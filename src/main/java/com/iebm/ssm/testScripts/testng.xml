@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestDependency">
+
+    <!--系统登录-->
+    <test name="login" enabled="false" >
+
+        <classes>
+            <class name="com.iebm.ssm.testScripts.LoginTest"></class>
+
+
+        </classes>
+
+    </test>
+
+    <!--病例查询-->
+    <test name="CaseQuery" enabled="false" >
+        <classes>
+            <class name="com.iebm.ssm.testScripts.LoginTest"></class>
+            <class name="com.iebm.ssm.testScripts.CaseQueryTest"></class>
+
+        </classes>
+
+    </test>
+
+    <!--实时预警-->
+    <test name="DynamicWarnTest" enabled="false">
+        <classes>
+            <class name="com.iebm.ssm.testScripts.LoginTest"></class>
+            <class name="com.iebm.ssm.testScripts.DynamicWarnTest"></class>
+
+        </classes>
+
+    </test>
+
+    <!--总体统计-->
+    <test name="totalInfo" enabled="false">
+        <classes>
+            <class name="com.iebm.ssm.testScripts.LoginTest"></class>
+            <class name="com.iebm.ssm.testScripts.TotalReportTest"></class>
+
+        </classes>
+
+    </test>
+
+    <test name="test1">
+        <classes>
+            <class name="com.iebm.ssm.testScripts.LoginTest"></class>
+            <class name="com.iebm.ssm.testScripts.IllegalPageTest"></class>
+        </classes>
+    </test>
+
+
+</suite>
