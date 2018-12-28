@@ -34,12 +34,7 @@ public class YiDianChaXun_FeesDetail_Drug {
         //					获取疑点病例详情------收费明细（药品明细）
 
         String drugUrl = Constant.url + "/app/diagnoseRelevant/view/diagnoseRelevantAction.action?method=loadDrugInfo&a_dhx_rSeed=1545356330008";
-                    /*
-                    String drugParam = "&pid="+id+"&ssmLevel=&pageRecords=200";
-                    String Drugresponse = HttpRequest.sendPost(drugUrl, driver.manage().getCookies().toString(), drugParam);
-					System.out.println(Drugresponse);
-					String drugParam = "&pid="+id+"&ssmLevel=&pageRecords=200";
-					*/
+
 
         List<NameValuePair> drugParamValuePairList = Lists.newArrayList();
         drugParamValuePairList.add(new BasicNameValuePair("pid",String.valueOf(id)));
@@ -85,13 +80,19 @@ public class YiDianChaXun_FeesDetail_Drug {
                         drug_num = drug_price_str.equals("") ? drug_num : new BigDecimal(drug_num_str);
                         BigDecimal drug_totalprice = drug_price.multiply(drug_num);
                         drug_type = drugdata.get(13).asText();
-                        if(drug_type.equals("甲类")){
-                            drug_firstType_totalprice = drug_firstType_totalprice.add(drug_totalprice);
-                        }if(drug_type.equals("乙类")){
-                            drug_secondType_totalprice = drug_secondType_totalprice.add(drug_totalprice);
-                        }else{
-                            drug_otherType_totalprice = drug_otherType_totalprice.add(drug_totalprice);
-                        }
+                        switch(drug_type){
+                            case "甲类":
+                                drug_firstType_totalprice = drug_firstType_totalprice.add(drug_totalprice);
+                                break;
+                            case "乙类":
+                                drug_secondType_totalprice = drug_secondType_totalprice.add(drug_totalprice);
+                                break;
+                            default :
+                                drug_otherType_totalprice = drug_otherType_totalprice.add(drug_totalprice);
+                                break;
+
+                        };
+
                         illegalFlag = drugdata.get(14).asText();
                         if(illegalFlag.equals("违规")){
                             drug_llegal_totalprice = drug_llegal_totalprice.add(drug_totalprice);
@@ -113,16 +114,18 @@ public class YiDianChaXun_FeesDetail_Drug {
                     drug_num = drug_num_str.equals("") ? drug_num : new BigDecimal(drug_num_str);
                     BigDecimal drug_totalprice = drug_price.multiply(drug_num);
                     drug_type = drugdata.get(13).asText();
-                    if(drug_type.equals("甲类")){
-                        drug_firstType_totalprice = drug_firstType_totalprice.add(drug_totalprice);
-                        System.out.println("甲类"+drug_firstType_totalprice);
-                    }if(drug_type.equals("乙类")){
-                        drug_secondType_totalprice = drug_secondType_totalprice.add(drug_totalprice);
-                        System.out.println("乙类"+drug_secondType_totalprice);
-                    }else{
-                        drug_otherType_totalprice = drug_otherType_totalprice.add(drug_totalprice);
-                        System.out.println("oo"+drug_otherType_totalprice);
-                    }
+                    switch(drug_type){
+                        case "甲类":
+                            drug_firstType_totalprice = drug_firstType_totalprice.add(drug_totalprice);
+                            break;
+                        case "乙类":
+                            drug_secondType_totalprice = drug_secondType_totalprice.add(drug_totalprice);
+                            break;
+                        default :
+                            drug_otherType_totalprice = drug_otherType_totalprice.add(drug_totalprice);
+                            break;
+
+                    };
                     illegalFlag = drugdata.get(14).asText();
                     if(illegalFlag.equals("违规")){
                         drug_llegal_totalprice = drug_llegal_totalprice.add(drug_totalprice);
@@ -147,7 +150,6 @@ public class YiDianChaXun_FeesDetail_Drug {
 
         infoMap.put("drug_llegal_totalprice", drug_llegal_totalprice);
         infoMap.put("drugDetail_totalprice", drug_alltotalprice);
-        System.out.println(drug_llegal_totalprice+"======="+drug_llegal_totalprice+"========="+drug_otherType_totalprice);
         infoMap.put("drug_firstType_totalprice", drug_firstType_totalprice);
         infoMap.put("drug_secondType_totalprice", drug_secondType_totalprice);
         infoMap.put("drug_otherType_totalprice", drug_otherType_totalprice);

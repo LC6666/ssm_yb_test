@@ -54,10 +54,10 @@ public class YiDianChaXun_DrugReport {
                     System.out.println("病例【"+infoMap.get("code").toString()+"】药品报销类别费用统计 乙类费用统计不一致    明细中乙类费用="+drug_secondType_totalprice+"   视图中乙类费用="+value);
                 }
 //                infoMap.put("secondDrug_chart", value);
-            }else{
+            }else if(label.contains("目录外费用")){
                 String drug_otherType_totalprice = df.format(infoMap.get("drug_otherType_totalprice"));
                 if (!value.equals(drug_otherType_totalprice)){
-                    System.out.println("病例【"+infoMap.get("code").toString()+"】药品报销类别费用统计 其他类费用统计不一致    明细中其他类费用="+drug_otherType_totalprice+"   视图中其他类费用="+value);
+                    System.out.println("病例【"+infoMap.get("code").toString()+"】药品报销类别费用统计 其他类费用统计不一致    明细中目录外费用="+drug_otherType_totalprice+"   视图中目录外费用="+value);
                 }
 //                infoMap.put("orhterDrug_chart", value);
             }
@@ -91,9 +91,13 @@ public class YiDianChaXun_DrugReport {
             String label = element.attr("label");
             String value = element.attr("value");
             if(label.contains("药品")){
-                infoMap.put("drugFees_chart", value);
+                String drugFee_str = infoMap.get("drugFee_str").toString();
+                if(!drugFee_str.equals(value)){
+                    System.out.println("病例【"+infoMap.get("code").toString()+"】药占比统计不正确    基本信息中药品费用="+drugFee_str+"   视图中药品费用="+value);
+                }
+//                infoMap.put("drugFees_chart", value);
             }if(label.contains("其它")){
-                infoMap.put("otherFees_chart", value);
+//                infoMap.put("otherFees_chart", value);
             }
 
         }
