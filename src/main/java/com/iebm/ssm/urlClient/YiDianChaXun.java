@@ -132,11 +132,10 @@ public class YiDianChaXun {
 
 //                         病例详情分析
                         info_map = this.getDetail(info_map);
-                        this.validateIllgal(info_map);
+//                        this.validateIllgal(info_map);
                         this.validateBasic(info_map);
 
-                        info_map = basicInfo.getBasicInfo(info_map);
-                        info_map = drugInfo.getDrugDetail(info_map);
+
                         drugReport.loadReportInfo(info_map);
                         drugReport.loadReportDrugRate(info_map);
 
@@ -198,6 +197,8 @@ public class YiDianChaXun {
 
     /**
      * 验证违规费用是否一致
+     * 违规费用有可能与明细中的违规总费用有差别，此场景可作废
+     *
      * @param info_map
      */
     public void validateIllgal(Map info_map){
@@ -221,12 +222,12 @@ public class YiDianChaXun {
 
 //        验证病例违规费用与基本信息违规费用是否一致
         if(!illegalFee_str2.equals(ownExpense_str)){
-            System.out.println("【"+id+"】就诊编号:"+code+"违规总费用与基本信息违规费用不一致   违规费用="+illegalFee_str2+" 基本信息违规费用="+ownExpense_str);
+            System.out.println("【"+id+"】就诊编号【"+code+"】违规总费用与基本信息违规费用不一致   违规费用="+illegalFee_str2+" 基本信息违规费用="+ownExpense_str);
         }
 
 //       验证病例违规费用与费用详情是否一致
         if(!all_illegalprice_str.equals(illegalFee_str2)){
-            System.out.println("【"+id+"】就诊编号:"+code+"违规总费用与明细违规总费用不一致   明细违规费用="+all_illegalprice_str+" 基本信息违规费用="+ownExpense_str);
+            System.out.println("【"+id+"】就诊编号【"+code+"】违规总费用与明细违规总费用不一致   明细违规费用="+all_illegalprice_str+" 基本信息违规费用="+ownExpense_str);
         }
     }
 
