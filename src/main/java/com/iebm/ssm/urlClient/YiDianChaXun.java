@@ -120,24 +120,25 @@ public class YiDianChaXun {
 //                        ======================================================================================================================
 
 //                        计算年度病例违规费用
-                        /*
+
+
                         BigDecimal illegeFee = new BigDecimal(illegalFee_str);
                         total_illegeFee = total_illegeFee.add(illegeFee);
                         System.out.println("【"+index+"】【"+id+"】当前病例【"+code+"】违规费用="+illegeFee+"  当前所有病例违规费用总和="+total_illegeFee);
 
-                        */
+
 //                        ======================================================================================================================
 
 //                        ======================================================================================================================
 //                        病种查询
-//                        diseaseSelect.FindDisease(info_map);
+                        diseaseSelect.FindDisease(info_map);
 //                        ======================================================================================================================
 
 
 
 //                    病例详情分析
-                        info_map = this.getDetail(info_map);
-                        this.validateIllgal(info_map);
+//                        info_map = this.getDetail(info_map);
+//                        this.validateIllgal(info_map);
 
                     }
                 }
@@ -226,6 +227,8 @@ public class YiDianChaXun {
             System.out.println("【"+id+"】就诊编号:"+code+"违规总费用与明细违规总费用不一致   明细违规费用="+all_illegalprice_str+" 基本信息违规费用="+ownExpense_str);
         }
     }
+
+
 
     public static void main(String[ ] args) throws IOException, URISyntaxException, ClassNotFoundException {
         Login login = new Login();
