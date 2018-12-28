@@ -119,20 +119,21 @@ public class YiDianChaXun {
                         info_map.put("illegalFee_str", illegalFee_str);
 //                        ======================================================================================================================
 //                        计算年度病例违规费用
-                        /*BigDecimal illegeFee = new BigDecimal(illegalFee_str);
+                        BigDecimal illegeFee = new BigDecimal(illegalFee_str);
                         total_illegeFee = total_illegeFee.add(illegeFee);
-                        System.out.println("【"+index+"】【"+id+"】当前病例【"+code+"】违规费用="+illegeFee+"  当前所有病例违规费用总和="+total_illegeFee);*/
+//                        System.out.println("【"+index+"】【"+id+"】当前病例【"+code+"】违规费用="+illegeFee+"  当前所有病例违规费用总和="+total_illegeFee);
 //                        ======================================================================================================================
 
 
 //                        ======================================================================================================================
 //                        病种查询
-//                        diseaseSelect.FindDisease(info_map);
+                        diseaseSelect.FindDisease(info_map);
 //                        ======================================================================================================================
 
 //                         病例详情分析
-//                        info_map = this.getDetail(info_map);
-//                        this.validateIllgal(info_map);
+                        info_map = this.getDetail(info_map);
+                        this.validateIllgal(info_map);
+                        this.validateBasic(info_map);
 
                         info_map = basicInfo.getBasicInfo(info_map);
                         info_map = drugInfo.getDrugDetail(info_map);
@@ -174,6 +175,7 @@ public class YiDianChaXun {
 
     /**
      * 验证基本信息各项总费用是否一致
+     * 验证违规费用是否一致
      * @param info_map
      */
     public void validateBasic(Map info_map){
