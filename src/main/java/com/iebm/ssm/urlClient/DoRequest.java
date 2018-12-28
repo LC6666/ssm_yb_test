@@ -51,6 +51,12 @@ public class DoRequest {
         headerList.add(new BasicHeader(HttpHeaders.CONNECTION,"keep-alive"));
         HttpClientBuilder httpClientBuilder = HttpClients.custom();
 
+//        设置代理IP、端口、协议（请分别替换）
+        /*HttpHost proxy = new HttpHost("127.0.0.1",8888,"http");
+//        把代理设置到请求配置
+        RequestConfig requestConfig = RequestConfig.custom().setProxy(proxy).build();
+        httpClientBuilder.setDefaultRequestConfig(requestConfig);*/
+
         HttpClientContext httpClientContext = null;
         if(cookieStore!=null){
             httpClientBuilder.setDefaultCookieStore(cookieStore);
@@ -58,13 +64,9 @@ public class DoRequest {
             httpClientContext = HttpClientContext.create();
         }
 
-/*//        设置代理IP、端口、协议（请分别替换）
-        HttpHost proxy = new HttpHost("127.0.0.1",8888,"http");
-//        把代理设置到请求配置
-        RequestConfig requestConfig = RequestConfig.custom().setProxy(proxy).build();
-        httpClientBuilder.setDefaultRequestConfig(requestConfig);
 
-        httpClientBuilder.setDefaultHeaders(headerList);*/
+
+        httpClientBuilder.setDefaultHeaders(headerList);
 
 
         HttpClient httpClient = httpClientBuilder.build();

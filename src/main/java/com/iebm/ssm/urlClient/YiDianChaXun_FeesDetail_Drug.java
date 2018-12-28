@@ -54,8 +54,12 @@ public class YiDianChaXun_FeesDetail_Drug {
         int drugtotalPages = drugpage.get("page").get("totalPages").asInt();
         String drug_price_str="";
         String drug_num_str="";
+        String illegalFlag = "";
         String drug_type = "";
         BigDecimal drug_alltotalprice = BigDecimal.ZERO;
+        BigDecimal drug_firstType_totalprice = BigDecimal.ZERO;
+        BigDecimal drug_secondType_totalprice = BigDecimal.ZERO;
+        BigDecimal drug_otherType_totalprice = BigDecimal.ZERO;
         BigDecimal drug_llegal_totalprice = BigDecimal.ZERO;
         BigDecimal drug_price = BigDecimal.ZERO;
         BigDecimal drug_num = BigDecimal.ZERO;
@@ -80,8 +84,16 @@ public class YiDianChaXun_FeesDetail_Drug {
                         drug_price = drug_price_str.equals("") ? drug_price : new BigDecimal(drug_price_str);
                         drug_num = drug_price_str.equals("") ? drug_num : new BigDecimal(drug_num_str);
                         BigDecimal drug_totalprice = drug_price.multiply(drug_num);
-                        drug_type = drugdata.get(14).asText();
-                        if(drug_type.equals("违规")){
+                        drug_type = drugdata.get(13).asText();
+                        if(drug_type.equals("甲类")){
+                            drug_firstType_totalprice = drug_firstType_totalprice.add(drug_totalprice);
+                        }if(drug_type.equals("乙类")){
+                            drug_secondType_totalprice = drug_secondType_totalprice.add(drug_totalprice);
+                        }else{
+                            drug_otherType_totalprice = drug_otherType_totalprice.add(drug_totalprice);
+                        }
+                        illegalFlag = drugdata.get(14).asText();
+                        if(illegalFlag.equals("违规")){
                             drug_llegal_totalprice = drug_llegal_totalprice.add(drug_totalprice);
                         }
                         drug_alltotalprice = drug_alltotalprice.add(drug_totalprice);
@@ -100,8 +112,19 @@ public class YiDianChaXun_FeesDetail_Drug {
                     drug_price = drug_price_str.equals("") ? drug_price : new BigDecimal(drug_price_str);
                     drug_num = drug_num_str.equals("") ? drug_num : new BigDecimal(drug_num_str);
                     BigDecimal drug_totalprice = drug_price.multiply(drug_num);
-                    drug_type = drugdata.get(14).asText();
-                    if(drug_type.equals("违规")){
+                    drug_type = drugdata.get(13).asText();
+                    if(drug_type.equals("甲类")){
+                        drug_firstType_totalprice = drug_firstType_totalprice.add(drug_totalprice);
+                        System.out.println("甲类"+drug_firstType_totalprice);
+                    }if(drug_type.equals("乙类")){
+                        drug_secondType_totalprice = drug_secondType_totalprice.add(drug_totalprice);
+                        System.out.println("乙类"+drug_secondType_totalprice);
+                    }else{
+                        drug_otherType_totalprice = drug_otherType_totalprice.add(drug_totalprice);
+                        System.out.println("oo"+drug_otherType_totalprice);
+                    }
+                    illegalFlag = drugdata.get(14).asText();
+                    if(illegalFlag.equals("违规")){
                         drug_llegal_totalprice = drug_llegal_totalprice.add(drug_totalprice);
                     }
                     drug_alltotalprice = drug_alltotalprice.add(drug_totalprice);
@@ -124,6 +147,10 @@ public class YiDianChaXun_FeesDetail_Drug {
 
         infoMap.put("drug_llegal_totalprice", drug_llegal_totalprice);
         infoMap.put("drugDetail_totalprice", drug_alltotalprice);
+        System.out.println(drug_llegal_totalprice+"======="+drug_llegal_totalprice+"========="+drug_otherType_totalprice);
+        infoMap.put("drug_firstType_totalprice", drug_firstType_totalprice);
+        infoMap.put("drug_secondType_totalprice", drug_secondType_totalprice);
+        infoMap.put("drug_otherType_totalprice", drug_otherType_totalprice);
 
         return infoMap;
 //					获取疑点病例详情------收费明细（药品明细）

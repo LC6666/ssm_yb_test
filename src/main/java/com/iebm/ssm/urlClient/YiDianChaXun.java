@@ -17,7 +17,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.iebm.ssm.util.Constant.*;
 
 public class YiDianChaXun {
 
@@ -27,6 +26,7 @@ public class YiDianChaXun {
     YiDianChaXun_FeesDetail_Cure cure = new YiDianChaXun_FeesDetail_Cure();
     YiDianChaXun_FeesDetail_Material material = new YiDianChaXun_FeesDetail_Material();
     YiDianChaXun_FeesDetail_Other other = new YiDianChaXun_FeesDetail_Other();
+    YiDianChaXun_DrugReport drugReport = new YiDianChaXun_DrugReport();
     DiseaseSelect diseaseSelect = new DiseaseSelect();
     DecimalFormat df = new DecimalFormat("0.00");
 
@@ -118,27 +118,27 @@ public class YiDianChaXun {
                         info_map.put("disease", disease);
                         info_map.put("illegalFee_str", illegalFee_str);
 //                        ======================================================================================================================
-
 //                        计算年度病例违规费用
-
-
-                        BigDecimal illegeFee = new BigDecimal(illegalFee_str);
+                        /*BigDecimal illegeFee = new BigDecimal(illegalFee_str);
                         total_illegeFee = total_illegeFee.add(illegeFee);
-                        System.out.println("【"+index+"】【"+id+"】当前病例【"+code+"】违规费用="+illegeFee+"  当前所有病例违规费用总和="+total_illegeFee);
-
-
+                        System.out.println("【"+index+"】【"+id+"】当前病例【"+code+"】违规费用="+illegeFee+"  当前所有病例违规费用总和="+total_illegeFee);*/
 //                        ======================================================================================================================
+
 
 //                        ======================================================================================================================
 //                        病种查询
-                        diseaseSelect.FindDisease(info_map);
+//                        diseaseSelect.FindDisease(info_map);
 //                        ======================================================================================================================
 
-
-
-//                    病例详情分析
+//                         病例详情分析
 //                        info_map = this.getDetail(info_map);
 //                        this.validateIllgal(info_map);
+
+                        info_map = basicInfo.getBasicInfo(info_map);
+                        info_map = drugInfo.getDrugDetail(info_map);
+                        drugReport.loadReportInfo(info_map);
+                        drugReport.loadReportDrugRate(info_map);
+
 
                     }
                 }
