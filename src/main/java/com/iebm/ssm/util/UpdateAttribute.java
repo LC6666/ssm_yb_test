@@ -20,7 +20,7 @@ public class UpdateAttribute {
 
 	public static void removeAttribute(WebDriver driver,WebElement element,String attributeName){
 		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].removeAttribute(arguments[1],arguments[2])", element,attributeName);
+		js.executeScript("arguments[0].removeAttribute(arguments[1])", element,attributeName);
 
 	}
 
