@@ -13,7 +13,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 /**
- *  @// TODO: 2018/12/29  病历查询
+ *  TODO: 2018/12/29  病历查询
  */
 public class BingLiChaXun {
 
