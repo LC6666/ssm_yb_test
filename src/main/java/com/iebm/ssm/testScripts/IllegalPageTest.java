@@ -34,24 +34,6 @@ public class IllegalPageTest {
 				"2013-08-10", "2018-08-10", "3条以上",
 				"000000010016510", "违规", "王");
 	}
-	
-	@Test(testName="查看列表数据",priority=3,enabled=false)
-	public void getTable() throws Exception{
-		Thread.sleep(1000);
-		illegal.readTable();
-	}
-	
-
-	@Test(testName="核验病例数据",priority=4,enabled=false)
-	public void getRowData() throws Exception{
-		Thread.sleep(1000);
-		illegal = new Illegal_Action();
-		illegal.readTableRow();
-	}
-
-
-
-	
 
 	
 }
