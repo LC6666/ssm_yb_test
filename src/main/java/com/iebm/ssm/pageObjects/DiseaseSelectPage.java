@@ -8,35 +8,35 @@ import org.openqa.selenium.WebElement;
 /**
  * 医疗机构选择弹窗
  */
-public class HospitalSelectPage {
+public class DiseaseSelectPage {
 
     private WebElement element = null;
-    private ObjectMap objectmap = new ObjectMap("./resource/hospitalSelectPageMap.properties");
+    private ObjectMap objectmap = new ObjectMap("./resource/diseaseSelectPageMap.properties");
     private WebDriver driver;
 
-    public HospitalSelectPage() {
+    public DiseaseSelectPage() {
         // TODO Auto-generated constructor stub
         this.driver = Constant.driver;
     }
 
 
-    public WebElement hospitalname_input() throws Exception {
-        element = driver.findElement(objectmap.getLocator("hospitalname_input"));
+    public WebElement diseasename_input() throws Exception {
+        element = driver.findElement(objectmap.getLocator("diseasename_input"));
         return element;
     }
 
-    public WebElement hospitalquery_btn() throws Exception {
-        element = driver.findElement(objectmap.getLocator("hospitalquery_btn"));
+    public WebElement diseasequery_btn() throws Exception {
+        element = driver.findElement(objectmap.getLocator("diseasequery_btn"));
         return element;
     }
 
-    public WebElement hospitalclear_btn() throws Exception {
-        element = driver.findElement(objectmap.getLocator("hospitalclear_btn"));
+    public WebElement diseaseclear_btn() throws Exception {
+        element = driver.findElement(objectmap.getLocator("diseaseclear_btn"));
         return element;
     }
 
-    public WebElement hospitallist() throws Exception {
-        element = driver.findElement(objectmap.getLocator("hospitallist"));
+    public WebElement diseaselist() throws Exception {
+        element = driver.findElement(objectmap.getLocator("diseaselist"));
         return element;
     }
 
@@ -75,18 +75,18 @@ public class HospitalSelectPage {
         return element;
     }
 
-    public WebElement hospitalconfirm_btn() throws Exception {
-        element = driver.findElement(objectmap.getLocator("hospitalconfirm_btn"));
+    public WebElement diseaseconfirm_btn() throws Exception {
+        element = driver.findElement(objectmap.getLocator("diseaseconfirm_btn"));
         return element;
     }
 
-    public WebElement hospitalselectclear_btn() throws Exception {
-        element = driver.findElement(objectmap.getLocator("hospitalselectclear_btn"));
+    public WebElement diseaseselectclear_btn() throws Exception {
+        element = driver.findElement(objectmap.getLocator("diseaseselectclear_btn"));
         return element;
     }
 
-    public WebElement hospitalcancel_btn() throws Exception {
-        element = driver.findElement(objectmap.getLocator("hospitalcancel_btn"));
+    public WebElement diseasecancel_btn() throws Exception {
+        element = driver.findElement(objectmap.getLocator("diseasecancel_btn"));
         return element;
     }
 

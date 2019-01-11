@@ -15,41 +15,41 @@ import com.iebm.ssm.util.Log;
 import com.iebm.ssm.util.UpdateAttribute;
 
 public class IllegalPageTest {
-	
 
-	String baseUrl = Constant.url;
-	Illegal_Action illegal ;
+	private Illegal_Action illegal;
+
+
 	
-	@Test(testName="进入疑点查询页面查询数据",priority=1)
+	@Test(testName="进入疑点查询",priority=1)
 	public void querytIllegal() throws Exception{
-		illegal = new Illegal_Action();
+		illegal = new Illegal_Action() ;
 		illegal.openPage();
-		illegal.setStartDate(Constant.driver, "2017-05-01","2020-05-01");
-		Thread.sleep(500);
-//		illegal.query();
 		
 	}
+
+	@Test(testName="查询病例",priority=2)
+	public void test() throws Exception {
+		illegal.setCondition("铜川市人民医院",
+				"三级", "肺炎", "智审完成",
+				"2013-08-10", "2018-08-10", "3条以上",
+				"000000010016510", "违规", "王");
+	}
 	
-	@Test(testName="查看列表数据",priority=2,enabled=false)
+	@Test(testName="查看列表数据",priority=3,enabled=false)
 	public void getTable() throws Exception{
 		Thread.sleep(1000);
-		Illegal_Action illegal = new Illegal_Action();
 		illegal.readTable();
 	}
 	
 
-	@Test(testName="核验病例数据",priority=3,enabled=false)
+	@Test(testName="核验病例数据",priority=4,enabled=false)
 	public void getRowData() throws Exception{
 		Thread.sleep(1000);
 		illegal = new Illegal_Action();
 		illegal.readTableRow();
 	}
 
-	@Test(testName="病例数据",priority=4)
-	public void test() throws Exception {
-		illegal = new Illegal_Action();
-		illegal.setCondition(Constant.driver, "铜川市人民医院", "三级", "肺炎", null, null, null, null, null, null, null);
-	}
+
 
 	
 
