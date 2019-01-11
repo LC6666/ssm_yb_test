@@ -40,11 +40,11 @@ public class QuestionDetail_Action {
         page.baseinfo().click();
 
         String code = page.code().getAttribute("value");
-        String totalFee_str = page.totalFee().getAttribute("value");
-        String drugFee_str = page.drugFee().getAttribute("value");
-        String inspectionFee_str = page.inspectionFee().getAttribute("value");
-        String treatmentFee_str = page.treatmentFee().getAttribute("value");
-        String otherFee_str = page.otherFee().getAttribute("value");
+        String totalFee_str = page.totalFee().getAttribute("value").replace(",", "");
+        String drugFee_str = page.drugFee().getAttribute("value").replace(",", "");
+        String inspectionFee_str = page.inspectionFee().getAttribute("value").replace(",", "");
+        String treatmentFee_str = page.treatmentFee().getAttribute("value").replace(",", "");
+        String otherFee_str = page.otherFee().getAttribute("value").replace(",", "");
 //		System.out.println("总费用="+totalFee_str+"   药品费用="+drugFee_str+"   检查费用="+inspectionFee_str+"   治疗费用="+treatmentFee_str+"   其他费用="+otherFee_str);
 //		DecimalFormat  df   =new   DecimalFormat("#.0000");
 

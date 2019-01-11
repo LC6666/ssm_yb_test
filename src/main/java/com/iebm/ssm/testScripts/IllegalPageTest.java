@@ -24,10 +24,9 @@ public class IllegalPageTest {
 	public void querytIllegal() throws Exception{
 		illegal = new Illegal_Action();
 		illegal.openPage();
-		illegal.setStartDate(Constant.driver, "2017-05-01");
-		illegal.setEndDate(Constant.driver, "2019-06-01");
+		illegal.setStartDate(Constant.driver, "2017-05-01","2020-05-01");
 		Thread.sleep(500);
-		illegal.query();
+//		illegal.query();
 		
 	}
 	
@@ -38,11 +37,18 @@ public class IllegalPageTest {
 		illegal.readTable();
 	}
 	
-	@Test(testName="核验病例数据",priority=3)
+
+	@Test(testName="核验病例数据",priority=3,enabled=false)
 	public void getRowData() throws Exception{
 		Thread.sleep(1000);
 		illegal = new Illegal_Action();
 		illegal.readTableRow();
+	}
+
+	@Test(testName="病例数据",priority=4)
+	public void test() throws Exception {
+		illegal = new Illegal_Action();
+		illegal.setCondition(Constant.driver, "铜川市人民医院", "三级", "肺炎", null, null, null, null, null, null, null);
 	}
 
 	

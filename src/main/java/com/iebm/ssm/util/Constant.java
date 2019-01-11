@@ -15,7 +15,8 @@ public class Constant {
 
     public static final String loginUsername = "ssm";
 
-    public static final String loginPassword = "666666";
+    public static final String loginPassword = "888888";
+//    public static final String loginPassword = "666666";
 
     public static WebDriver driver;
 

@@ -53,7 +53,7 @@ public class YiDianChaXun {
         nameValuePairList.add(new BasicNameValuePair("diseaseName",""));
         nameValuePairList.add(new BasicNameValuePair("diseaseId",""));
         nameValuePairList.add(new BasicNameValuePair("startCreateTime","2012-12-31"));
-        nameValuePairList.add(new BasicNameValuePair("endCreateTime","2020-03-26"));
+        nameValuePairList.add(new BasicNameValuePair("endCreateTime","2018-12-31"));
         nameValuePairList.add(new BasicNameValuePair("siCode",""));
         nameValuePairList.add(new BasicNameValuePair("insuredName",""));
         nameValuePairList.add(new BasicNameValuePair("undefined",""));
@@ -93,7 +93,7 @@ public class YiDianChaXun {
             pageParamValuePairList.add(new BasicNameValuePair("diseaseName",""));
             pageParamValuePairList.add(new BasicNameValuePair("diseaseId",""));
             pageParamValuePairList.add(new BasicNameValuePair("startCreateTime","2012-12-31"));
-            pageParamValuePairList.add(new BasicNameValuePair("endCreateTime","2020-03-26"));
+            pageParamValuePairList.add(new BasicNameValuePair("endCreateTime","2018-12-31"));
             pageParamValuePairList.add(new BasicNameValuePair("siCode",""));
             pageParamValuePairList.add(new BasicNameValuePair("insuredName",""));
             pageParamValuePairList.add(new BasicNameValuePair("institutionLevel",""));
@@ -107,6 +107,7 @@ public class YiDianChaXun {
                     for (JsonNode row : rows) {
                         JsonNode data = row.get("data");
                         String index = data.get(0).asText();
+//                        System.out.println(index);
                         String id = data.get(2).asText();
                         String code = data.get(3).asText();
                         String disease = data.get(7).asText();
@@ -119,20 +120,20 @@ public class YiDianChaXun {
                         info_map.put("illegalFee_str", illegalFee_str);
 //                        ======================================================================================================================
 //                        计算年度病例违规费用
-                        BigDecimal illegeFee = new BigDecimal(illegalFee_str);
-                        total_illegeFee = total_illegeFee.add(illegeFee);
+//                        BigDecimal illegeFee = new BigDecimal(illegalFee_str);
+//                        total_illegeFee = total_illegeFee.add(illegeFee);
 //                        System.out.println("【"+index+"】【"+id+"】当前病例【"+code+"】违规费用="+illegeFee+"  当前所有病例违规费用总和="+total_illegeFee);
 //                        ======================================================================================================================
 
 
 //                        ======================================================================================================================
 //                        病种查询
-                        diseaseSelect.FindDisease(info_map);
+//                        diseaseSelect.FindDisease(info_map);
 //                        ======================================================================================================================
 
 //                         病例详情分析
                         info_map = this.getDetail(info_map);
-//                        this.validateIllgal(info_map);
+                        this.validateIllgal(info_map);
                         this.validateBasic(info_map);
 
 

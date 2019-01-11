@@ -63,7 +63,7 @@ public class BingLiChaXun {
                 nameValuePairList.add(new BasicNameValuePair("diseaseName",""));
                 nameValuePairList.add(new BasicNameValuePair("diseaseId",""));
                 nameValuePairList.add(new BasicNameValuePair("startCreateTime","2012-12-31"));
-                nameValuePairList.add(new BasicNameValuePair("endCreateTime","2020-03-26"));
+                nameValuePairList.add(new BasicNameValuePair("endCreateTime","2018-12-31"));
                 nameValuePairList.add(new BasicNameValuePair("siCode",""));
                 nameValuePairList.add(new BasicNameValuePair("insuredName",""));
                 nameValuePairList.add(new BasicNameValuePair("institutionLevel",""));
