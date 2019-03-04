@@ -11,17 +11,13 @@ public class CaseQueryTest {
 	
 	@Test(testName="进入病例查询页面",priority=1,dependsOnGroups = "login")
 	public void testIllegal() throws Exception{
-		CaseQuery_Action casequery = new CaseQuery_Action(Constant.driver);
+		CaseQuery_Action casequery = new CaseQuery_Action();
 		casequery.openPage();
 		Thread.sleep(500);
 		
 	}
 	
-	@Test(testName="疑点查询接口",priority=2,enabled = false)
-	public void illgealQuery(){
-		CaseQuery_Action casequery = new CaseQuery_Action(Constant.driver);
-		casequery.setParam(baseUrl,Constant.driver.manage().getCookies().toString());
-	}
+
 	
 
 	

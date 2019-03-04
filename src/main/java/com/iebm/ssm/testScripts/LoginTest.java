@@ -21,10 +21,19 @@ public class LoginTest {
 
 	String baseUrl = Constant.url;
 	
-	@Test
+	@Test(testName = "用户登录")
 	public void testLogin() throws Exception{
 		Log.info("调用Login_Action.execute");
 		Login_Action.execute(Constant.driver, Constant.loginUsername, Constant.loginPassword);
+		Thread.sleep(3000);
+		Assert.assertTrue(Constant.driver.getPageSource().contains("退出系统"));
+
+	}
+
+	@Test(testName = "管理员登录")
+	public void admintLogin() throws Exception{
+		Log.info("调用Login_Action.execute");
+		Login_Action.execute(Constant.driver, "1001", "666666");
 		Thread.sleep(3000);
 		Assert.assertTrue(Constant.driver.getPageSource().contains("退出系统"));
 

@@ -14,6 +14,7 @@ public class SelectOperate {
         this.select = new Select(select);
     }
 
+
     public void operateSelectDemo(){
 //        isMultiple表示此下拉列表是否允许多选
         select.isMultiple();
@@ -37,5 +38,25 @@ public class SelectOperate {
         select.selectByValue("08");
 //通过显示文字来选中
         select.selectByVisibleText("乡镇卫生院");
+    }
+
+
+    public void selectByIndex(int index) throws Exception {
+        List<WebElement> selectedoptions = select.getAllSelectedOptions();
+        if(index<=selectedoptions.size()){
+            select.selectByIndex(index);
+        }else{
+            throw new Exception("超过下拉选项数量");
+        }
+    }
+
+    public void selectByValue(String value){
+        select.selectByVisibleText(value);
+
+    }
+
+    public void selectByText(String Text){
+        select.selectByVisibleText(Text);
+
     }
 }

@@ -1,0 +1,58 @@
+<tr>
+    <td class="standartTreeImage">
+        <img border="0" align="absmiddle" src="../dhtmlx/dhtmlxTree/imgs/minus5.gif" style="padding: 0px; margin: 0px; width: 18px; height: 18px;">
+    </td>
+    <td width="16px">
+        <img src="../dhtmlx/dhtmlxTree/imgs/iconUncheckAll.gif" align="absmiddle" style="width: 16px; height: 16px;">
+    </td>
+    <td class="standartTreeImage" style="width: 18px;">
+        <img border="0" align="absmiddle" src="../dhtmlx/dhtmlxTree/imgs/folderOpen.gif" style="padding: 0px; margin: 0px; width: 18px; height: 18px;">
+    </td>
+    <td class="standartTreeRow" nowrap="" style="font-size: 10pt; cursor: pointer;">
+        <span class="standartTreeRow" style="padding-left: 5px; padding-right: 5px;">铜川市医保</span>
+    </td>
+</tr>
+<tr style="">
+    <td style="background-image: none;"> </td>
+    <td colspan="3"><table cellspacing="0" cellpadding="0" border="0" style="margin: 0px; padding: 0px;">
+<tbody>
+<tr>
+    <td class="standartTreeImage">
+        <img border="0" align="absmiddle" src="../dhtmlx/dhtmlxTree/imgs/plus3.gif" style="padding: 0px; margin: 0px; width: 18px; height: 18px;">
+    </td>
+    <td width="16px">
+        <img src="../dhtmlx/dhtmlxTree/imgs/iconUncheckAll.gif" align="absmiddle" style="width: 16px; height: 16px;">
+    </td>
+    <td class="standartTreeImage" style="width: 18px;">
+        <img border="0" align="absmiddle" src="../dhtmlx/dhtmlxTree/imgs/folderClosed.gif" style="padding: 0px; margin: 0px; width: 18px; height: 18px;">
+    </td>
+    <td class="standartTreeRow" nowrap="" style="font-size: 10pt; cursor: pointer;">
+        <span class="standartTreeRow" style="padding-left: 5px; padding-right: 5px;">铜川市医保局</span>
+    </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+    <td class="standartTreeImage"><img border="0" align="absmiddle" src="../dhtmlx/dhtmlxTree/imgs/plus3.gif" style="padding: 0px; margin: 0px; width: 18px; height: 18px;"></td><td width="16px"><img src="../dhtmlx/dhtmlxTree/imgs/iconUncheckAll.gif" align="absmiddle" style="width: 16px; height: 16px;"></td><td class="standartTreeImage" style="width: 18px;"><img border="0" align="absmiddle" src="../dhtmlx/dhtmlxTree/imgs/folderClosed.gif" style="padding: 0px; margin: 0px; width: 18px; height: 18px;"></td><td class="standartTreeRow" nowrap="" style="font-size: 10pt; cursor: pointer;"><span class="standartTreeRow" style="padding-left: 5px; padding-right: 5px;">铜川市医保局</span></td></tr>
+<tr style="">
+    <td style="background-image: none;"> </td><td colspan="3"><table cellspacing="0" cellpadding="0" border="0" style="margin: 0px; padding: 0px;"><tbody><tr><td class="standartTreeImage"><img border="0" align="absmiddle" src="../dhtmlx/dhtmlxTree/imgs/line3.gif" style="padding: 0px; margin: 0px; width: 18px; height: 18px;"></td><td width="16px"><img src="../dhtmlx/dhtmlxTree/imgs/iconUncheckAll.gif" align="absmiddle" style="width: 16px; height: 16px;"></td><td class="standartTreeImage" style="width: 18px;"><img border="0" align="absmiddle" src="../dhtmlx/dhtmlxTree/imgs/leaf.gif" style="padding: 0px; margin: 0px; width: 18px; height: 18px;"></td><td class="standartTreeRow" nowrap="" style="font-size: 10pt; cursor: pointer;"><span class="standartTreeRow" style="padding-left: 5px; padding-right: 5px;">医保局</span></td></tr></tbody></table></td></tr>
+<tr>
+    <td class="standartTreeImage"><img border="0" align="absmiddle" src="../dhtmlx/dhtmlxTree/imgs/line3.gif" style="padding: 0px; margin: 0px; width: 18px; height: 18px;"></td><td width="16px"><img src="../dhtmlx/dhtmlxTree/imgs/iconUncheckAll.gif" align="absmiddle" style="width: 16px; height: 16px;"></td><td class="standartTreeImage" style="width: 18px;"><img border="0" align="absmiddle" src="../dhtmlx/dhtmlxTree/imgs/leaf.gif" style="padding: 0px; margin: 0px; width: 18px; height: 18px;"></td><td class="standartTreeRow" nowrap="" style="font-size: 10pt; cursor: pointer;"><span class="standartTreeRow" style="padding-left: 5px; padding-right: 5px;">医保局</span></td></tr>
+<tr style="">
+    <td style="background-image: none;"> </td><td colspan="3"><table cellspacing="0" cellpadding="0" border="0" style="margin: 0px; padding: 0px;"><tbody><tr><td class="standartTreeImage"><img border="0" align="absmiddle" src="../dhtmlx/dhtmlxTree/imgs/line2.gif" style="padding: 0px; margin: 0px; width: 18px; height: 18px;"></td><td width="16px"><img src="../dhtmlx/dhtmlxTree/imgs/iconUncheckAll.gif" align="absmiddle" style="width: 16px; height: 16px;"></td><td class="standartTreeImage" style="width: 18px;"><img border="0" align="absmiddle" src="../dhtmlx/dhtmlxTree/imgs/leaf.gif" style="padding: 0px; margin: 0px; width: 18px; height: 18px;"></td><td class="standartTreeRow" nowrap="" style="font-size: 10pt; cursor: pointer;"><span class="standartTreeRow" style="padding-left: 5px; padding-right: 5px;">知识库管理</span></td></tr></tbody></table></td></tr>
+<tr>
+    <td class="standartTreeImage">
+        <img border="0" align="absmiddle" src="../dhtmlx/dhtmlxTree/imgs/line2.gif" style="padding: 0px; margin: 0px; width: 18px; height: 18px;">
+    </td>
+    <td width="16px">
+        <img src="../dhtmlx/dhtmlxTree/imgs/iconUncheckAll.gif" align="absmiddle" style="width: 16px; height: 16px;">
+    </td>
+    <td class="standartTreeImage" style="width: 18px;">
+        <img border="0" align="absmiddle" src="../dhtmlx/dhtmlxTree/imgs/leaf.gif" style="padding: 0px; margin: 0px; width: 18px; height: 18px;">
+    </td>
+    <td class="standartTreeRow" nowrap="" style="font-size: 10pt; cursor: pointer;">
+        <span class="standartTreeRow" style="padding-left: 5px; padding-right: 5px;">知识库管理</span>
+    </td>
+</tr>

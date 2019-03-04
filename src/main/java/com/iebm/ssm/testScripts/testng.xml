@@ -9,13 +9,12 @@
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest"></class>
 
-
         </classes>
 
     </test>
 
     <!--病例查询-->
-    <test name="CaseQuery" enabled="false" >
+    <test name="CaseQuery" enabled="false">
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest"></class>
             <class name="com.iebm.ssm.testScripts.CaseQueryTest"></class>
@@ -34,20 +33,24 @@
 
     </test>
 
-    <!--总体统计-->
-    <test name="totalInfo" enabled="false">
-        <classes>
-            <class name="com.iebm.ssm.testScripts.LoginTest"></class>
-            <class name="com.iebm.ssm.testScripts.TotalReportTest"></class>
 
-        </classes>
-
-    </test>
-
-    <test name="IllegalTest">
+    <!--疑点查询-->
+    <test name="IllegalTest" enabled="false">
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest"></class>
             <class name="com.iebm.ssm.testScripts.IllegalPageTest"></class>
+        </classes>
+    </test>
+
+    <!--用户管理-->
+    <test name="UserConfigTest">
+        <classes>
+            <class name="com.iebm.ssm.testScripts.LoginTest">
+                <methods>
+                    <include name="admintLogin"/>
+                </methods>
+            </class>
+            <class name="com.iebm.ssm.testScripts.UserConfigTest"></class>
         </classes>
     </test>
 

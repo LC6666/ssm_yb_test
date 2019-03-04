@@ -3,6 +3,8 @@ package com.iebm.ssm.util;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -31,7 +33,7 @@ public class Table {
 
 
     /**
-     * 获取表格元素的行数，查找表格元素有几个元素
+     * 获取表格元素的行数，查找表格元素有几个tr元素（不适用于table中有嵌套table的情形）
      * 有几个tr元素，就可以知道表格有几行，tr数量和表格行数一致
      * @return
      * TODO
@@ -46,7 +48,7 @@ public class Table {
 
 
     /**
-     * 获取表格的列数
+     * 获取表格的列数（不适用于table中有嵌套table的情形）
      * 使用get(0)从容器中取出表格第一行的元素，查找有几个"td"，td数量和列数一致
      * @return
      * TODO
@@ -54,14 +56,17 @@ public class Table {
      * 下午7:54:14
      */
     public int getColumnCount(){
-//		System.out.println(_table.getText());
         List<WebElement> tableRows = _table.findElements(By.tagName("tr"));
-//		System.out.println(tableRows.size());
 //		第1行为th，从第2行为td比较稳定
         return tableRows.get(tableRows.size()-1).findElements(By.tagName("td")).size();
     }
 
 
+    /**
+     * 获取表格某一行内容（不适用于table中有嵌套table的情形）
+     * @param RowNum
+     * @return
+     */
     public WebElement getRow(int RowNum){
         try {
             List<WebElement> tableRows = _table.findElements(By.tagName("tr"));
@@ -88,13 +93,9 @@ public class Table {
     public WebElement getCell(int rowNo,int colNo){
         try {
             List<WebElement> tableRows = _table.findElements(By.tagName("tr"));
-			/*System.out.println("行总数:"+tableRows.size());
-			System.out.println("行号:"+rowNo);*/
             WebElement currentRow = tableRows.get(rowNo);
             List<WebElement> tablecols = currentRow.findElements(By.tagName("td"));
-//			System.out.println("列总数："+tablecols.size());
             WebElement cell = tablecols.get(colNo);
-//			System.out.println("列号："+colNo);
             return cell;
         } catch (NoSuchElementException e) {
             // TODO Auto-generated catch block
@@ -116,16 +117,35 @@ public class Table {
     public WebElement getWebElementInCell(int rowNo,int colNo,By by){
         try {
             List<WebElement> tableRows = _table.findElements(By.tagName("tr"));
-            WebElement currentRow = tableRows.get(rowNo-1);
+            WebElement currentRow = tableRows.get(rowNo);
             List<WebElement> tablecols = currentRow.findElements(By.tagName("td"));
 
-            WebElement cell = tablecols.get(colNo-1);
+            WebElement cell = tablecols.get(colNo);
             return cell.findElement(by);
         } catch (NoSuchElementException e) {
             // TODO Auto-generated catch block
             throw new NoSuchElementException("没有找到相关元素");
         }
     }
+
+
+    /**
+     * 获得表格中某个元素的数量，如表格中嵌套图片
+     * @param by
+     * @return
+     * TODO
+     * LC
+     * 下午7:56:11
+     */
+    public List<WebElement> getWebElementsInTable(By by){
+        try {
+            return _table.findElements(by);
+        } catch (NoSuchElementException e) {
+            // TODO Auto-generated catch block
+            throw new NoSuchElementException("没有找到相关元素");
+        }
+    }
+
 
 }
 
