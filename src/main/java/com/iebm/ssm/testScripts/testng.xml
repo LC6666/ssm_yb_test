@@ -43,7 +43,7 @@
     </test>
 
     <!--用户管理-->
-    <test name="UserConfigTest">
+    <test name="UserConfigTest" enabled="true">
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>
