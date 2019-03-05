@@ -4,11 +4,10 @@
 <suite name="TestDependency">
 
     <!--系统登录-->
-    <test name="login" enabled="false" >
+    <test name="datadriverlogin" enabled="false" >
 
         <classes>
-            <class name="com.iebm.ssm.testScripts.LoginTest"></class>
-
+            <class name="com.iebm.ssm.testScripts.DataDriverLoginTest"></class>
         </classes>
 
     </test>
@@ -43,7 +42,7 @@
     </test>
 
     <!--用户管理-->
-    <test name="UserConfigTest" enabled="true">
+    <test name="UserConfigTest" enabled="false">
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>
