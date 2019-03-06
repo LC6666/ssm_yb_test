@@ -35,7 +35,7 @@ public class DataDriverLoginTest {
 
 
 
-	@Test(testName = "dataDriverLogin1",dataProvider = "loginInfo")
+	@Test(testName = "dataDriverLogin",dataProvider = "loginInfo",priority = 1)
 	public void dataDriverLogin(String loginid,String password) throws Exception{
 		Log.info("使用DataDriver测试");
 		Login_Action.execute(loginid, password);
@@ -44,7 +44,7 @@ public class DataDriverLoginTest {
 	}
 
 
-	@Test(testName = "dataDriverLoginFromCSV",dataProvider = "loginData")
+	@Test(testName = "dataDriverLoginFromCSV",dataProvider = "loginData",priority = 2)
 	public void dataDriverLoginFromCSV(String loginid,String password) throws Exception{
 		Log.info("使用DataDriver测试");
 		Login_Action.execute(loginid, password);
