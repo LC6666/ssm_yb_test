@@ -14,7 +14,6 @@ import org.testng.annotations.*;
  *下午6:19:28
 */
 
-@Test(groups = "login")
 public class LoginTest {
 
 	String baseUrl = Constant.url;
@@ -47,7 +46,7 @@ public class LoginTest {
 
 	@AfterSuite
 	public void afterSuite(){
-//		Constant.driver.quit();
+		Constant.driver.quit();
 	}
 
 }

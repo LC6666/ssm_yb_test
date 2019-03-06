@@ -11,8 +11,7 @@ import com.iebm.ssm.util.OpenBrower;
  *	testng测试
  */
 public class TestNGDemo1 {
-	
-	private WebDriver driver;
+
 	
 	@BeforeClass
 	public void BeforeClass(){
@@ -63,15 +62,25 @@ public class TestNGDemo1 {
 	@AfterTest
 	public void AfterTest(){
 		System.out.println("@AfterTest");
-		OpenBrower.closeBrowser(driver);
+//		OpenBrower.closeBrowser(driver);
 	}
 	
 	@Test
-	public void Test(){
-		System.out.println("@Test");
-		driver =OpenBrower.openBrowser("chrome");
-		System.out.println("BeforeSuite>BeforeTest>BeforeClass>BeforeMethod>Test>AfterMethod>AfterClass>AfterTest>AfterSuite");
+	public void Test1(){
+		System.out.println("@Test1");
 	}
+
+    @Test(dataProvider = "dataProvider")
+    public void Test2(String str1,String str2){
+        System.out.println("@Test2");
+        System.out.println(str1+"====="+str2);
+    }
+
+    @DataProvider(name = "dataProvider")
+    public static Object[][] DataProvider(){
+        System.out.println("@DataProvider");
+        return  new Object[][]{{"user","user"},{"admin","admin"}};
+    }
 	
 	
 	

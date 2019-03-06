@@ -13,27 +13,29 @@ import java.io.IOException;
 
 /*
  *TODO
+ * 数据驱动测试
  *LC
  *下午6:19:28
 */
 
-@Test(groups = "login")
+
 public class DataDriverLoginTest {
 
-	String baseUrl = Constant.url;
 
 	@DataProvider(name="loginInfo")
-	public static Object[][] loginInfo(){
-		return  new Object[][]{{"ssm","83881021"},{"1001","666666"}};
+	public static Object[][] getloginInfo(){
+		Object[][] revalue = new Object[][]{{"ssm","83881021"},{"1001","666666"}};
+		return  revalue;
 	}
 
 	@DataProvider(name="loginData")
-	public static Object[][] loginData() throws IOException {
+	public static Object[][] getloginData() throws IOException {
 		return TestDataDrivenByCSVFile.getTestData("./resource/login_data.csv");
 	}
 
 
-	@Test(testName = "用户登录",dataProvider = "loginInfo",priority = 1)
+
+	@Test(testName = "dataDriverLogin1",dataProvider = "loginInfo")
 	public void dataDriverLogin(String loginid,String password) throws Exception{
 		Log.info("使用DataDriver测试");
 		Login_Action.execute(loginid, password);
@@ -41,7 +43,8 @@ public class DataDriverLoginTest {
 		Assert.assertTrue(Constant.driver.getPageSource().contains("退出系统"));
 	}
 
-	@Test(testName = "用户登录",dataProvider = "loginData",priority = 2)
+
+	@Test(testName = "dataDriverLoginFromCSV",dataProvider = "loginData")
 	public void dataDriverLoginFromCSV(String loginid,String password) throws Exception{
 		Log.info("使用DataDriver测试");
 		Login_Action.execute(loginid, password);
@@ -65,7 +68,7 @@ public class DataDriverLoginTest {
 
 	@AfterSuite
 	public void afterSuite(){
-//		Constant.driver.quit();
+		Constant.driver.quit();
 	}
 
 }
