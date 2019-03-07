@@ -36,6 +36,7 @@ public class UserConfigPage {
         return element;
     }
 
+//    -----------start---------新增用户------------------------
     public WebElement userAddwindow_maxsize_btn() throws Exception{
         List<WebElement> elementList = driver.findElements(objectmap.getLocator("userAddwindow_maxsize_btn"));
         return elementList.get(0);
@@ -142,4 +143,5 @@ public class UserConfigPage {
         element = driver.findElement(objectmap.getLocator("Add_userAddMsg_btn"));
         return element;
     }
+    //    -----------end---------新增用户------------------------
 }
