@@ -1,22 +1,35 @@
 package com.iebm.ssm.util;
 
-import org.apache.poi.*;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.omg.CORBA.ShortHolder;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/*
+ *TODO 从EXCEL读取数据测试
+ *Administrator
+ *上午11:17:23
+ */
+
 public class TestDataDrivenByExcelFile {
 
+    /**
+     *
+     * 功能描述: 读取数据
+     *
+     * @param: 文件路径，文件名，sheet页名
+     * @return:
+     * @auther: LC
+     * @date: 2019/3/7 10:42
+     */
     public static Object[][] getDataFromXlxs(String filePath,String fileName,String sheetName) throws IOException {
 //      根据参数传入的数据文件路径和文件名称，组合出excel数据文件的绝对路径
 //      声明一个File文件对象
