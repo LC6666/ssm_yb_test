@@ -27,6 +27,15 @@ public class LoginTest {
 
 	}
 
+	@Test(testName = "ssmLogin")
+	public void ssmLogin() throws Exception{
+		Log.info("调用Login_Action.execute");
+		Login_Action.execute("ssm", "888888");
+		Thread.sleep(3000);
+		Assert.assertTrue(Constant.driver.getPageSource().contains("退出系统"));
+
+	}
+
 	@Test(testName = "adminLogin")
 	public void admintLogin() throws Exception{
 		Log.info("调用Login_Action.execute");
@@ -46,7 +55,8 @@ public class LoginTest {
 
 	@AfterSuite
 	public void afterSuite(){
-		Constant.driver.quit();
+
+//		Constant.driver.quit();
 	}
 
 }

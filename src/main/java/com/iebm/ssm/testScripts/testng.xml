@@ -33,7 +33,7 @@
     </test>
 
     <!--用户管理-->
-    <test name="UserConfigTest" enabled="true">
+    <test name="UserConfigTest" enabled="false">
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>
@@ -41,6 +41,18 @@
                 </methods>
             </class>
             <class name="com.iebm.ssm.testScripts.UserConfigTest"></class>
+        </classes>
+    </test>
+
+    <!--规则列表-->
+    <test name="RuleListTest" enabled="true">
+        <classes>
+            <class name="com.iebm.ssm.testScripts.LoginTest">
+                <methods>
+                    <include name="ssmLogin"/>
+                </methods>
+            </class>
+            <class name="com.iebm.ssm.testScripts.RuleListTest"></class>
         </classes>
     </test>
 

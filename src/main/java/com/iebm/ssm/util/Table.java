@@ -2,9 +2,6 @@ package com.iebm.ssm.util;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 

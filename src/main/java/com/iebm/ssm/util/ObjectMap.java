@@ -4,6 +4,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.openqa.selenium.By;
 
 /*
@@ -62,6 +65,11 @@ public class ObjectMap {
             throw new Exception("输入的locator type未在程序中被定义："+locatorType);
         }
     }
+
+
+
+
+
 
 
 
