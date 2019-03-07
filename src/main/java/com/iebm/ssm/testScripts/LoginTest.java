@@ -18,7 +18,7 @@ public class LoginTest {
 
 	String baseUrl = Constant.url;
 
-	@Test(testName = "用户登录")
+	@Test(testName = "guestLogin")
 	public void testLogin() throws Exception{
 		Log.info("调用Login_Action.execute");
 		Login_Action.execute(Constant.loginUsername, Constant.loginPassword);
@@ -27,7 +27,7 @@ public class LoginTest {
 
 	}
 
-	@Test(testName = "管理员登录")
+	@Test(testName = "adminLogin")
 	public void admintLogin() throws Exception{
 		Log.info("调用Login_Action.execute");
 		Login_Action.execute("1001", "666666");

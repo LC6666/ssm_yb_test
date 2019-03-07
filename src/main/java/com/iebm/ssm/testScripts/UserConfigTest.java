@@ -5,6 +5,13 @@ import org.testng.annotations.Test;
 
 import java.util.HashMap;
 import java.util.Map;
+/**
+ *
+ * 功能描述:
+ *  用户管理
+ * @auther: LC
+ * @date: 2019/3/7 10:49
+ */
 
 public class UserConfigTest {
 

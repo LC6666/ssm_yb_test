@@ -22,15 +22,6 @@
 
     </test>
 
-    <!--实时预警-->
-    <test name="DynamicWarnTest" enabled="false">
-        <classes>
-            <class name="com.iebm.ssm.testScripts.LoginTest"></class>
-            <class name="com.iebm.ssm.testScripts.DynamicWarnTest"></class>
-
-        </classes>
-
-    </test>
 
 
     <!--疑点查询-->
