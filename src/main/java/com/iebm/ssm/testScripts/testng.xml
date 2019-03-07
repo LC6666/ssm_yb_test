@@ -13,9 +13,13 @@
     </test>
 
     <!--病例查询-->
-    <test name="CaseQuery" enabled="false">
+    <test name="CaseQuery" enabled="true">
         <classes>
-            <class name="com.iebm.ssm.testScripts.LoginTest"></class>
+            <class name="com.iebm.ssm.testScripts.LoginTest">
+                <methods>
+                    <include name="ssmLogin"/>
+                </methods>
+            </class>
             <class name="com.iebm.ssm.testScripts.CaseQueryTest"></class>
 
         </classes>
@@ -25,7 +29,7 @@
 
 
     <!--疑点查询-->
-    <test name="IllegalTest" enabled="true">
+    <test name="IllegalTest" enabled="false">
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>

@@ -29,10 +29,14 @@ public class IllegalPageTest {
 
 	@Test(testName="查询病例",priority=2)
 	public void test() throws Exception {
-		illegal.setCondition("铜川市人民医院",
+		/*illegal.setCondition("铜川市人民医院",
 				"三级", "肺炎", "智审完成",
 				"2013-08-10", "2018-08-10", "3条以上",
-				"000000010016510", "违规", "王");
+				"000000010016510", "违规", "王");*/
+		illegal.setCondition(null,
+				null, null, null,
+				null, null, null,
+				null, null, null);
 	}
 
 	
