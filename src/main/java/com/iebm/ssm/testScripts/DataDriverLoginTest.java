@@ -2,10 +2,7 @@ package com.iebm.ssm.testScripts;
 
 
 import com.iebm.ssm.appModules.Login_Action;
-import com.iebm.ssm.util.TestDataDrivenByCSVFile;
-import com.iebm.ssm.util.Constant;
-import com.iebm.ssm.util.Log;
-import com.iebm.ssm.util.OpenBrower;
+import com.iebm.ssm.util.*;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -33,6 +30,16 @@ public class DataDriverLoginTest {
 		return TestDataDrivenByCSVFile.getTestData("./resource/login_data.csv");
 	}
 
+	@DataProvider(name="loginDatafromExcel")
+	public static Object[][] getloginDataByExcel() throws IOException {
+		return TestDataDrivenByExcelFile.getDataFromXlxs("./resource/", "login_data.xls", "login_data");
+	}
+
+	@DataProvider(name="loginDatafromExcel2")
+	public static Object[][] getloginDataByExcel2() throws IOException {
+		return TestDataDrivenByExcelFile.getDataFromXlxs("./resource/", "login_data.xlsx", "login_data");
+	}
+
 
 
 	@Test(testName = "dataDriverLogin",dataProvider = "loginInfo",priority = 1)
@@ -46,6 +53,22 @@ public class DataDriverLoginTest {
 
 	@Test(testName = "dataDriverLoginFromCSV",dataProvider = "loginData",priority = 2)
 	public void dataDriverLoginFromCSV(String loginid,String password) throws Exception{
+		Log.info("使用DataDriver测试");
+		Login_Action.execute(loginid, password);
+		Thread.sleep(3000);
+		Assert.assertTrue(Constant.driver.getPageSource().contains("退出系统"));
+	}
+
+	@Test(testName = "dataDriverLoginFromExcel",dataProvider = "loginDatafromExcel",priority = 3)
+	public void dataDriverLoginFromExcel(String loginid,String password) throws Exception{
+		Log.info("使用DataDriver测试");
+		Login_Action.execute(loginid, password);
+		Thread.sleep(3000);
+		Assert.assertTrue(Constant.driver.getPageSource().contains("退出系统"));
+	}
+
+	@Test(testName = "dataDriverLoginFromExcel2",dataProvider = "loginDatafromExcel2",priority = 4)
+	public void dataDriverLoginFromExcel2(String loginid,String password) throws Exception{
 		Log.info("使用DataDriver测试");
 		Login_Action.execute(loginid, password);
 		Thread.sleep(3000);
