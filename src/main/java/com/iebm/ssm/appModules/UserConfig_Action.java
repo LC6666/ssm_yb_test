@@ -2,6 +2,7 @@ package com.iebm.ssm.appModules;
 
 import com.iebm.ssm.pageObjects.UserConfigPage;
 import com.iebm.ssm.util.Constant;
+import com.iebm.ssm.util.PageNumInfo;
 import com.iebm.ssm.util.Table;
 import com.iebm.ssm.util.TreeSelector;
 import org.openqa.selenium.By;
@@ -143,4 +144,37 @@ public class UserConfig_Action {
     }
 
 
+    public void editUser(String loginId) throws Exception {
+        if(loginId!=null){
+
+        }
+
+        PageNumInfo pageNumInfo = new PageNumInfo(page.pageArea_table());
+        String totalPageNo = pageNumInfo.getTotalPageNo();
+
+        for(int pageNo=1;pageNo<=Integer.parseInt(totalPageNo);pageNo++){
+            Table userList = new Table(page.userlist_table());
+            int rowCount = userList.getRowCount();
+            for(int i=1;i<rowCount;i++){
+                userList.getRow(i).click();
+                page.editUserBtn().click();
+                Thread.sleep(300);
+
+                String institutionname = page.edit_institution_input().getAttribute("value");
+                String loginId2 = page.edit_loginId_input().getAttribute("value");
+                if(institutionname==null||institutionname.equals("")){
+                    System.out.println("用户"+loginId2+"没有绑定医疗机构");
+                }
+                page.edit_userClose_btn().click();
+            }
+            if(pageNo<Integer.parseInt(totalPageNo)){
+                pageNumInfo.btnClick("next");
+            }
+
+
+        }
+
+
+
+    }
 }

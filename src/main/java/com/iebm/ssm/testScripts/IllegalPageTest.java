@@ -35,7 +35,7 @@ public class IllegalPageTest {
 				"000000010016510", "违规", "王");*/
 		illegal.setCondition(null,
 				null, null, null,
-				null, null, null,
+				"2019-01-01", "2020-01-01", null,
 				null, null, null);
 	}
 

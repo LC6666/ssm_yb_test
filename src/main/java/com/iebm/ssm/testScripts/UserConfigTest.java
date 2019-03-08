@@ -17,18 +17,18 @@ public class UserConfigTest {
 
     private UserConfig_Action userConfig_action ;
 
-    @Test(testName = "打开用户管理页",priority = 0)
+    @Test(testName = "OpenPage",priority = 0)
     public void openPage() throws Exception {
         userConfig_action = new UserConfig_Action();
         userConfig_action.openPage();
     }
 
-    @Test(testName = "选择组织机构",priority = 1)
+    @Test(testName = "选择组织机构",priority = 1,enabled = false)
     public void selectOrg() throws Exception {
         userConfig_action.selectOrg("铜川市医保,铜川市医保局,耀州医保局,铜川妇产医院");
     }
 
-    @Test(testName = "新增用户",priority = 2)
+    @Test(testName = "AddUser",priority = 2,enabled = false)
     public void addUser()throws Exception {
         Map userInfo_map = new HashMap();
         String loginId = "testf";
@@ -58,9 +58,10 @@ public class UserConfigTest {
         userInfo_map.put("remark",remark);
 
         userConfig_action.addUser(userInfo_map);
+    }
 
-
-
-
+    @Test(testName = "EditUser",priority = 3)
+    public void editUser() throws Exception {
+        userConfig_action.editUser(null);
     }
 }

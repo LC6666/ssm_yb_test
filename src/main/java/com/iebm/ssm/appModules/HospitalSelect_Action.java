@@ -39,9 +39,15 @@ public class HospitalSelect_Action {
     }
 
 
-
+    /**
+     * 验证返回选项是否包含输入的信息
+     * @param hospitalname
+     * @return
+     * @throws Exception
+     */
     public Boolean isFindHospital(String hospitalname) throws Exception {
         if (hospitalname != null) {
+            page.hospitalname_input().clear();
             page.hospitalname_input().sendKeys(hospitalname);
             page.hospitalquery_btn().click();
             Table table = new Table(page.hospitallist());
@@ -49,10 +55,13 @@ public class HospitalSelect_Action {
             for (int i = 1; i < rowCount; i++) {
                 WebElement cell = table.getCell(i, 4);
                 if (hospitalname.equals(cell.getText())) {
+                    page.hospitalcancel_btn().click();
                     return true;
                 }
             }
+
         }
+        page.hospitalcancel_btn().click();
         return false;
     }
 

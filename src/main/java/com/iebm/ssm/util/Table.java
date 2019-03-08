@@ -1,5 +1,6 @@
 package com.iebm.ssm.util;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import org.openqa.selenium.By;
@@ -141,6 +142,21 @@ public class Table {
             // TODO Auto-generated catch block
             throw new NoSuchElementException("没有找到相关元素");
         }
+    }
+
+
+    /**
+     * 获取某一列
+     * @param colNo
+     * @return
+     */
+    public List<WebElement> getColum(int colNo){
+        List<WebElement> list = new ArrayList<>();
+        for(int i=0;i<getRowCount();i++){
+            WebElement element = this.getRow(i).findElements(By.className("td")).get(colNo);
+            list.add(element);
+        }
+       return list;
     }
 
 

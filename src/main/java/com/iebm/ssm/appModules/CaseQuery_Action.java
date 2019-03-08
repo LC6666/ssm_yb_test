@@ -30,7 +30,7 @@ public class CaseQuery_Action {
     /**
      *
      * @throws Exception
-     * TODO 进入疑点查询页面
+     * TODO 进入病例查询页面
      * LC
      * 上午10:34:30
      */
@@ -39,10 +39,12 @@ public class CaseQuery_Action {
         page.nav().click();
         Thread.sleep(300);
         page.title().click();
+
     }
 
 
     public void query(String hospital,String hospital_level,String disease,String startdate,String enddate,String sicode,String insuredName) throws Exception {
+        Thread.sleep(1000);
         page.reset_btn().click();
         if(hospital!=null) {
             page.hospital_img().click();
@@ -105,9 +107,16 @@ public class CaseQuery_Action {
     }
 
 
-
-
-
+    public void queryHospital(String hospitalname) throws Exception {
+        Thread.sleep(1000);
+        page.hospital_img().click();
+        Thread.sleep(500);
+        HospitalSelect_Action hospitalSelect_action = new HospitalSelect_Action();
+        boolean b =  hospitalSelect_action.isFindHospital(hospitalname);
+        if(!b){
+            System.out.println("医疗机构【"+hospitalname+"】查询不到！");
+        }
+    }
 }
 
 

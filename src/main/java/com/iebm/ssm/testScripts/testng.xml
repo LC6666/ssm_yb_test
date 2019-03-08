@@ -13,11 +13,11 @@
     </test>
 
     <!--病例查询-->
-    <test name="CaseQuery" enabled="true">
+    <test name="CaseQuery" enabled="false">
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>
-                    <include name="ssmLogin"/>
+                    <include name="guestLogin"/>
                 </methods>
             </class>
             <class name="com.iebm.ssm.testScripts.CaseQueryTest"></class>
@@ -29,11 +29,11 @@
 
 
     <!--疑点查询-->
-    <test name="IllegalTest" enabled="false">
+    <test name="IllegalTest" enabled="true">
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>
-                    <include name="ssmLogin"/>
+                    <include name="guestLogin"/>
                 </methods>
             </class>
             <class name="com.iebm.ssm.testScripts.IllegalPageTest"></class>
@@ -57,7 +57,7 @@
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>
-                    <include name="ssmLogin"/>
+                    <include name="guestLogin"/>
                 </methods>
             </class>
             <class name="com.iebm.ssm.testScripts.RuleListTest"></class>

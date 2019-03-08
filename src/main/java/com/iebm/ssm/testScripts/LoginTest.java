@@ -16,10 +16,9 @@ import org.testng.annotations.*;
 
 public class LoginTest {
 
-	String baseUrl = Constant.url;
 
 	@Test(testName = "guestLogin")
-	public void testLogin() throws Exception{
+	public void guestLogin() throws Exception{
 		Log.info("调用Login_Action.execute");
 		Login_Action.execute(Constant.loginUsername, Constant.loginPassword);
 		Thread.sleep(3000);
