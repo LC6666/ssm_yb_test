@@ -36,7 +36,7 @@ public class TestDataDrivenByCSVFile {
 //      设置二维数组每行的值，每行是一个object对象
         for (int i=0;i<records.size();i++){
             results[i] = records.get(i);
-            System.out.println(results[i]);
+//            System.out.println(results[i]);
         }
 
         return results;

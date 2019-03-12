@@ -29,7 +29,7 @@
 
 
     <!--疑点查询-->
-    <test name="IllegalTest" enabled="true">
+    <test name="IllegalTest" enabled="false">
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>

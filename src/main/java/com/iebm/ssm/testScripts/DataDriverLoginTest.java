@@ -40,6 +40,11 @@ public class DataDriverLoginTest {
 		return TestDataDrivenByExcelFile.getDataFromXlxs("./resource/", "login_data.xlsx", "login_data");
 	}
 
+	@DataProvider(name="loginDatafromMysql")
+	public static Object[][] getloignDataByMysql() throws ClassNotFoundException {
+		return TestDataDrivenByMysql.getTestData("login_test");
+	}
+
 
 
 	@Test(testName = "dataDriverLogin",dataProvider = "loginInfo",priority = 1)
@@ -69,6 +74,14 @@ public class DataDriverLoginTest {
 
 	@Test(testName = "dataDriverLoginFromExcel2",dataProvider = "loginDatafromExcel2",priority = 4)
 	public void dataDriverLoginFromExcel2(String loginid,String password) throws Exception{
+		Log.info("使用DataDriver测试");
+		Login_Action.execute(loginid, password);
+		Thread.sleep(3000);
+		Assert.assertTrue(Constant.driver.getPageSource().contains("退出系统"));
+	}
+
+	@Test(testName = "dataDriverLoginFromMysql",dataProvider = "loginDatafromMysql",priority = 5)
+	public void dataDriverLoginFromMysql(String loginid,String password) throws Exception{
 		Log.info("使用DataDriver测试");
 		Login_Action.execute(loginid, password);
 		Thread.sleep(3000);
