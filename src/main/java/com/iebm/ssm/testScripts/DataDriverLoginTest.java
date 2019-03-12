@@ -81,7 +81,7 @@ public class DataDriverLoginTest {
 	}
 
 	@Test(testName = "dataDriverLoginFromMysql",dataProvider = "loginDatafromMysql",priority = 5)
-	public void dataDriverLoginFromMysql(String loginid,String password) throws Exception{
+	public void dataDriverLoginFromMysql(String id,String loginid,String password) throws Exception{
 		Log.info("使用DataDriver测试");
 		Login_Action.execute(loginid, password);
 		Thread.sleep(3000);

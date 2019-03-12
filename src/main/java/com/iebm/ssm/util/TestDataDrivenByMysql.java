@@ -17,7 +17,7 @@ public class TestDataDrivenByMysql {
 //      声明Mysql数据库的驱动
         String driver = "com.mysql.cj.jdbc.Driver";
 //      声明本地数据库的IP地址和数据库名称
-        String url = "jdbc:mysql://127.0.0.1:3306/ssm_yb_test";
+        String url = "jdbc:mysql://127.0.0.1:3306/ssm_yb_test?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC";
 //      声明数据库的用户名。为简化数据库权限设定等操作，本例使用数据库的root用户进行操作
 //      在正式对外服务的生产数据库中，建议使用非root的用户账户进行自动化测试的相关操作
         String user="root";
@@ -39,7 +39,7 @@ public class TestDataDrivenByMysql {
 //          声明一个ResultSetMetaData对象
                 ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
 //          调用ResultSetMetaData对象的getColumnCount方法，获取数据行的列数
-                int cols = resultSetMetaData.getColumnCount()-1;
+                int cols = resultSetMetaData.getColumnCount();
 //          使用next方法遍历数据结果集中的所有数据行
                 while (resultSet.next()){
 //              声明一个字符型数组，数组大小使用数据行的列个数进行声明
@@ -47,7 +47,7 @@ public class TestDataDrivenByMysql {
                     int col=0;
 //              遍历所有数据行中的所有列数据，并存储在字符数组中
                     for(int colindex=0;colindex<cols;colindex++){
-                        fileds[col] = resultSet.getString(colindex+2);
+                        fileds[col] = resultSet.getString(colindex+1);
                         col++;
                     }
 //              将每一行的数据存储到字符数组之后，存储到records中

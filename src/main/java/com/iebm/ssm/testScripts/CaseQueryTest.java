@@ -16,7 +16,8 @@ public class CaseQueryTest {
 
 	@DataProvider(name = "hospitalnamedata")
 	public Object[][] testdata() throws IOException {
-		return TestDataDrivenByExcelFile.getDataFromXlxs("./resource/", "hos_name.xlsx", "Sheet1");
+//		return TestDataDrivenByExcelFile.getDataFromXlxs("./resource/", "hos_name.xlsx", "Sheet1");
+		return TestDataDrivenByCSVFile.getTestData("./resource/hospitalname.csv");
 	}
 
 	
@@ -33,6 +34,12 @@ public class CaseQueryTest {
 		casequery.query(null,null,null,null,null,null,null);
 	}
 
+	/**
+	 * 医疗机构查询
+	 * @param index
+	 * @param hospitalname
+	 * @throws Exception
+	 */
 	@Test(testName = "hospitalquery",dataProvider = "hospitalnamedata",priority = 2)
 	public void queryHospital(String index,String hospitalname) throws Exception{
 		casequery.queryHospital(hospitalname);
