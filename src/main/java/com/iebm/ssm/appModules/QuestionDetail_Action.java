@@ -1,13 +1,10 @@
 package com.iebm.ssm.appModules;
 
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
 
 import com.iebm.ssm.util.Constant;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 
-import com.iebm.ssm.pageObjects.IllegalPage;
 import com.iebm.ssm.pageObjects.QuestionDetailPage;
 import com.iebm.ssm.util.Table;
 
