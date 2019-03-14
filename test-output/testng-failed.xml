@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [TestDependency]">
-  <test thread-count="5" name="test1(failed)">
+  <test thread-count="5" name="HospitalFeedBackTest(failed)">
     <classes>
-      <class name="com.iebm.ssm.testScripts.IllegalPageTest">
+      <class name="com.iebm.ssm.testScripts.ReviewFirstTest">
         <methods>
-          <include name="getRowData"/>
+          <include name="queryReviewCase" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.iebm.ssm.testScripts.IllegalPageTest -->
+      </class> <!-- com.iebm.ssm.testScripts.ReviewFirstTest -->
     </classes>
-  </test> <!-- test1(failed) -->
+  </test> <!-- HospitalFeedBackTest(failed) -->
 </suite> <!-- Failed suite [TestDependency] -->

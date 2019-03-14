@@ -1,104 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="1" total="4" passed="2">
+<testng-results skipped="0" failed="0" ignored="2" total="5" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="TestDependency" duration-ms="28897727" started-at="2018-12-20T14:34:23 CST" finished-at="2018-12-20T22:36:01 CST">
+  <suite name="TestDependency" duration-ms="11592" started-at="2019-03-14T09:57:59 CST" finished-at="2019-03-14T09:58:10 CST">
     <groups>
-      <group name="login">
-        <method signature="LoginTest.testLogin()[pri:0, instance:com.iebm.ssm.testScripts.LoginTest@7471b5]" name="testLogin" class="com.iebm.ssm.testScripts.LoginTest"/>
-      </group> <!-- login -->
     </groups>
-    <test name="test1" duration-ms="28897727" started-at="2018-12-20T14:34:23 CST" finished-at="2018-12-20T22:36:01 CST">
+    <test name="HospitalFeedBackTest" duration-ms="11592" started-at="2019-03-14T09:57:59 CST" finished-at="2019-03-14T09:58:10 CST">
       <class name="com.iebm.ssm.testScripts.LoginTest">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.iebm.ssm.testScripts.LoginTest@7471b5]" name="beforeMethod" is-config="true" duration-ms="4363" started-at="2018-12-20T14:34:23 CST" finished-at="2018-12-20T14:34:27 CST">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.iebm.ssm.testScripts.LoginTest@146e1f4]" name="beforeTest" is-config="true" duration-ms="2782" started-at="2019-03-14T09:57:59 CST" finished-at="2019-03-14T09:58:02 CST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="testLogin()[pri:0, instance:com.iebm.ssm.testScripts.LoginTest@7471b5]" name="testLogin" duration-ms="11731" started-at="2018-12-20T14:34:27 CST" finished-at="2018-12-20T14:34:39 CST">
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="guestLogin()[pri:0, instance:com.iebm.ssm.testScripts.LoginTest@146e1f4]" name="guestLogin" duration-ms="3364" started-at="2019-03-14T09:58:02 CST" finished-at="2019-03-14T09:58:05 CST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.iebm.ssm.testScripts.LoginTest@7471b5]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-12-20T22:36:01 CST" finished-at="2018-12-20T22:36:01 CST">
+        </test-method> <!-- guestLogin -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.iebm.ssm.testScripts.LoginTest@146e1f4]" name="afterSuite" is-config="true" duration-ms="1" started-at="2019-03-14T09:58:10 CST" finished-at="2019-03-14T09:58:10 CST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
+        </test-method> <!-- afterSuite -->
       </class> <!-- com.iebm.ssm.testScripts.LoginTest -->
-      <class name="com.iebm.ssm.testScripts.IllegalPageTest">
-        <test-method status="PASS" signature="querytIllegal()[pri:1, instance:com.iebm.ssm.testScripts.IllegalPageTest@157f54e]" name="querytIllegal" duration-ms="5117" started-at="2018-12-20T14:34:39 CST" finished-at="2018-12-20T14:34:44 CST">
+      <class name="com.iebm.ssm.testScripts.ReviewFirstTest">
+        <test-method status="PASS" signature="openPage()[pri:0, instance:com.iebm.ssm.testScripts.ReviewFirstTest@9711b]" name="openPage" duration-ms="957" started-at="2019-03-14T09:58:05 CST" finished-at="2019-03-14T09:58:06 CST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- querytIllegal -->
-        <test-method status="FAIL" signature="getRowData()[pri:3, instance:com.iebm.ssm.testScripts.IllegalPageTest@157f54e]" name="getRowData" duration-ms="28876408" started-at="2018-12-20T14:34:44 CST" finished-at="2018-12-20T22:36:00 CST">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[timeout
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=2.44.609538 (b655c5a60b0b544917107a59d4153d4bf78e1b90),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'LC-PC', ip: '192.168.29.69', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_60'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.44.609538 (b655c5a60b0b54..., userDataDir: C:\Users\LC\AppData\Local\T...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:16668}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: d9d777b91707d4d753e46c0c09e32517]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: timeout
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=2.44.609538 (b655c5a60b0b544917107a59d4153d4bf78e1b90),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'LC-PC', ip: '192.168.29.69', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_60'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.44.609538 (b655c5a60b0b54..., userDataDir: C:\Users\LC\AppData\Local\T...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:16668}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: d9d777b91707d4d753e46c0c09e32517
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-at com.iebm.ssm.appModules.QuestionDetail_Action.getChargeList(QuestionDetail_Action.java:102)
-at com.iebm.ssm.appModules.Illegal_Action.readTableRow(Illegal_Action.java:93)
-at com.iebm.ssm.testScripts.IllegalPageTest.getRowData(IllegalPageTest.java:45)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:497)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:131)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:658)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:792)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1103)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:140)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:589)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:398)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:392)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:354)
-at org.testng.SuiteRunner.run(SuiteRunner.java:302)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1145)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1067)
-at org.testng.TestNG.runSuites(TestNG.java:997)
-at org.testng.TestNG.run(TestNG.java:965)
-at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
-at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        </test-method> <!-- openPage -->
+        <test-method status="PASS" signature="queryReviewCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.ReviewFirstTest@9711b]" name="queryReviewCase" duration-ms="4165" started-at="2019-03-14T09:58:06 CST" data-provider="queryReviewCaseData" finished-at="2019-03-14T09:58:10 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[铜川市人民医院]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[三级]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[急性糜烂性胃炎]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[2018-06-01]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[2018-06-30]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[疑似违规]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[000000010120671]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[结案]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[结案]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getRowData -->
-      </class> <!-- com.iebm.ssm.testScripts.IllegalPageTest -->
-    </test> <!-- test1 -->
+        </test-method> <!-- queryReviewCase -->
+      </class> <!-- com.iebm.ssm.testScripts.ReviewFirstTest -->
+    </test> <!-- HospitalFeedBackTest -->
   </suite> <!-- TestDependency -->
 </testng-results>

@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-TestDependency">
-              <span class="suite-name border-failed">TestDependency</span>
+              <span class="suite-name border-passed">TestDependency</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -59,7 +59,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="group-TestDependency">
-                    <span>1 group</span>
+                    <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-TestDependency" class="hide-methods failed suite-TestDependency"> (hide)</a> <!-- hide-methods failed suite-TestDependency -->
-                      <a href="#" panel-name="suite-TestDependency" class="show-methods failed suite-TestDependency"> (show)</a> <!-- show-methods failed suite-TestDependency -->
-                    </span>
-                    <div class="method-list-content failed suite-TestDependency">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-TestDependency" title="com.iebm.ssm.testScripts.IllegalPageTest" hash-for-method="getRowData">getRowData</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-TestDependency -->
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -116,12 +102,17 @@
                     <div class="method-list-content passed suite-TestDependency">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-TestDependency" title="com.iebm.ssm.testScripts.IllegalPageTest" hash-for-method="querytIllegal">querytIllegal</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-TestDependency" title="com.iebm.ssm.testScripts.LoginTest" hash-for-method="guestLogin">guestLogin</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-TestDependency" title="com.iebm.ssm.testScripts.LoginTest" hash-for-method="testLogin">testLogin</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-TestDependency" title="com.iebm.ssm.testScripts.ReviewFirstTest" hash-for-method="openPage">openPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestDependency" title="com.iebm.ssm.testScripts.ReviewFirstTest" hash-for-method="queryReviewCase(1, 铜川市人民医院, 三级, 急性糜烂性胃炎, 2018-06-01, 2018-06-30, 疑似违规, 000000010120671, 结案, 结案, true)">queryReviewCase(1, 铜川市人民医院, 三级, 急性糜烂性胃炎, 2018-06-01, 2018-06-30, 疑似违规, 000000010120671, 结案, 结案, true)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-TestDependency -->
@@ -136,45 +127,29 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-TestDependency" class="panel TestDependency">
-          <div class="suite-TestDependency-class-failed">
+          <div class="suite-TestDependency-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.iebm.ssm.testScripts.IllegalPageTest</span>
+              <img src="passed.png"/>
+              <span class="class-name">com.iebm.ssm.testScripts.ReviewFirstTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="getRowData">
-                  </a> <!-- getRowData -->
-                  <span class="method-name">getRowData</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: timeout
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=2.44.609538 (b655c5a60b0b544917107a59d4153d4bf78e1b90),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;LC-PC&apos;, ip: &apos;192.168.29.69&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_60&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.44.609538 (b655c5a60b0b54..., userDataDir: C:\Users\LC\AppData\Local\T...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:16668}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: d9d777b91707d4d753e46c0c09e32517
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at com.iebm.ssm.appModules.QuestionDetail_Action.getChargeList(QuestionDetail_Action.java:102)
-	at com.iebm.ssm.appModules.Illegal_Action.readTableRow(Illegal_Action.java:93)
-	at com.iebm.ssm.testScripts.IllegalPageTest.getRowData(IllegalPageTest.java:45)
-... Removed 28 stack frames
-</div> <!-- stack-trace -->
+                  <a name="openPage">
+                  </a> <!-- openPage -->
+                  <span class="method-name">openPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="queryReviewCase(1, 铜川市人民医院, 三级, 急性糜烂性胃炎, 2018-06-01, 2018-06-30, 疑似违规, 000000010120671, 结案, 结案, true)">
+                  </a> <!-- queryReviewCase(1, 铜川市人民医院, 三级, 急性糜烂性胃炎, 2018-06-01, 2018-06-30, 疑似违规, 000000010120671, 结案, 结案, true) -->
+                  <span class="method-name">queryReviewCase</span>
+                  <span class="parameters">(1, 铜川市人民医院, 三级, 急性糜烂性胃炎, 2018-06-01, 2018-06-30, 疑似违规, 000000010120671, 结案, 结案, true)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-TestDependency-class-failed -->
+          </div> <!-- suite-TestDependency-class-passed -->
           <div class="suite-TestDependency-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -183,24 +158,9 @@ Session ID: d9d777b91707d4d753e46c0c09e32517
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testLogin">
-                  </a> <!-- testLogin -->
-                  <span class="method-name">testLogin</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-TestDependency-class-passed -->
-          <div class="suite-TestDependency-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.iebm.ssm.testScripts.IllegalPageTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="querytIllegal">
-                  </a> <!-- querytIllegal -->
-                  <span class="method-name">querytIllegal</span>
+                  <a name="guestLogin">
+                  </a> <!-- guestLogin -->
+                  <span class="method-name">guestLogin</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -215,12 +175,16 @@ Session ID: d9d777b91707d4d753e46c0c09e32517
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;TestDependency&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;test1&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;HospitalFeedBackTest&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.iebm.ssm.testScripts.LoginTest&quot;/&gt;
-      &lt;class name=&quot;com.iebm.ssm.testScripts.IllegalPageTest&quot;/&gt;
+      &lt;class name=&quot;com.iebm.ssm.testScripts.LoginTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;guestLogin&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.iebm.ssm.testScripts.LoginTest --&gt;
+      &lt;class name=&quot;com.iebm.ssm.testScripts.ReviewFirstTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- test1 --&gt;
+  &lt;/test&gt; &lt;!-- HospitalFeedBackTest --&gt;
 &lt;/suite&gt; &lt;!-- TestDependency --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -232,7 +196,7 @@ Session ID: d9d777b91707d4d753e46c0c09e32517
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">test1 (2 classes)</span>
+                <span class="test-name">HospitalFeedBackTest (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -242,14 +206,6 @@ Session ID: d9d777b91707d4d753e46c0c09e32517
             <span class="header-content">Groups for TestDependency</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="test-group">
-              <span class="test-group-name">login</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">testLogin</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-TestDependency" class="panel">
@@ -268,22 +224,22 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'getRowData')
-data.setCell(0, 2, 'com.iebm.ssm.testScripts.IllegalPageTest')
-data.setCell(0, 3, 28876408);
+data.setCell(0, 1, 'queryReviewCase')
+data.setCell(0, 2, 'com.iebm.ssm.testScripts.ReviewFirstTest')
+data.setCell(0, 3, 4165);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testLogin')
+data.setCell(1, 1, 'guestLogin')
 data.setCell(1, 2, 'com.iebm.ssm.testScripts.LoginTest')
-data.setCell(1, 3, 11731);
+data.setCell(1, 3, 3364);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'querytIllegal')
-data.setCell(2, 2, 'com.iebm.ssm.testScripts.IllegalPageTest')
-data.setCell(2, 3, 5117);
+data.setCell(2, 1, 'openPage')
+data.setCell(2, 2, 'com.iebm.ssm.testScripts.ReviewFirstTest')
+data.setCell(2, 3, 957);
 window.suiteTableData['TestDependency']= { tableData: data, tableDiv: 'times-div-TestDependency'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 8 hours</span>
+              <span class="suite-total-time">Total running time: 8 seconds</span>
               <div id="times-div-TestDependency">
               </div> <!-- times-div-TestDependency -->
             </div> <!-- times-div -->
@@ -298,13 +254,15 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-TestDependency" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.iebm.ssm.testScripts.IllegalPageTest</span>
+              <span class="ignored-class-name">com.iebm.ssm.testScripts.LoginTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">getTable</span>
+                <span class="ignored-method-name">ssmLogin</span>
+                <br/>
+                <span class="ignored-method-name">admintLogin</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -318,32 +276,30 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.iebm.ssm.testScripts.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">beforeMethod</span>
+                <span class="method-name">beforeTest</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">testLogin</span>
-                <span class="method-start">4390 ms</span>
+                <span class="method-name">guestLogin</span>
+                <span class="method-start">2809 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.iebm.ssm.testScripts.IllegalPageTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.iebm.ssm.testScripts.ReviewFirstTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">querytIllegal</span>
-                <span class="method-start">16124 ms</span>
+                <span class="method-name">openPage</span>
+                <span class="method-start">6177 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">getRowData</span>
-                <span class="method-start">21242 ms</span>
+                <span class="method-name">queryReviewCase(1, 铜川市人民医院, 三级, 急性糜烂性胃炎, 2018-06-01, 2018-06-30, 疑似违规, 000000010120671, 结案, 结案, true)</span>
+                <span class="method-start">7422 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.iebm.ssm.testScripts.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
-                <span class="method-name">afterMethod</span>
-                <span class="method-start">28897951 ms</span>
+                <span class="method-name">afterSuite</span>
+                <span class="method-start">11616 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
