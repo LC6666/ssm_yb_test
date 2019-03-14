@@ -28,13 +28,13 @@ public class HospitalFeedBack_Action {
         page.title().click();
     }
 
-    public void queryCaseFeedBack(String index, String diseasename, String startdate, String enddate, String sicode, String accpet, String remark, String filepath, String enable) throws Exception {
+    public void queryCaseFeedBack(String index, String disease, String startdate, String enddate, String sicode, String accpet, String remark, String filepath, String enable) throws Exception {
         if (enable.equals("true")) {
-            if (diseasename != null && !diseasename.equals("")) {
+            if (disease != null && !disease.equals("")) {
                 page.disease_img().click();
                 Thread.sleep(300);
                 DiseaseSelect_Action diseaseSelect_action = new DiseaseSelect_Action();
-                diseaseSelect_action.finddisease(diseasename);
+                diseaseSelect_action.finddisease(disease);
             }
             if (startdate != null) {
                 UpdateAttribute.removeAttribute(Constant.driver, page.startdate_input(), "readonly");

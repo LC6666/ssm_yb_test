@@ -77,7 +77,7 @@
     </test>
 
     <!--疑点审核 人工初审-->
-    <test name="HospitalFeedBackTest" enabled="true">
+    <test name="ReviewFirstTest" enabled="false">
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>
@@ -85,6 +85,18 @@
                 </methods>
             </class>
             <class name="com.iebm.ssm.testScripts.ReviewFirstTest"></class>
+        </classes>
+    </test>
+
+    <!--疑点审核 医院疑似违规病例反馈-->
+    <test name="HospitalDoubtFeedBackTest" enabled="true">
+        <classes>
+            <class name="com.iebm.ssm.testScripts.LoginTest">
+                <methods>
+                    <include name="guestLogin"/>
+                </methods>
+            </class>
+            <class name="com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest"></class>
         </classes>
     </test>
 
