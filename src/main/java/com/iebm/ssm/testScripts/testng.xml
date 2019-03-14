@@ -89,7 +89,7 @@
     </test>
 
     <!--疑点审核 医院疑似违规病例反馈-->
-    <test name="HospitalDoubtFeedBackTest" enabled="true">
+    <test name="HospitalDoubtFeedBackTest" enabled="false">
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>
@@ -97,6 +97,18 @@
                 </methods>
             </class>
             <class name="com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest"></class>
+        </classes>
+    </test>
+
+    <!--疑点审核 人工复审-->
+    <test name="ReviewSencondTest" enabled="true">
+        <classes>
+            <class name="com.iebm.ssm.testScripts.LoginTest">
+                <methods>
+                    <include name="guestLogin"/>
+                </methods>
+            </class>
+            <class name="com.iebm.ssm.testScripts.ReviewSencondTest"></class>
         </classes>
     </test>
 

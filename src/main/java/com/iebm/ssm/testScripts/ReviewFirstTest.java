@@ -30,6 +30,21 @@ public class ReviewFirstTest {
         reviewFirst_action.openPage();
     }
 
+    /**
+     * 人工初审查询
+     * @param index
+     * @param hospital
+     * @param hospital_level
+     * @param disease
+     * @param startdate
+     * @param endate
+     * @param illegalClass
+     * @param siCode
+     * @param nextstate
+     * @param remark
+     * @param enable
+     * @throws Exception
+     */
     @Test(testName = "queryReviewCase",dataProvider = "queryReviewCaseData",priority = 1,enabled = true)
     public void queryReviewCase(String index,String hospital,String hospital_level,String disease,String startdate,String endate,String illegalClass,String siCode,String nextstate,String remark,String enable) throws Exception {
         reviewFirst_action.queryReviewCase(index,hospital,hospital_level,disease,startdate,endate,illegalClass,siCode,nextstate,remark,enable);
