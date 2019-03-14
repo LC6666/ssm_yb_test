@@ -10,6 +10,7 @@ import javax.xml.ws.RequestWrapper;
 import java.io.IOException;
 
 /**
+ * 医院违规病例反馈
  * @Auther: LC
  * @Date: 2019/3/12 13:26
  * @Description:
@@ -39,7 +40,7 @@ public class HospitalFeedBackTest {
 
 
     /**
-     * 选择病例反馈
+     * 查询病例反馈
      * @param index
      * @param diseasename
      * @param startdate
@@ -53,6 +54,24 @@ public class HospitalFeedBackTest {
     @Test(testName = "queryCaseFeedBack",priority = 1,enabled = true,dataProvider = "getTestCaseDate")
     public void queryCaseFeedBack(String index,String diseasename,String startdate,String enddate,String sicode,String accpet,String remark,String filepath,String enable) throws Exception {
         hospitalFeedBack.queryCaseFeedBack(index,diseasename,startdate,enddate,sicode,accpet,remark,filepath,enable);
+    }
+
+
+    /**
+     * 查询病例反馈
+     * @param index
+     * @param diseasename
+     * @param startdate
+     * @param enddate
+     * @param sicode
+     * @param accpet
+     * @param remark
+     * @param filepath
+     * @param enable
+     */
+    @Test(testName = "queryCaseToFeedBace",priority = 2,enabled = true,dataProvider = "getTestCaseDate")
+    public void queryCaseToFeedBace(String index,String diseasename,String startdate,String enddate,String sicode,String accpet,String remark,String filepath,String enable) throws Exception {
+        hospitalFeedBack.queryCaseToFeedBace(index,diseasename,startdate,enddate,sicode,accpet,remark,filepath,enable );
     }
 
 
