@@ -107,12 +107,12 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-TestDependency" title="com.iebm.ssm.testScripts.ReviewSencondTest" hash-for-method="openPage">openPage</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-TestDependency" title="com.iebm.ssm.testScripts.ConclusionAuditTest" hash-for-method="openPage">openPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-TestDependency" title="com.iebm.ssm.testScripts.ReviewSencondTest" hash-for-method="queryReviewCase(1, 铜川市人民医院, 三级, 急性糜烂性胃炎, 2018-06-01, 2018-06-30, 疑似违规, 000000010120671, 结案, 结案, true)">queryReviewCase(1, 铜川市人民医院, 三级, 急性糜烂性胃炎, 2018-06-01, 2018-06-30, 疑似违规, 000000010120671, 结案, 结案, true)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-TestDependency" title="com.iebm.ssm.testScripts.ConclusionAuditTest" hash-for-method="queryConclusionCase(1, 铜川市人民医院, 三级, 脑梗死, 违规, 2018-01-01, 2021-01-01, 不违规, 000000008919263, true)">queryConclusionCase(1, 铜川市人民医院, 三级, 脑梗死, 违规, 2018-01-01, 2021-01-01, 不违规, 000000008919263, true)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-TestDependency -->
@@ -130,7 +130,7 @@
           <div class="suite-TestDependency-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.iebm.ssm.testScripts.ReviewSencondTest</span>
+              <span class="class-name">com.iebm.ssm.testScripts.ConclusionAuditTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -142,10 +142,10 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="queryReviewCase(1, 铜川市人民医院, 三级, 急性糜烂性胃炎, 2018-06-01, 2018-06-30, 疑似违规, 000000010120671, 结案, 结案, true)">
-                  </a> <!-- queryReviewCase(1, 铜川市人民医院, 三级, 急性糜烂性胃炎, 2018-06-01, 2018-06-30, 疑似违规, 000000010120671, 结案, 结案, true) -->
-                  <span class="method-name">queryReviewCase</span>
-                  <span class="parameters">(1, 铜川市人民医院, 三级, 急性糜烂性胃炎, 2018-06-01, 2018-06-30, 疑似违规, 000000010120671, 结案, 结案, true)</span>
+                  <a name="queryConclusionCase(1, 铜川市人民医院, 三级, 脑梗死, 违规, 2018-01-01, 2021-01-01, 不违规, 000000008919263, true)">
+                  </a> <!-- queryConclusionCase(1, 铜川市人民医院, 三级, 脑梗死, 违规, 2018-01-01, 2021-01-01, 不违规, 000000008919263, true) -->
+                  <span class="method-name">queryConclusionCase</span>
+                  <span class="parameters">(1, 铜川市人民医院, 三级, 脑梗死, 违规, 2018-01-01, 2021-01-01, 不违规, 000000008919263, true)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -175,16 +175,16 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;TestDependency&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;ReviewSencondTest&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;ConclusionAuditTest&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.iebm.ssm.testScripts.LoginTest&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;guestLogin&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.iebm.ssm.testScripts.LoginTest --&gt;
-      &lt;class name=&quot;com.iebm.ssm.testScripts.ReviewSencondTest&quot;/&gt;
+      &lt;class name=&quot;com.iebm.ssm.testScripts.ConclusionAuditTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- ReviewSencondTest --&gt;
+  &lt;/test&gt; &lt;!-- ConclusionAuditTest --&gt;
 &lt;/suite&gt; &lt;!-- TestDependency --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -196,7 +196,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">ReviewSencondTest (2 classes)</span>
+                <span class="test-name">ConclusionAuditTest (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -224,22 +224,22 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'guestLogin')
-data.setCell(0, 2, 'com.iebm.ssm.testScripts.LoginTest')
-data.setCell(0, 3, 3462);
+data.setCell(0, 1, 'queryConclusionCase')
+data.setCell(0, 2, 'com.iebm.ssm.testScripts.ConclusionAuditTest')
+data.setCell(0, 3, 3693);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'queryReviewCase')
-data.setCell(1, 2, 'com.iebm.ssm.testScripts.ReviewSencondTest')
-data.setCell(1, 3, 2676);
+data.setCell(1, 1, 'guestLogin')
+data.setCell(1, 2, 'com.iebm.ssm.testScripts.LoginTest')
+data.setCell(1, 3, 3314);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'openPage')
-data.setCell(2, 2, 'com.iebm.ssm.testScripts.ReviewSencondTest')
-data.setCell(2, 3, 167);
+data.setCell(2, 2, 'com.iebm.ssm.testScripts.ConclusionAuditTest')
+data.setCell(2, 3, 189);
 window.suiteTableData['TestDependency']= { tableData: data, tableDiv: 'times-div-TestDependency'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 6 seconds</span>
+              <span class="suite-total-time">Total running time: 7 seconds</span>
               <div id="times-div-TestDependency">
               </div> <!-- times-div-TestDependency -->
             </div> <!-- times-div -->
@@ -281,25 +281,25 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">guestLogin</span>
-                <span class="method-start">3249 ms</span>
+                <span class="method-start">2770 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.iebm.ssm.testScripts.ReviewSencondTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.iebm.ssm.testScripts.ConclusionAuditTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">openPage</span>
-                <span class="method-start">6715 ms</span>
+                <span class="method-start">6088 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">queryReviewCase(1, 铜川市人民医院, 三级, 急性糜烂性胃炎, 2018-06-01, 2018-06-30, 疑似违规, 000000010120671, 结案, 结案, true)</span>
-                <span class="method-start">7191 ms</span>
+                <span class="method-name">queryConclusionCase(1, 铜川市人民医院, 三级, 脑梗死, 违规, 2018-01-01, 2021-01-01, 不违规, 000000008919263, true)</span>
+                <span class="method-start">6682 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.iebm.ssm.testScripts.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">9897 ms</span>
+                <span class="method-start">10409 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

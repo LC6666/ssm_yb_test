@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 /**
+ * 疑点结论
  * @Auther: LC
  * @Date: 2019/3/13 16:55
  * @Description:
@@ -13,7 +14,7 @@ import org.openqa.selenium.WebElement;
 public class ConclusionAuditPage {
 
     private WebElement element = null;
-    private ObjectMap objectmap = new ObjectMap("./resource/conclusionAuditPagMap.properties");
+    private ObjectMap objectmap = new ObjectMap("./resource/conclusionAuditPageMap.properties");
     private WebDriver driver;
 
     public ConclusionAuditPage(WebDriver driver) {
@@ -61,8 +62,8 @@ public class ConclusionAuditPage {
         element = driver.findElement(objectmap.getLocator("illegalClass_select"));
         return element;
     }
-    public WebElement siCode_input() throws Exception{
-        element = driver.findElement(objectmap.getLocator("siCode_input"));
+    public WebElement illegalResult_select() throws Exception{
+        element = driver.findElement(objectmap.getLocator("illegalResult_select"));
         return element;
     }
     public WebElement query_btn() throws Exception{

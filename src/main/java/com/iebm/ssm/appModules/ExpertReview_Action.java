@@ -1,6 +1,6 @@
 package com.iebm.ssm.appModules;
 
-import com.iebm.ssm.pageObjects.ReviewSencondPage;
+import com.iebm.ssm.pageObjects.ExpertReviewPage;
 import com.iebm.ssm.util.Constant;
 import com.iebm.ssm.util.PageNumInfo;
 import com.iebm.ssm.util.Table;
@@ -8,18 +8,17 @@ import com.iebm.ssm.util.UpdateAttribute;
 import org.openqa.selenium.support.ui.Select;
 
 /**
- * 人工复审
  * @Auther: LC
- * @Date: 2019/3/14 12:40
+ * @Date: 2019/3/14 17:48
  * @Description:
  */
 
-public class ReviewSencond_Action {
+public class ExpertReview_Action {
 
-    private ReviewSencondPage page;
+    private ExpertReviewPage page;
 
-    public ReviewSencond_Action(){
-        page = new ReviewSencondPage(Constant.driver);
+    public ExpertReview_Action(){
+        this.page = new ExpertReviewPage(Constant.driver);
     }
 
     public void openPage() throws Exception {
@@ -27,7 +26,7 @@ public class ReviewSencond_Action {
         page.title().click();
     }
 
-    public void queryReviewCase(String index, String hospital, String hospital_level, String disease, String startdate, String enddate, String illegalClass, String siCode, String nextState, String remark, String enable) throws Exception {
+    public void queryReviewCase(String index, String hospital, String hospital_level, String disease, String illegalclass, String startdate, String enddate, String sicode, String accept, String remar, String enable) throws Exception {
         if(hospital!=null&&!hospital.equals("")){
             page.hospital_img().click();
             Thread.sleep(300);
@@ -53,17 +52,17 @@ public class ReviewSencond_Action {
             page.enddate_input().clear();
             page.enddate_input().sendKeys(enddate);
         }
-        if(illegalClass!=null&&!illegalClass.equals("")){
+        if(illegalclass!=null&&!illegalclass.equals("")){
             Select select = new Select(page.illegalClass_select());
-            select.selectByVisibleText(illegalClass);
+            select.selectByVisibleText(illegalclass);
         }
-        if(siCode!=null&&!siCode.equals("")){
-            page.siCode_input().sendKeys(siCode);
+        if(sicode!=null&&!sicode.equals("")){
+            page.siCode_input().sendKeys(sicode);
         }
         page.query_btn().click();
         Thread.sleep(300);
 
-        if(siCode!=null&&!siCode.equals("")){
+        if(sicode!=null&&!sicode.equals("")){
             PageNumInfo pageInfo = new PageNumInfo(page.pageArea_table());
             String totalpageNo = pageInfo.getTotalPageNo();
             if (!totalpageNo.equals("0")) {
@@ -77,7 +76,7 @@ public class ReviewSencond_Action {
                     for (int j = 1; j < rowCount; j++) {
 //                          获取表格中的病例号
                         String sicode_in_td = table.getCell(j, 2).getText();
-                        if (sicode_in_td.equals(siCode)) {
+                        if (sicode_in_td.equals(sicode)) {
                             System.out.println("找到病例");
                             break pageSearch;
                         }
@@ -86,13 +85,13 @@ public class ReviewSencond_Action {
                         pageInfo.btnClick("next");
                         Thread.sleep(3000);
                     } else {
-                        System.out.println("没有找到病例" + siCode);
+                        System.out.println("没有找到病例" + sicode);
                         return;
                     }
 
                 }
             } else {
-                System.out.println("没有找到病例" + siCode);
+                System.out.println("没有找到病例" + sicode);
                 return;
             }
         }
