@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [TestDependency]">
-  <test thread-count="5" name="ConclusionAuditTest(failed)">
+  <test thread-count="5" name="QueryDoubtfulTest(failed)">
     <classes>
-      <class name="com.iebm.ssm.testScripts.ConclusionAuditTest">
+      <class name="com.iebm.ssm.testScripts.QueryDoubtfulTest">
         <methods>
-          <include name="openPage"/>
-          <include name="queryConclusionCase" invocation-numbers="0"/>
+          <include name="qeuryDoubtfulCase"/>
         </methods>
-      </class> <!-- com.iebm.ssm.testScripts.ConclusionAuditTest -->
+      </class> <!-- com.iebm.ssm.testScripts.QueryDoubtfulTest -->
     </classes>
-  </test> <!-- ConclusionAuditTest(failed) -->
+  </test> <!-- QueryDoubtfulTest(failed) -->
 </suite> <!-- Failed suite [TestDependency] -->

@@ -57,6 +57,7 @@ public class ReviewFirst_Action {
             select.selectByVisibleText(illegalClass);
         }
         if(siCode!=null&&!siCode.equals("")){
+            page.siCode_input().clear();
             page.siCode_input().sendKeys(siCode);
         }
         page.query_btn().click();

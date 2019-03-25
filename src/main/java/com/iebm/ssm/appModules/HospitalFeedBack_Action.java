@@ -29,7 +29,7 @@ public class HospitalFeedBack_Action {
     }
 
     public void queryCaseFeedBack(String index, String disease, String startdate, String enddate, String sicode, String accpet, String remark, String filepath, String enable) throws Exception {
-        if (enable.equals("true")) {
+//        if (enable.equals("true")) {
             if (disease != null && !disease.equals("")) {
                 page.disease_img().click();
                 Thread.sleep(300);
@@ -84,7 +84,7 @@ public class HospitalFeedBack_Action {
 
             }
 
-        }
+//        }
 
 
     }

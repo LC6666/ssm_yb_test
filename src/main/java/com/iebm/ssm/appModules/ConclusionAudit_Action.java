@@ -83,8 +83,9 @@ public class ConclusionAudit_Action {
                     for (int j = 1; j < rowCount; j++) {
 //                          获取表格中的病例号
                         String sicode_in_td = table.getCell(j, 2).getText();
+                        String index_in_td = table.getCell(j, 0).getText();
                         if (sicode_in_td.equals(sicode)) {
-                            System.out.println("找到病例");
+                            System.out.println("找到病例"+sicode+"序号为"+index_in_td);
                             break pageSearch;
                         }
                     }

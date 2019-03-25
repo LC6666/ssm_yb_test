@@ -5,8 +5,8 @@
   <testcase name="querytIllegal" time="0.003" classname="com.iebm.ssm.testScripts.IllegalPageTest">
     <failure type="java.lang.NullPointerException">
       <![CDATA[java.lang.NullPointerException
-at com.iebm.ssm.pageObjects.IllegalPage.nav(IllegalPage.java:32)
-at com.iebm.ssm.appModules.Illegal_Action.openPage(Illegal_Action.java:38)
+at com.iebm.ssm.pageObjects.QueryDoubtfulPage.nav(IllegalPage.java:32)
+at com.iebm.ssm.appModules.QueryDoubtful_Action.openPage(Illegal_Action.java:38)
 at com.iebm.ssm.testScripts.IllegalPageTest.querytIllegal(IllegalPageTest.java:26)
 ... Removed 24 stack frames]]>
     </failure>
@@ -14,8 +14,8 @@ at com.iebm.ssm.testScripts.IllegalPageTest.querytIllegal(IllegalPageTest.java:2
   <testcase name="getRowData" time="1.001" classname="com.iebm.ssm.testScripts.IllegalPageTest">
     <failure type="java.lang.NullPointerException">
       <![CDATA[java.lang.NullPointerException
-at com.iebm.ssm.pageObjects.IllegalPage.table(IllegalPage.java:67)
-at com.iebm.ssm.appModules.Illegal_Action.readTableRow(Illegal_Action.java:79)
+at com.iebm.ssm.pageObjects.QueryDoubtfulPage.table(IllegalPage.java:67)
+at com.iebm.ssm.appModules.QueryDoubtful_Action.readTableRow(Illegal_Action.java:79)
 at com.iebm.ssm.testScripts.IllegalPageTest.getRowData(IllegalPageTest.java:45)
 ... Removed 24 stack frames]]>
     </failure>
