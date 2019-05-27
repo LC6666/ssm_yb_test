@@ -26,7 +26,7 @@ public class YiDianChaXun_BasicInfo {
      */
     public Map getBasicInfo(Map infoMap) throws IOException, ClassNotFoundException, URISyntaxException {
 
-        //					获取疑点病例详情------基本信息
+        //获取疑点病例详情------基本信息
 
         String id = infoMap.get("id").toString();
         String code = infoMap.get("code").toString();
@@ -37,6 +37,7 @@ public class YiDianChaXun_BasicInfo {
         String treatmentFee_str = "";
         String otherFee_str = "";
         String ownExpense_str ="";
+        String initialIllegalFee_str = "";
         BigDecimal drugFee = BigDecimal.ZERO ;
         BigDecimal inspectionFee = BigDecimal.ZERO;
         BigDecimal treatmentFee = BigDecimal.ZERO;
@@ -59,6 +60,7 @@ public class YiDianChaXun_BasicInfo {
                 .attr("value").replace(",", "");
         otherFee_str = doc.getElementById("app.common.diagnosis.basicInfo.form0.otherFee").attr("value").replace(",", "");
         ownExpense_str = doc.getElementById("app.common.diagnosis.basicInfo.form0.ownExpense").attr("value").replace(",", "");
+        initialIllegalFee_str = doc.getElementById("app.common.diagnosis.basicInfo.form0.initialIllegalFee").attr("value").replace(",", "");
 
 
         drugFee = drugFee_str.equals("") ? drugFee : new BigDecimal(drugFee_str);
@@ -72,17 +74,23 @@ public class YiDianChaXun_BasicInfo {
         df.setRoundingMode(RoundingMode.HALF_UP);
         String str = df.format(totalFee2);
         if (totalFee1.compareTo(new BigDecimal(str)) != 0) {
-            System.out.println("【"+id+"】就诊编号:" + code + "   基本信息总费用计算不正确" );
-            System.out.println("基本信息显示总费用="+totalFee1+" 页面计算总费用="+totalFee2);
-            System.out.println("-----------------------------------------------------------------------");
+            System.out.println("就诊编号【" + code + "】基本信息总费用计算不正确   基本信息显示总费用="+totalFee1+" 页面计算总费用="+totalFee2 );
         }
 
+//      总费用
         infoMap.put("totalFee_str", totalFee_str);
+//      药品费用
         infoMap.put("drugFee_str", drugFee_str);
+//      检查费用
         infoMap.put("inspectionFee_str", inspectionFee_str);
+//      治疗费用
         infoMap.put("treatmentFee_str", treatmentFee_str);
+//      其他费用
         infoMap.put("otherFee_str", otherFee_str);
+//      违规费用
         infoMap.put("ownExpense_str", ownExpense_str);
+//      最终违规金额
+        infoMap.put("initialIllegalFee_str", initialIllegalFee_str);
 
         return infoMap;
 

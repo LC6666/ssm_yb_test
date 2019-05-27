@@ -27,7 +27,9 @@ public class YiDianChaXun {
     YiDianChaXun_FeesDetail_Material material = new YiDianChaXun_FeesDetail_Material();
     YiDianChaXun_FeesDetail_Other other = new YiDianChaXun_FeesDetail_Other();
     YiDianChaXun_DrugReport drugReport = new YiDianChaXun_DrugReport();
+    YiDianChaXun_illegalInfo illegalinfo = new YiDianChaXun_illegalInfo();
     DiseaseSelect diseaseSelect = new DiseaseSelect();
+    HospitalSelect hospitalSelect = new HospitalSelect();
     DecimalFormat df = new DecimalFormat("0.00");
 
 
@@ -111,17 +113,20 @@ public class YiDianChaXun {
                         String id = data.get(2).asText();
                         String code = data.get(3).asText();
                         String disease = data.get(7).asText();
+                        String hospital = data.get(6).asText();
                         String illegalFee_str = data.get(10).asText();
                         Map info_map = new HashMap();
                         info_map.put("index", index);
                         info_map.put("id", id);
                         info_map.put("code", code);
                         info_map.put("disease", disease);
+                        info_map.put("hospital", hospital);
                         info_map.put("illegalFee_str", illegalFee_str);
+                        info_map.put("illegalInfo_id",row.get("id").asText());
 //                        ======================================================================================================================
 //                        计算年度病例违规费用
                         BigDecimal illegeFee = new BigDecimal(illegalFee_str);
-                        total_illegeFee = total_illegeFee.add(illegeFee);
+//                        total_illegeFee = total_illegeFee.add(illegeFee);
 //                        System.out.println("【"+index+"】【"+id+"】当前病例【"+code+"】违规费用="+illegeFee+"  当前所有病例违规费用总和="+total_illegeFee);
 //                        ======================================================================================================================
 
@@ -129,6 +134,9 @@ public class YiDianChaXun {
 //                        ======================================================================================================================
 //                        病种查询
 //                        diseaseSelect.FindDisease(info_map);
+
+//                        医院查询
+                        hospitalSelect.FindHospital(info_map);
 //                        ======================================================================================================================
 
 //                         病例详情分析
@@ -140,6 +148,8 @@ public class YiDianChaXun {
 //                        drugReport.loadReportInfo(info_map);
 //                        drugReport.loadReportDrugRate(info_map);
 
+//                        illegalinfo.getIllegalInfo(info_map);
+
 
                     }
                 }
@@ -148,12 +158,12 @@ public class YiDianChaXun {
             }
 
         }
-        System.out.println("违规费用总计="+total_illegeFee);
+//        System.out.println("违规费用总计="+total_illegeFee);
 
     }
 
     /**
-     * 获取病例详情
+     * 获取病例详情，分析病例
      * @param info_map
      * @throws URISyntaxException
      * @throws IOException
@@ -161,11 +171,18 @@ public class YiDianChaXun {
      */
     public Map getDetail(Map info_map) throws URISyntaxException, IOException, ClassNotFoundException {
 
+
+//      基本信息页面的费用分析
         info_map = basicInfo.getBasicInfo(info_map);
+//      收费明细--药品明细费用分析
         info_map = drugInfo.getDrugDetail(info_map);
+//      收费明细--检查明细费用分析
         info_map = inspection.getInspection(info_map);
+//      收费明细--治疗明细费用分析
         info_map = cure.getCureDetail(info_map);
+//      收费明细--材料明细费用分析
         info_map = material.getMaterialDetail(info_map);
+//      收费明细--其他明细费用分析
         info_map = other.getOtherDetail(info_map);
         return info_map;
 
@@ -198,7 +215,7 @@ public class YiDianChaXun {
 
     /**
      * 验证违规费用是否一致
-     * 违规费用有可能与明细中的违规总费用有差别，此场景可作废
+     * 违规费用有可能与明细中的违规总费用有差别（占比类规则原因），此场景可作废
      *
      * @param info_map
      */

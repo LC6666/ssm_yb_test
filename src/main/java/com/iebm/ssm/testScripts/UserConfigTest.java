@@ -1,6 +1,8 @@
 package com.iebm.ssm.testScripts;
 
 import com.iebm.ssm.appModules.UserConfig_Action;
+import com.iebm.ssm.util.TestDataDrivenByMysql;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
@@ -17,6 +19,11 @@ public class UserConfigTest {
 
     private UserConfig_Action userConfig_action ;
 
+    @DataProvider(name="orgDatafromMysql")
+    public static Object[][] getloignDataByMysql() throws ClassNotFoundException {
+        return TestDataDrivenByMysql.getTestData("login_test");
+    }
+
     @Test(testName = "OpenPage",priority = 0)
     public void openPage() throws Exception {
         userConfig_action = new UserConfig_Action();
@@ -27,6 +34,7 @@ public class UserConfigTest {
     public void selectOrg() throws Exception {
         userConfig_action.selectOrg("铜川市医保,铜川市医保局,耀州医保局,铜川妇产医院");
     }
+
 
     @Test(testName = "AddUser",priority = 2,enabled = false)
     public void addUser()throws Exception {
