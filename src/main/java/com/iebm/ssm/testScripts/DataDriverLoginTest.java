@@ -27,17 +27,17 @@ public class DataDriverLoginTest {
 
 	@DataProvider(name="loginData")
 	public static Object[][] getloginData() throws IOException {
-		return TestDataDrivenByCSVFile.getTestData("./resource/login_data.csv");
+		return TestDataDrivenByCSVFile.getTestData("./resource/test_data.csv");
 	}
 
 	@DataProvider(name="loginDatafromExcel")
 	public static Object[][] getloginDataByExcel() throws IOException {
-		return TestDataDrivenByExcelFile.getDataFromXlxs("./resource/", "login_data.xls", "login_data");
+		return TestDataDrivenByExcelFile.getDataFromXlxs("./resource/", "test_data.xls", "login_data");
 	}
 
 	@DataProvider(name="loginDatafromExcel2")
 	public static Object[][] getloginDataByExcel2() throws IOException {
-		return TestDataDrivenByExcelFile.getDataFromXlxs("./resource/", "login_data.xlsx", "login_data");
+		return TestDataDrivenByExcelFile.getDataFromXlxs("./resource/", "test_data.xlsx", "login_data");
 	}
 
 	@DataProvider(name="loginDatafromMysql")
