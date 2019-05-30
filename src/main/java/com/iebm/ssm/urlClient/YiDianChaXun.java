@@ -133,10 +133,10 @@ public class YiDianChaXun {
 
 //                        ======================================================================================================================
 //                        病种查询
-//                        diseaseSelect.FindDisease(info_map);
+                        diseaseSelect.FindDisease(info_map);
 
 //                        医院查询
-                        hospitalSelect.FindHospital(info_map);
+//                        hospitalSelect.FindHospital(info_map);
 //                        ======================================================================================================================
 
 //                         病例详情分析

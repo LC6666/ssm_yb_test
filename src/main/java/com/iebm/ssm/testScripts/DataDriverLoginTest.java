@@ -87,6 +87,15 @@ public class DataDriverLoginTest {
 		Thread.sleep(3000);
 		Assert.assertTrue(Constant.driver.getPageSource().contains("退出系统"));
 	}
+
+	@Test(testName = "guestLogin")
+	public void guestLogin() throws Exception{
+		Log.info("调用Login_Action.execute");
+		Login_Action.execute(Constant.loginUsername, Constant.loginPassword);
+		Thread.sleep(3000);
+		Assert.assertTrue(Constant.driver.getPageSource().contains("退出系统"));
+
+	}
 	
 	@BeforeTest
 	public void beforeTest(){

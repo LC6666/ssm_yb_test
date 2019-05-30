@@ -20,12 +20,17 @@ public class HospitalFeedBackTest {
 
     private HospitalFeedBack_Action hospitalFeedBack;
 
-    @DataProvider(name = "getTestCaseDate")
+    @DataProvider(name = "getTestCaseDateFromMysql")
     public Object[][] getTestCaseDate() throws ClassNotFoundException {
 //        return TestDataDrivenByExcelFile.getDataFromXlxs("./resource","AuditCase.xlsx","医院违规病例反馈");
         return TestDataDrivenByMysql.getTestData("hospitalfeedback_test");
     }
 
+    @DataProvider(name="getTestCaseDateFromExcel")
+    public static Object[][] getloginDataByExcel2() throws IOException {
+//        return TestDataDrivenByExcelFile.getDataFromXlxs("./resource","AuditCase.xlsx","医院违规病例反馈");
+        return TestDataDrivenByExcelFile.getDataFromXlxs("./resource","test_data.xlsx","医院违规病例反馈");
+    }
 
     /**
      * 进入疑点审核，打开医院违规病例反馈
@@ -51,7 +56,7 @@ public class HospitalFeedBackTest {
      * @param filepath
      * @throws Exception
      */
-    @Test(testName = "queryCaseFeedBack",priority = 1,enabled = true,dataProvider = "getTestCaseDate")
+    @Test(testName = "queryCaseFeedBack",priority = 1,enabled = false,dataProvider = "getTestCaseDateFromMysql")
     public void queryCaseFeedBack(String index,String diseasename,String startdate,String enddate,String sicode,String accpet,String remark,String filepath,String enable) throws Exception {
         hospitalFeedBack.queryCaseFeedBack(index,diseasename,startdate,enddate,sicode,accpet,remark,filepath,enable);
     }
@@ -69,9 +74,9 @@ public class HospitalFeedBackTest {
      * @param filepath
      * @param enable
      */
-    @Test(testName = "queryCaseToFeedBace",priority = 2,enabled = true,dataProvider = "getTestCaseDate")
-    public void queryCaseToFeedBace(String index,String diseasename,String startdate,String enddate,String sicode,String accpet,String remark,String filepath,String enable) throws Exception {
-        hospitalFeedBack.queryCaseToFeedBace(index,diseasename,startdate,enddate,sicode,accpet,remark,filepath,enable );
+    @Test(testName = "queryCaseFeedBack2",priority = 2,enabled = true,dataProvider = "getTestCaseDateFromExcel")
+    public void queryCaseFeedBack2(String index,String diseasename,String startdate,String enddate,String sicode,String accpet,String remark,String filepath,String enable) throws Exception {
+        hospitalFeedBack.queryCaseFeedBack2(index,diseasename,startdate,enddate,sicode,accpet,remark,filepath,enable );
     }
 
 

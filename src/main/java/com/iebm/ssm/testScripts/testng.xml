@@ -29,11 +29,17 @@
 
 
     <!--疑点查询-->
-    <test name="QueryDoubtfulTest" enabled="true">
+    <test name="QueryDoubtfulTest" enabled="false">
         <classes>
-            <class name="com.iebm.ssm.testScripts.LoginTest">
+
+            <!--<class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>
                     <include name="guestLogin"/>
+                </methods>
+            </class>-->
+            <class name="com.iebm.ssm.testScripts.DataDriverLoginTest">
+                <methods>
+                    <include name="guestLogin"></include>
                 </methods>
             </class>
             <class name="com.iebm.ssm.testScripts.QueryDoubtfulTest"></class>
@@ -65,14 +71,15 @@
     </test>
 
     <!--疑点审核 医院违规病例反馈-->
-    <test name="HospitalFeedBackTest" enabled="false">
+    <test name="HospitalFeedBackTest" enabled="true">
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>
                     <include name="guestLogin"/>
                 </methods>
             </class>
-            <class name="com.iebm.ssm.testScripts.HospitalFeedBackTest"></class>
+            <class name="com.iebm.ssm.testScripts.HospitalFeedBackTest">
+            </class>
         </classes>
     </test>
 

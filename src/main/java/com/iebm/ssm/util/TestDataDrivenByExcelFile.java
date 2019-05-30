@@ -61,10 +61,10 @@ public class TestDataDrivenByExcelFile {
         for(int i=1;i<=rowCount;i++){
 //          使用getrow方法获取row对象
             Row row = sheet.getRow(i);
-//          声明一个数组，用来存储excel数据文件第行中的3个数据，数组的大小用getLastCellNum办法来进行动态声明，实现测试数据个数和数组大小相一致
+//          声明一个数组，用来存储excel数据文件第i行中的几个数据，数组的大小用getLastCellNum办法来进行动态声明，实现测试数据个数和数组大小相一致
             String fields[] = new String[row.getLastCellNum()];
             for(int j=0;j<row.getLastCellNum();j++){
-               fields[j] = row.getCell(j).getStringCellValue();
+               fields[j] = row.getCell(j)==null?"":row.getCell(j).getStringCellValue();
             }
 //          将fields的数据对象存储到records的list中
             records.add(fields);
