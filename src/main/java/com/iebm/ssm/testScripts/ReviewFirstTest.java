@@ -1,9 +1,12 @@
 package com.iebm.ssm.testScripts;
 
 import com.iebm.ssm.appModules.ReviewFirst_Action;
+import com.iebm.ssm.util.TestDataDrivenByExcelFile;
 import com.iebm.ssm.util.TestDataDrivenByMysql;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 
 /**
  * 人工初审
@@ -20,6 +23,10 @@ public class ReviewFirstTest {
         return TestDataDrivenByMysql.getTestData("reviewfirst_test");
     }
 
+    @DataProvider(name="getTestDataFromExcel")
+    public static Object[][] getTestDataFromExcel() throws IOException {
+        return TestDataDrivenByExcelFile.getDataFromXlxs("./resource","test_data.xlsx","人工初审");
+    }
     /**
      * 进入疑点审核，打开人工初审
      * @throws Exception
@@ -45,7 +52,7 @@ public class ReviewFirstTest {
      * @param enable
      * @throws Exception
      */
-    @Test(testName = "queryReviewCase",dataProvider = "queryReviewCaseData",priority = 1,enabled = true)
+    @Test(testName = "queryReviewCase",dataProvider = "getTestDataFromExcel",priority = 1,enabled = true)
     public void queryReviewCase(String index,String hospital,String hospital_level,String disease,String startdate,String endate,String illegalClass,String siCode,String nextstate,String remark,String enable) throws Exception {
         reviewFirst_action.queryReviewCase(index,hospital,hospital_level,disease,startdate,endate,illegalClass,siCode,nextstate,remark,enable);
     }

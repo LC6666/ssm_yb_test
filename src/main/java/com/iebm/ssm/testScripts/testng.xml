@@ -4,7 +4,7 @@
 <suite name="TestDependency">
 
     <!--系统登录-->
-    <test name="datadriverlogin" enabled="true" >
+    <test name="datadriverlogin" enabled="false" >
 
         <classes>
             <class name="com.iebm.ssm.testScripts.DataDriverLoginTest"></class>
@@ -83,7 +83,7 @@
     </test>
 
     <!--疑点审核 人工初审-->
-    <test name="ReviewFirstTest" enabled="false">
+    <test name="ReviewFirstTest" enabled="true">
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>
