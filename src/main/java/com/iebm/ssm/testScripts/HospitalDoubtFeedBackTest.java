@@ -34,7 +34,7 @@ public class HospitalDoubtFeedBackTest {
     /**
      * 查询病例
      * @param index
-     * @param disease
+     * @param diseasename
      * @param startdate
      * @param enddate
      * @param sicode
@@ -45,8 +45,8 @@ public class HospitalDoubtFeedBackTest {
      * @throws Exception
      */
     @Test(testName="queryFeedBackCase",priority = 1,enabled = true,dataProvider = "queryFeedBackCaseData")
-    public void queryFeedBackCase(String index,String disease,String startdate,String enddate,String sicode,String accpet,String remark,String filepath,String enable) throws Exception {
-        hospitalDoubtFeedBack_action.queryFeedBackCase(index,disease,startdate,enddate,sicode,accpet,filepath,enable);
+    public void queryFeedBackCase(String index,String diseasename,String startdate,String enddate,String sicode,String accpet,String remark,String filepath,String enable) throws Exception {
+        hospitalDoubtFeedBack_action.queryFeedBackCase(index,diseasename,startdate,enddate,sicode,accpet,remark,filepath,enable);
 
     }
 }

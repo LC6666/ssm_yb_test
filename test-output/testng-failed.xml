@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [TestDependency]">
-  <test thread-count="5" name="ReviewFirstTest(failed)">
+  <test thread-count="5" name="HospitalDoubtFeedBackTest(failed)">
     <classes>
-      <class name="com.iebm.ssm.testScripts.ReviewFirstTest">
+      <class name="com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest">
         <methods>
-          <include name="queryReviewCase"/>
+          <include name="queryFeedBackCase" invocation-numbers="2 3 4 5 6 7 8 9"/>
         </methods>
-      </class> <!-- com.iebm.ssm.testScripts.ReviewFirstTest -->
+      </class> <!-- com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest -->
     </classes>
-  </test> <!-- ReviewFirstTest(failed) -->
+  </test> <!-- HospitalDoubtFeedBackTest(failed) -->
 </suite> <!-- Failed suite [TestDependency] -->

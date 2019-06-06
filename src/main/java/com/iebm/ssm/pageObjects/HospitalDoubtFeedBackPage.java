@@ -49,6 +49,11 @@ public class HospitalDoubtFeedBackPage {
         element = driver.findElement(objectmap.getLocator("enddate_input"));
         return element;
     }
+    public WebElement sicode_input() throws Exception{
+        element = driver.findElement(objectmap.getLocator("sicode_input"));
+        return element;
+    }
+
     public WebElement feedBack_btn() throws Exception{
         element = driver.findElement(objectmap.getLocator("feedBack_btn"));
         return element;
@@ -96,11 +101,15 @@ public class HospitalDoubtFeedBackPage {
 
     public WebElement confirm_y_btn() throws Exception{
         List<WebElement> elements = driver.findElements(objectmap.getLocator("confirm_y_btn"));
-        return elements.get(0);
+        return elements.get(1);
     }
     public WebElement confirm_n_btn() throws Exception{
         List<WebElement> elements = driver.findElements(objectmap.getLocator("confirm_n_btn"));
-        return elements.get(1);
+        return elements.get(2);
+    }
+    public WebElement tips_btn() throws Exception{
+        element = driver.findElement(objectmap.getLocator("tips_btn"));
+        return element;
     }
 
 

@@ -184,7 +184,7 @@ public class HospitalFeedBack_Action {
                     if (filepath != null && !filepath.equals("")) {
                         Constant.driver.switchTo().frame("frm_img_2");
 //                    page.fileupload_btn().click();
-                        page.fileupload_btn().sendKeys("C:\\hsnet.log");
+                        page.fileupload_btn().sendKeys(filepath);
 //                    page.fileupload_btn().sendKeys(filepath);
                         Constant.driver.switchTo().defaultContent();
                     }

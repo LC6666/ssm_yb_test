@@ -52,7 +52,7 @@ public class ReviewFirst_Action {
                 hospitalSelect_action.findHospital(hospital);
 
             }
-            if(hospital_level!=null&&!disease.equals("")){
+            if(hospital_level!=null&&!hospital_level.equals("")){
                 Select select = new Select(page.hospital_level_select());
                 select.selectByVisibleText(hospital_level);
             }
