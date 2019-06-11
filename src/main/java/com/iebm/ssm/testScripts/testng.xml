@@ -68,92 +68,7 @@
             <class name="com.iebm.ssm.testScripts.RuleListTest"></class>
         </classes>
     </test>
-
-    <!--疑点审核 医院违规病例反馈-->
-    <test name="HospitalFeedBackTest" enabled="false">
-        <classes>
-            <class name="com.iebm.ssm.testScripts.LoginTest">
-                <methods>
-                    <include name="guestLogin"/>
-                </methods>
-            </class>
-            <class name="com.iebm.ssm.testScripts.HospitalFeedBackTest">
-            </class>
-        </classes>
-    </test>
-
-    <!--疑点审核 人工初审-->
-    <test name="ReviewFirstTest" enabled="false">
-        <classes>
-            <class name="com.iebm.ssm.testScripts.LoginTest">
-                <methods>
-                    <include name="guestLogin"/>
-                </methods>
-            </class>
-            <class name="com.iebm.ssm.testScripts.ReviewFirstTest"></class>
-        </classes>
-    </test>
-
-    <!--疑点审核 医院疑似违规病例反馈-->
-    <test name="HospitalDoubtFeedBackTest" enabled="false">
-        <classes>
-            <class name="com.iebm.ssm.testScripts.LoginTest">
-                <methods>
-                    <include name="guestLogin"/>
-                </methods>
-            </class>
-            <class name="com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest"></class>
-        </classes>
-    </test>
-
-    <!--疑点审核 人工复审-->
-    <test name="ReviewSencondTest" enabled="false">
-        <classes>
-            <class name="com.iebm.ssm.testScripts.LoginTest">
-                <methods>
-                    <include name="guestLogin"/>
-                </methods>
-            </class>
-            <class name="com.iebm.ssm.testScripts.ReviewSencondTest"></class>
-        </classes>
-    </test>
-
-    <!--疑点审核 专家审核-->
-    <test name="ExpertReviewTest" enabled="false">
-        <classes>
-            <class name="com.iebm.ssm.testScripts.LoginTest">
-                <methods>
-                    <include name="guestLogin"/>
-                </methods>
-            </class>
-            <class name="com.iebm.ssm.testScripts.ExpertReviewTest"></class>
-        </classes>
-    </test>
-
-    <!--疑点审核 稽查科调查-->
-    <test name="BusinessAuditTest" enabled="false">
-        <classes>
-            <class name="com.iebm.ssm.testScripts.LoginTest">
-                <methods>
-                    <include name="guestLogin"/>
-                </methods>
-            </class>
-            <class name="com.iebm.ssm.testScripts.BusinessAuditTest"></class>
-        </classes>
-    </test>
-
-    <!--疑点审核 疑点结论-->
-    <test name="ConclusionAuditTest" enabled="false">
-        <classes>
-            <class name="com.iebm.ssm.testScripts.LoginTest">
-                <methods>
-                    <include name="guestLogin"/>
-                </methods>
-            </class>
-            <class name="com.iebm.ssm.testScripts.ConclusionAuditTest"></class>
-        </classes>
-    </test>
-
+    
     <!--疑点审核 流程-->
     <test name="ConclusionAuditTest" enabled="true">
         <classes>
@@ -162,12 +77,19 @@
                     <include name="guestLogin"/>
                 </methods>
             </class>
+            <!--疑点审核 医院违规病例反馈-->
             <class name="com.iebm.ssm.testScripts.HospitalFeedBackTest"></class>
+            <!--疑点审核 人工初审-->
             <class name="com.iebm.ssm.testScripts.ReviewFirstTest"></class>
+            <!--疑点审核 医院疑似违规病例反馈-->
             <class name="com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest"></class>
+            <!--疑点审核 人工复审-->
             <class name="com.iebm.ssm.testScripts.ReviewSencondTest"></class>
+            <!--疑点审核 专家审核-->
             <class name="com.iebm.ssm.testScripts.ExpertReviewTest"></class>
+            <!--疑点审核 稽查科调查-->
             <class name="com.iebm.ssm.testScripts.BusinessAuditTest"></class>
+            <!--疑点审核 疑点结论-->
             <class name="com.iebm.ssm.testScripts.ConclusionAuditTest"></class>
         </classes>
     </test>

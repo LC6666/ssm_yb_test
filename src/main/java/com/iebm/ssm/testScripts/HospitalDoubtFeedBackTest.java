@@ -52,7 +52,7 @@ public class HospitalDoubtFeedBackTest {
      * @param enable
      * @throws Exception
      */
-    @Test(testName="queryFeedBackCase",priority = 1,enabled = true,dataProvider = "queryFeedBackCaseDataFromExcel")
+    @Test(testName="queryFeedBackCase",priority = 1,enabled = true,dataProvider = "queryFeedBackCaseDataFromMysql")
     public void queryFeedBackCase(String index,String diseasename,String startdate,String enddate,String sicode,String accpet,String remark,String filepath,String enable) throws Exception {
         hospitalDoubtFeedBack_action.queryFeedBackCase(index,diseasename,startdate,enddate,sicode,accpet,remark,filepath,enable);
 

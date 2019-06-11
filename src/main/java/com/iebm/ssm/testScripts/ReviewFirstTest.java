@@ -18,7 +18,7 @@ import java.io.IOException;
 public class ReviewFirstTest {
     public ReviewFirst_Action reviewFirst_action;
 
-    @DataProvider(name="queryReviewCaseData")
+    @DataProvider(name="queryReviewCaseDataFromMysql")
     public Object[][] getTestData() throws ClassNotFoundException {
         return TestDataDrivenByMysql.getTestData("reviewfirst_test");
     }
@@ -52,7 +52,7 @@ public class ReviewFirstTest {
      * @param enable
      * @throws Exception
      */
-    @Test(testName = "queryReviewCase",dataProvider = "getTestDataFromExcel",priority = 1,enabled = true)
+    @Test(testName = "queryReviewCase",dataProvider = "queryReviewCaseDataFromMysql",priority = 1,enabled = true)
     public void queryReviewCase(String index,String hospital,String hospital_level,String disease,String startdate,String endate,String illegalClass,String siCode,String nextstate,String remark,String enable) throws Exception {
         reviewFirst_action.queryReviewCase(index,hospital,hospital_level,disease,startdate,endate,illegalClass,siCode,nextstate,remark,enable);
     }

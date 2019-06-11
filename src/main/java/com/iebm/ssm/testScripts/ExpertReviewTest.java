@@ -34,7 +34,7 @@ public class ExpertReviewTest {
         expertReview_action.openPage();
     }
 
-    @Test(testName = "queryReviewCase",priority = 1,enabled = true,dataProvider = "getExpertReviewCaseDataFromExcel")
+    @Test(testName = "queryReviewCase",priority = 1,enabled = true,dataProvider = "getExpertReviewCaseDataFromMysql")
     public void queryReviewCase(String index,String hospital,String hospital_level,String disease,String illegalclass,String startdate,String enddate,String sicode,String accept,String remark,String enable) throws Exception {
         expertReview_action.queryReviewCase(index,hospital,hospital_level,disease,illegalclass,startdate,enddate,sicode,accept,remark,enable);
     }

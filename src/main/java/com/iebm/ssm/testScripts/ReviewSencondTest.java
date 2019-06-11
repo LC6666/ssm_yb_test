@@ -39,7 +39,7 @@ public class ReviewSencondTest {
         reviewSencond_action.openPage();
     }
 
-    @Test(testName = "queryReviewCase",priority = 1,enabled = true,dataProvider = "getReviewCaseDataFromExcel")
+    @Test(testName = "queryReviewCase",priority = 1,enabled = true,dataProvider = "getReviewCaseDataFromMysql")
     public void queryReviewCase(String index, String hospital, String hospital_level, String disease, String startdate, String enddate, String illegalClass, String siCode, String nextState, String remark, String enable) throws Exception {
         reviewSencond_action.queryReviewCase(index, hospital, hospital_level, disease, startdate, enddate, illegalClass, siCode, nextState, remark, enable);
     }

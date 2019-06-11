@@ -3,11 +3,46 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [TestDependency]">
   <test thread-count="5" name="ConclusionAuditTest(failed)">
     <classes>
+      <class name="com.iebm.ssm.testScripts.ConclusionAuditTest">
+        <methods>
+          <include name="openPage"/>
+          <include name="queryConclusionCase" invocation-numbers="0 1 2 3 4 5 6 7 8 9"/>
+        </methods>
+      </class> <!-- com.iebm.ssm.testScripts.ConclusionAuditTest -->
       <class name="com.iebm.ssm.testScripts.HospitalFeedBackTest">
         <methods>
-          <include name="queryCaseFeedBack2" invocation-numbers="0 1 2 3 4 5 6 7 8 9"/>
+          <include name="queryCaseFeedBack2" invocation-numbers="4"/>
         </methods>
       </class> <!-- com.iebm.ssm.testScripts.HospitalFeedBackTest -->
+      <class name="com.iebm.ssm.testScripts.ReviewSencondTest">
+        <methods>
+          <include name="openPage"/>
+          <include name="queryReviewCase" invocation-numbers="0 1 2 3 4 5 6 7 9"/>
+        </methods>
+      </class> <!-- com.iebm.ssm.testScripts.ReviewSencondTest -->
+      <class name="com.iebm.ssm.testScripts.ReviewFirstTest">
+        <methods>
+          <include name="queryReviewCase" invocation-numbers="0 1 7 8 9"/>
+        </methods>
+      </class> <!-- com.iebm.ssm.testScripts.ReviewFirstTest -->
+      <class name="com.iebm.ssm.testScripts.ExpertReviewTest">
+        <methods>
+          <include name="openPage"/>
+          <include name="queryReviewCase" invocation-numbers="0 1"/>
+        </methods>
+      </class> <!-- com.iebm.ssm.testScripts.ExpertReviewTest -->
+      <class name="com.iebm.ssm.testScripts.BusinessAuditTest">
+        <methods>
+          <include name="openPage"/>
+          <include name="queryBusinessAuditCase" invocation-numbers="0 1 2 3 5 6 7 8 9"/>
+        </methods>
+      </class> <!-- com.iebm.ssm.testScripts.BusinessAuditTest -->
+      <class name="com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest">
+        <methods>
+          <include name="openPage"/>
+          <include name="queryFeedBackCase" invocation-numbers="0 1 2 3"/>
+        </methods>
+      </class> <!-- com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest -->
     </classes>
   </test> <!-- ConclusionAuditTest(failed) -->
 </suite> <!-- Failed suite [TestDependency] -->

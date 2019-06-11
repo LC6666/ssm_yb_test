@@ -35,7 +35,7 @@ public class ConclusionAuditTest {
         conclusionAudit_action.openPage();
     }
 
-    @Test(testName = "queryConclusionCase",priority = 0,enabled = true,dataProvider = "getConclusionCaseDataFromExcel")
+    @Test(testName = "queryConclusionCase",priority = 0,enabled = true,dataProvider = "getConclusionCaseDataFromMysql")
     public void queryConclusionCase(String index, String hospital, String hospital_level, String disease, String illegalclass, String startdate, String enddate, String illegalresult,String sicode, String enable ) throws Exception {
         conclusionAudit_action.queryConclusionCase(index, hospital, hospital_level, disease, illegalclass, startdate, enddate, illegalresult,sicode, enable);
     }

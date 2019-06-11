@@ -72,7 +72,7 @@ public class HospitalFeedBackTest {
      * @param filepath
      * @param enable
      */
-    @Test(testName = "queryCaseFeedBack2",priority = 2,enabled = true,dataProvider = "getTestCaseDateFromExcel")
+    @Test(testName = "queryCaseFeedBack2",priority = 2,enabled = true,dataProvider = "getTestCaseDateFromMysql")
     public void queryCaseFeedBack2(String index,String diseasename,String startdate,String enddate,String sicode,String accpet,String remark,String filepath,String enable) throws Exception {
         hospitalFeedBack.queryCaseFeedBack2(index,diseasename,startdate,enddate,sicode,accpet,remark,filepath,enable );
     }

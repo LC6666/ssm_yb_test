@@ -35,7 +35,7 @@ public class BusinessAuditTest {
         businessAudit_action.openPage();
     }
 
-    @Test(testName = "",priority = 1,enabled = true,dataProvider = "getBusinessAuditCaseDataFromExcel")
+    @Test(testName = "",priority = 1,enabled = true,dataProvider = "getBusinessAuditCaseDataFromMysql")
     public void queryBusinessAuditCase(String index, String hospital, String hospital_level, String disease, String illegalclass, String startdate, String enddate, String sicode, String accept, String remark, String enable) throws Exception {
         businessAudit_action.queryBusinessAuditCase(index, hospital, hospital_level, disease, illegalclass, startdate, enddate, sicode, accept, remark, enable);
     }
