@@ -72,6 +72,10 @@ public class ExpertReviewPage {
         element = driver.findElement(objectmap.getLocator("reset_btn"));
         return element;
     }
+    public WebElement firstTrial_btn() throws Exception{
+        element = driver.findElement(objectmap.getLocator("firstTrial_btn"));
+        return element;
+    }
     public WebElement resultlist_table() throws Exception{
         element = driver.findElement(objectmap.getLocator("resultlist_table"));
         return element;

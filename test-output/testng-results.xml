@@ -2,30 +2,30 @@
 <testng-results skipped="0" failed="0" ignored="2" total="14" passed="12">
   <reporter-output>
   </reporter-output>
-  <suite name="TestDependency" duration-ms="38160" started-at="2019-06-06T17:03:09 CST" finished-at="2019-06-06T17:03:47 CST">
+  <suite name="TestDependency" duration-ms="48681" started-at="2019-06-06T19:56:26 CST" finished-at="2019-06-06T19:57:15 CST">
     <groups>
     </groups>
-    <test name="HospitalDoubtFeedBackTest" duration-ms="38160" started-at="2019-06-06T17:03:09 CST" finished-at="2019-06-06T17:03:47 CST">
+    <test name="ConclusionAuditTest" duration-ms="48681" started-at="2019-06-06T19:56:26 CST" finished-at="2019-06-06T19:57:15 CST">
       <class name="com.iebm.ssm.testScripts.LoginTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.iebm.ssm.testScripts.LoginTest@9711b]" name="beforeTest" is-config="true" duration-ms="6189" started-at="2019-06-06T17:03:09 CST" finished-at="2019-06-06T17:03:15 CST">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.iebm.ssm.testScripts.LoginTest@146e1f4]" name="beforeTest" is-config="true" duration-ms="5682" started-at="2019-06-06T19:56:26 CST" finished-at="2019-06-06T19:56:32 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="guestLogin()[pri:0, instance:com.iebm.ssm.testScripts.LoginTest@9711b]" name="guestLogin" duration-ms="3502" started-at="2019-06-06T17:03:15 CST" finished-at="2019-06-06T17:03:19 CST">
+        <test-method status="PASS" signature="guestLogin()[pri:0, instance:com.iebm.ssm.testScripts.LoginTest@146e1f4]" name="guestLogin" duration-ms="3736" started-at="2019-06-06T19:56:32 CST" finished-at="2019-06-06T19:56:35 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- guestLogin -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.iebm.ssm.testScripts.LoginTest@9711b]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-06-06T17:03:47 CST" finished-at="2019-06-06T17:03:47 CST">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.iebm.ssm.testScripts.LoginTest@146e1f4]" name="afterSuite" is-config="true" duration-ms="1" started-at="2019-06-06T19:57:15 CST" finished-at="2019-06-06T19:57:15 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
       </class> <!-- com.iebm.ssm.testScripts.LoginTest -->
-      <class name="com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest">
-        <test-method status="PASS" signature="openPage()[pri:0, instance:com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest@c7c2a6]" name="openPage" duration-ms="809" started-at="2019-06-06T17:03:19 CST" finished-at="2019-06-06T17:03:20 CST">
+      <class name="com.iebm.ssm.testScripts.ConclusionAuditTest">
+        <test-method status="PASS" signature="openPage()[pri:0, instance:com.iebm.ssm.testScripts.ConclusionAuditTest@9711b]" name="openPage" duration-ms="1771" started-at="2019-06-06T19:56:35 CST" finished-at="2019-06-06T19:56:37 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openPage -->
-        <test-method status="PASS" signature="queryFeedBackCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest@c7c2a6]" name="queryFeedBackCase" duration-ms="1464" started-at="2019-06-06T17:03:20 CST" data-provider="queryFeedBackCaseData" finished-at="2019-06-06T17:03:21 CST">
+        <test-method status="PASS" signature="queryConclusionCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.iebm.ssm.testScripts.ConclusionAuditTest@9711b]" name="queryConclusionCase" duration-ms="5822" started-at="2019-06-06T19:56:37 CST" data-provider="getqueryConclusionCaseData" finished-at="2019-06-06T19:56:43 CST">
           <params>
             <param index="0">
               <value>
@@ -34,40 +34,45 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[]]>
+                <![CDATA[铜川市人民医院]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[2018-01-01]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[2019-03-15]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[000000012171213]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[y]]>
+                <![CDATA[2018-01-01]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[基于UI的自动化处理]]>
+                <![CDATA[2020-03-15]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[C:\hsnet.log]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
               <value>
                 <![CDATA[y]]>
               </value>
@@ -75,8 +80,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- queryFeedBackCase -->
-        <test-method status="PASS" signature="queryFeedBackCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest@c7c2a6]" name="queryFeedBackCase" duration-ms="1614" started-at="2019-06-06T17:03:21 CST" data-provider="queryFeedBackCaseData" finished-at="2019-06-06T17:03:23 CST">
+        </test-method> <!-- queryConclusionCase -->
+        <test-method status="PASS" signature="queryConclusionCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.iebm.ssm.testScripts.ConclusionAuditTest@9711b]" name="queryConclusionCase" duration-ms="3585" started-at="2019-06-06T19:56:43 CST" data-provider="getqueryConclusionCaseData" finished-at="2019-06-06T19:56:47 CST">
           <params>
             <param index="0">
               <value>
@@ -88,35 +93,34 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[2018-01-01]]>
+                <![CDATA[三级]]>
               </value>
             </param>
             <param index="3">
-              <value>
-                <![CDATA[2019-03-15]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="4">
-              <value>
-                <![CDATA[000000012207889]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="5">
-              <value>
-                <![CDATA[y]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="6">
               <value>
-                <![CDATA[基于UI的自动化处理]]>
+                <![CDATA[2020-03-15]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[C:\hsnet.log]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
               <value>
                 <![CDATA[y]]>
               </value>
@@ -124,8 +128,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- queryFeedBackCase -->
-        <test-method status="PASS" signature="queryFeedBackCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest@c7c2a6]" name="queryFeedBackCase" duration-ms="4974" started-at="2019-06-06T17:03:23 CST" data-provider="queryFeedBackCaseData" finished-at="2019-06-06T17:03:28 CST">
+        </test-method> <!-- queryConclusionCase -->
+        <test-method status="PASS" signature="queryConclusionCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.iebm.ssm.testScripts.ConclusionAuditTest@9711b]" name="queryConclusionCase" duration-ms="4138" started-at="2019-06-06T19:56:47 CST" data-provider="getqueryConclusionCaseData" finished-at="2019-06-06T19:56:51 CST">
           <params>
             <param index="0">
               <value>
@@ -133,41 +137,38 @@
               </value>
             </param>
             <param index="1">
-              <value>
-                <![CDATA[冠状动脉粥样硬化性心脏病]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="2">
-              <value>
-                <![CDATA[2018-01-01]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="3">
               <value>
-                <![CDATA[2019-03-15]]>
+                <![CDATA[慢性胃炎]]>
               </value>
             </param>
             <param index="4">
-              <value>
-                <![CDATA[]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="5">
-              <value>
-                <![CDATA[y]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="6">
               <value>
-                <![CDATA[基于UI的自动化处理]]>
+                <![CDATA[2020-03-15]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[C:\hsnet.log]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
               <value>
                 <![CDATA[y]]>
               </value>
@@ -175,8 +176,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- queryFeedBackCase -->
-        <test-method status="PASS" signature="queryFeedBackCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest@c7c2a6]" name="queryFeedBackCase" duration-ms="3776" started-at="2019-06-06T17:03:28 CST" data-provider="queryFeedBackCaseData" finished-at="2019-06-06T17:03:32 CST">
+        </test-method> <!-- queryConclusionCase -->
+        <test-method status="PASS" signature="queryConclusionCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.iebm.ssm.testScripts.ConclusionAuditTest@9711b]" name="queryConclusionCase" duration-ms="3306" started-at="2019-06-06T19:56:51 CST" data-provider="getqueryConclusionCaseData" finished-at="2019-06-06T19:56:54 CST">
           <params>
             <param index="0">
               <value>
@@ -184,39 +185,38 @@
               </value>
             </param>
             <param index="1">
-              <value>
-                <![CDATA[冠状动脉粥样硬化性心脏病]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="2">
-              <value>
-                <![CDATA[2018-01-01]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="3">
-              <value>
-                <![CDATA[2019-03-15]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="4">
+              <value>
+                <![CDATA[违规]]>
+              </value>
+            </param>
+            <param index="5">
+              <value is-null="true"/>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[2020-03-15]]>
+              </value>
+            </param>
+            <param index="7">
               <value>
                 <![CDATA[]]>
               </value>
             </param>
-            <param index="5">
-              <value>
-                <![CDATA[y]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[基于UI的自动化处理]]>
-              </value>
-            </param>
-            <param index="7">
-              <value is-null="true"/>
-            </param>
             <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
               <value>
                 <![CDATA[y]]>
               </value>
@@ -224,8 +224,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- queryFeedBackCase -->
-        <test-method status="PASS" signature="queryFeedBackCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest@c7c2a6]" name="queryFeedBackCase" duration-ms="2237" started-at="2019-06-06T17:03:32 CST" data-provider="queryFeedBackCaseData" finished-at="2019-06-06T17:03:34 CST">
+        </test-method> <!-- queryConclusionCase -->
+        <test-method status="PASS" signature="queryConclusionCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.iebm.ssm.testScripts.ConclusionAuditTest@9711b]" name="queryConclusionCase" duration-ms="3313" started-at="2019-06-06T19:56:54 CST" data-provider="getqueryConclusionCaseData" finished-at="2019-06-06T19:56:57 CST">
           <params>
             <param index="0">
               <value>
@@ -233,41 +233,38 @@
               </value>
             </param>
             <param index="1">
-              <value>
-                <![CDATA[冠状动脉粥样硬化性心脏病]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="2">
-              <value>
-                <![CDATA[2018-01-01]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="3">
-              <value>
-                <![CDATA[2019-03-15]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="4">
               <value>
-                <![CDATA[000000012171142]]>
+                <![CDATA[疑似违规]]>
               </value>
             </param>
             <param index="5">
-              <value>
-                <![CDATA[y]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="6">
               <value>
-                <![CDATA[基于UI的自动化处理]]>
+                <![CDATA[2020-03-15]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[C:\hsnet.log]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
               <value>
                 <![CDATA[y]]>
               </value>
@@ -275,8 +272,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- queryFeedBackCase -->
-        <test-method status="PASS" signature="queryFeedBackCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest@c7c2a6]" name="queryFeedBackCase" duration-ms="2359" started-at="2019-06-06T17:03:34 CST" data-provider="queryFeedBackCaseData" finished-at="2019-06-06T17:03:36 CST">
+        </test-method> <!-- queryConclusionCase -->
+        <test-method status="PASS" signature="queryConclusionCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.iebm.ssm.testScripts.ConclusionAuditTest@9711b]" name="queryConclusionCase" duration-ms="3273" started-at="2019-06-06T19:56:57 CST" data-provider="getqueryConclusionCaseData" finished-at="2019-06-06T19:57:01 CST">
           <params>
             <param index="0">
               <value>
@@ -284,39 +281,36 @@
               </value>
             </param>
             <param index="1">
-              <value>
-                <![CDATA[冠状动脉粥样硬化性心脏病]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="2">
-              <value>
-                <![CDATA[2018-01-01]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="3">
-              <value>
-                <![CDATA[2019-03-15]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="4">
-              <value>
-                <![CDATA[000000012091293]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="5">
-              <value>
-                <![CDATA[y]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="6">
               <value>
-                <![CDATA[基于UI的自动化处理]]>
+                <![CDATA[2020-03-15]]>
               </value>
             </param>
             <param index="7">
-              <value is-null="true"/>
+              <value>
+                <![CDATA[违规]]>
+              </value>
             </param>
             <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
               <value>
                 <![CDATA[y]]>
               </value>
@@ -324,8 +318,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- queryFeedBackCase -->
-        <test-method status="PASS" signature="queryFeedBackCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest@c7c2a6]" name="queryFeedBackCase" duration-ms="3663" started-at="2019-06-06T17:03:36 CST" data-provider="queryFeedBackCaseData" finished-at="2019-06-06T17:03:40 CST">
+        </test-method> <!-- queryConclusionCase -->
+        <test-method status="PASS" signature="queryConclusionCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.iebm.ssm.testScripts.ConclusionAuditTest@9711b]" name="queryConclusionCase" duration-ms="3332" started-at="2019-06-06T19:57:01 CST" data-provider="getqueryConclusionCaseData" finished-at="2019-06-06T19:57:04 CST">
           <params>
             <param index="0">
               <value>
@@ -333,39 +327,36 @@
               </value>
             </param>
             <param index="1">
-              <value>
-                <![CDATA[冠状动脉粥样硬化性心脏病]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="2">
-              <value>
-                <![CDATA[2018-01-01]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="3">
-              <value>
-                <![CDATA[2019-03-15]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="4">
+              <value is-null="true"/>
+            </param>
+            <param index="5">
+              <value is-null="true"/>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[2020-03-15]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[不违规]]>
+              </value>
+            </param>
+            <param index="8">
               <value>
                 <![CDATA[]]>
               </value>
             </param>
-            <param index="5">
-              <value>
-                <![CDATA[y]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[基于UI的自动化处理]]>
-              </value>
-            </param>
-            <param index="7">
-              <value is-null="true"/>
-            </param>
-            <param index="8">
+            <param index="9">
               <value>
                 <![CDATA[y]]>
               </value>
@@ -373,8 +364,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- queryFeedBackCase -->
-        <test-method status="PASS" signature="queryFeedBackCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest@c7c2a6]" name="queryFeedBackCase" duration-ms="2678" started-at="2019-06-06T17:03:40 CST" data-provider="queryFeedBackCaseData" finished-at="2019-06-06T17:03:43 CST">
+        </test-method> <!-- queryConclusionCase -->
+        <test-method status="PASS" signature="queryConclusionCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.iebm.ssm.testScripts.ConclusionAuditTest@9711b]" name="queryConclusionCase" duration-ms="3216" started-at="2019-06-06T19:57:04 CST" data-provider="getqueryConclusionCaseData" finished-at="2019-06-06T19:57:07 CST">
           <params>
             <param index="0">
               <value>
@@ -382,39 +373,36 @@
               </value>
             </param>
             <param index="1">
-              <value>
-                <![CDATA[冠状动脉粥样硬化性心脏病]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="2">
-              <value>
-                <![CDATA[2018-01-01]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="3">
-              <value>
-                <![CDATA[2019-03-15]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="4">
-              <value>
-                <![CDATA[000000012097945]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="5">
-              <value>
-                <![CDATA[y]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="6">
               <value>
-                <![CDATA[基于UI的自动化处理]]>
+                <![CDATA[2020-03-15]]>
               </value>
             </param>
             <param index="7">
-              <value is-null="true"/>
+              <value>
+                <![CDATA[]]>
+              </value>
             </param>
             <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
               <value>
                 <![CDATA[y]]>
               </value>
@@ -422,8 +410,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- queryFeedBackCase -->
-        <test-method status="PASS" signature="queryFeedBackCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest@c7c2a6]" name="queryFeedBackCase" duration-ms="2306" started-at="2019-06-06T17:03:43 CST" data-provider="queryFeedBackCaseData" finished-at="2019-06-06T17:03:45 CST">
+        </test-method> <!-- queryConclusionCase -->
+        <test-method status="PASS" signature="queryConclusionCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.iebm.ssm.testScripts.ConclusionAuditTest@9711b]" name="queryConclusionCase" duration-ms="3644" started-at="2019-06-06T19:57:07 CST" data-provider="getqueryConclusionCaseData" finished-at="2019-06-06T19:57:11 CST">
           <params>
             <param index="0">
               <value>
@@ -431,41 +419,36 @@
               </value>
             </param>
             <param index="1">
-              <value>
-                <![CDATA[冠状动脉粥样硬化性心脏病]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="2">
-              <value>
-                <![CDATA[2018-01-01]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="3">
-              <value>
-                <![CDATA[2019-03-15]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="4">
-              <value>
-                <![CDATA[000000012143444]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="5">
-              <value>
-                <![CDATA[y]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="6">
               <value>
-                <![CDATA[基于UI的自动化处理]]>
+                <![CDATA[2020-03-15]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[C:\hsnet.log]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="8">
+              <value>
+                <![CDATA[000000012143444]]>
+              </value>
+            </param>
+            <param index="9">
               <value>
                 <![CDATA[y]]>
               </value>
@@ -473,8 +456,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- queryFeedBackCase -->
-        <test-method status="PASS" signature="queryFeedBackCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest@c7c2a6]" name="queryFeedBackCase" duration-ms="2332" started-at="2019-06-06T17:03:45 CST" data-provider="queryFeedBackCaseData" finished-at="2019-06-06T17:03:47 CST">
+        </test-method> <!-- queryConclusionCase -->
+        <test-method status="PASS" signature="queryConclusionCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.iebm.ssm.testScripts.ConclusionAuditTest@9711b]" name="queryConclusionCase" duration-ms="3613" started-at="2019-06-06T19:57:11 CST" data-provider="getqueryConclusionCaseData" finished-at="2019-06-06T19:57:15 CST">
           <params>
             <param index="0">
               <value>
@@ -482,39 +465,36 @@
               </value>
             </param>
             <param index="1">
-              <value>
-                <![CDATA[冠状动脉粥样硬化性心脏病]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="2">
-              <value>
-                <![CDATA[2018-01-01]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="3">
-              <value>
-                <![CDATA[2019-03-15]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="4">
+              <value is-null="true"/>
+            </param>
+            <param index="5">
+              <value is-null="true"/>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[2020-03-15]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
               <value>
                 <![CDATA[000000012065775]]>
               </value>
             </param>
-            <param index="5">
-              <value>
-                <![CDATA[y]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[基于UI的自动化处理]]>
-              </value>
-            </param>
-            <param index="7">
-              <value is-null="true"/>
-            </param>
-            <param index="8">
+            <param index="9">
               <value>
                 <![CDATA[y]]>
               </value>
@@ -522,8 +502,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- queryFeedBackCase -->
-      </class> <!-- com.iebm.ssm.testScripts.HospitalDoubtFeedBackTest -->
-    </test> <!-- HospitalDoubtFeedBackTest -->
+        </test-method> <!-- queryConclusionCase -->
+      </class> <!-- com.iebm.ssm.testScripts.ConclusionAuditTest -->
+    </test> <!-- ConclusionAuditTest -->
   </suite> <!-- TestDependency -->
 </testng-results>

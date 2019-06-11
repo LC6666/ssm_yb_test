@@ -27,7 +27,7 @@ public class ExpertReviewTest {
     }
 
     @Test(testName = "queryReviewCase",priority = 1,enabled = true,dataProvider = "getqueryReviewCaseData")
-    public void queryReviewCase(String index,String hospital,String hospital_level,String disease,String illegalclass,String startdate,String enddate,String sicode,String accept,String remar,String enable) throws Exception {
-        expertReview_action.queryReviewCase(index,hospital,hospital_level,disease,illegalclass,startdate,enddate,sicode,accept,remar,enable);
+    public void queryReviewCase(String index,String hospital,String hospital_level,String disease,String illegalclass,String startdate,String enddate,String sicode,String accept,String remark,String enable) throws Exception {
+        expertReview_action.queryReviewCase(index,hospital,hospital_level,disease,illegalclass,startdate,enddate,sicode,accept,remark,enable);
     }
 }

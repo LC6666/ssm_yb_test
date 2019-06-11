@@ -66,6 +66,11 @@ public class ConclusionAuditPage {
         element = driver.findElement(objectmap.getLocator("illegalResult_select"));
         return element;
     }
+    public WebElement siCode_input() throws Exception{
+        element = driver.findElement(objectmap.getLocator("siCode_input"));
+        return element;
+    }
+
     public WebElement query_btn() throws Exception{
         element = driver.findElement(objectmap.getLocator("query_btn"));
         return element;

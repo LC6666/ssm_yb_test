@@ -68,6 +68,10 @@ public class BusinessAuditPage {
         return element;
     }
 
+    public WebElement siCode_input() throws Exception{
+        element = driver.findElement(objectmap.getLocator("siCode_input"));
+        return element;
+    }
 
     public WebElement query_btn() throws Exception{
         element = driver.findElement(objectmap.getLocator("query_btn"));
@@ -76,6 +80,11 @@ public class BusinessAuditPage {
 
     public WebElement reset_btn() throws Exception{
         element = driver.findElement(objectmap.getLocator("reset_btn"));
+        return element;
+    }
+
+    public WebElement firstTrial_btn() throws Exception{
+        element = driver.findElement(objectmap.getLocator("firstTrial_btn"));
         return element;
     }
 

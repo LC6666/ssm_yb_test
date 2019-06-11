@@ -32,8 +32,8 @@ public class ReviewSencondTest {
     }
 
     @Test(testName = "queryReviewCase",priority = 1,enabled = true,dataProvider = "getqueryReviewCaseData")
-    public void queryReviewCase(String index,String hospital,String hospital_level,String disease,String startdate,String enddate,String illegalClass,String sicode,String nextState,String remark,String enable) throws Exception {
-        reviewSencond_action.queryReviewCase(index,hospital,hospital_level,disease,startdate,enddate,illegalClass,sicode,nextState,remark,enable);
+    public void queryReviewCase(String index, String hospital, String hospital_level, String disease, String startdate, String enddate, String illegalClass, String siCode, String nextState, String remark, String enable) throws Exception {
+        reviewSencond_action.queryReviewCase(index, hospital, hospital_level, disease, startdate, enddate, illegalClass, siCode, nextState, remark, enable);
     }
 
 }
