@@ -1,9 +1,12 @@
 package com.iebm.ssm.testScripts;
 
 import com.iebm.ssm.appModules.HospitalDoubtFeedBack_Action;
+import com.iebm.ssm.util.TestDataDrivenByExcelFile;
 import com.iebm.ssm.util.TestDataDrivenByMysql;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 
 /**
  * 医院疑似违规病例反馈
@@ -16,9 +19,14 @@ public class HospitalDoubtFeedBackTest {
 
     public HospitalDoubtFeedBack_Action hospitalDoubtFeedBack_action;
 
-    @DataProvider(name = "queryFeedBackCaseData")
-    public Object[][] queryFeedBackCaseData() throws ClassNotFoundException {
+    @DataProvider(name = "queryFeedBackCaseDataFromMysql")
+    public Object[][] queryFeedBackCaseDataFromMysql() throws ClassNotFoundException {
         return TestDataDrivenByMysql.getTestData("hospitaldoubtfeedback_test");
+    }
+
+    @DataProvider(name="queryFeedBackCaseDataFromExcel")
+    public Object[][] queryFeedBackCaseDataFromExcel() throws ClassNotFoundException, IOException {
+        return TestDataDrivenByExcelFile.getDataFromXlxs("./resource","test_data.xlsx","医院疑似违规病例反馈" );
     }
 
     /**
@@ -44,7 +52,7 @@ public class HospitalDoubtFeedBackTest {
      * @param enable
      * @throws Exception
      */
-    @Test(testName="queryFeedBackCase",priority = 1,enabled = true,dataProvider = "queryFeedBackCaseData")
+    @Test(testName="queryFeedBackCase",priority = 1,enabled = true,dataProvider = "queryFeedBackCaseDataFromExcel")
     public void queryFeedBackCase(String index,String diseasename,String startdate,String enddate,String sicode,String accpet,String remark,String filepath,String enable) throws Exception {
         hospitalDoubtFeedBack_action.queryFeedBackCase(index,diseasename,startdate,enddate,sicode,accpet,remark,filepath,enable);
 

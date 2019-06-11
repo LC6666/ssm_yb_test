@@ -26,6 +26,7 @@ public class HospitalFeedBack_Action {
 
     public void openPage() throws Exception {
         page.nav().click();
+        Thread.sleep(500);
         page.title().click();
     }
 
@@ -96,36 +97,30 @@ public class HospitalFeedBack_Action {
     public void queryCaseFeedBack2(String index, String diseasename, String startdate, String enddate, String sicode, String accpet, String remark, String filepath, String enable) throws Exception {
         if (enable.equals("y")) {
             page.reset_btn().click();
-            String diseasename_input_val = null;
-            String startdata_input_val = null;
-            String enddata_input_val = null;
-            String sicode_input_val = null;
+
             if (diseasename != null && !diseasename.equals("")) {
                 page.disease_img().click();
                 Thread.sleep(300);
                 DiseaseSelect_Action diseaseSelect_action = new DiseaseSelect_Action();
                 diseaseSelect_action.finddisease(diseasename);
-                diseasename_input_val = diseasename;
+
             }
             if (startdate != null && !startdate.equals("")) {
                 UpdateAttribute.removeAttribute(Constant.driver, page.startdate_input(), "readonly");
                 page.startdate_input().clear();
                 page.startdate_input().sendKeys(startdate);
-                startdata_input_val = startdate;
             }
             if (enddate != null && !enddate.equals("")) {
                 UpdateAttribute.removeAttribute(Constant.driver, page.enddate_input(), "readonly");
                 page.enddate_input().clear();
                 page.enddate_input().sendKeys(enddate);
-                enddata_input_val = enddate;
             }
             if (sicode != null && !sicode.equals("")) {
                 page.sicode_input().sendKeys(sicode);
-                sicode_input_val = sicode;
             }
             page.query_btn().click();
+            Thread.sleep(3000);
 
-            Thread.sleep(500);
 
             int rowNum = 1;
 //          遍历查询结果
@@ -133,7 +128,7 @@ public class HospitalFeedBack_Action {
             String totalpageNo = pageInfo.getTotalPageNo();
             if (!totalpageNo.equals("0")) {
 
-                if (sicode_input_val != null) {
+                if (sicode != null && !sicode.equals("")) {
                     //      根据sicode查找病例,遍历分页
                     String totalPageNo = pageInfo.getTotalPageNo();
 
@@ -167,8 +162,6 @@ public class HospitalFeedBack_Action {
                     Table table = new Table(page.resultlist_table());
                     table.getCell(rowNum, 3).click();
                     page.feedBack_btn().click();
-//                Actions builder = new Actions(Constant.driver);
-//                builder.doubleClick(table.getRow(rowNum));
                     Thread.sleep(500);
                     if (accpet.equals("y")) {
                         page.accept_btn().click();
@@ -183,9 +176,7 @@ public class HospitalFeedBack_Action {
 
                     if (filepath != null && !filepath.equals("")) {
                         Constant.driver.switchTo().frame("frm_img_2");
-//                    page.fileupload_btn().click();
                         page.fileupload_btn().sendKeys(filepath);
-//                    page.fileupload_btn().sendKeys(filepath);
                         Constant.driver.switchTo().defaultContent();
                     }
 //                Thread.sleep(1000);
@@ -195,6 +186,7 @@ public class HospitalFeedBack_Action {
                     page.confirm_y_btn().click();
                     Thread.sleep(500);
                     page.tips_btn().click();
+                    Thread.sleep(1000);
 //                关闭
 //                page.close_btn().click();
 

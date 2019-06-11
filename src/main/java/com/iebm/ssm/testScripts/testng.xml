@@ -143,7 +143,7 @@
     </test>
 
     <!--疑点审核 疑点结论-->
-    <test name="ConclusionAuditTest" enabled="true">
+    <test name="ConclusionAuditTest" enabled="false">
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>
@@ -155,7 +155,7 @@
     </test>
 
     <!--疑点审核 流程-->
-    <test name="ConclusionAuditTest" enabled="false">
+    <test name="ConclusionAuditTest" enabled="true">
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>

@@ -22,6 +22,7 @@ public class ReviewFirst_Action {
 
     public void openPage() throws Exception {
         page.nav().click();
+        Thread.sleep(500);
         page.title().click();
         Thread.sleep(500);
     }

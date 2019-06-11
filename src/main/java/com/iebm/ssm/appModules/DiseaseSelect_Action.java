@@ -25,6 +25,7 @@ public class DiseaseSelect_Action {
         Actions builder = new Actions(Constant.driver);
         page.diseasename_input().sendKeys(diseasename);
         page.diseasequery_btn().click();
+        Thread.sleep(500);
         Table table = new Table(page.diseaselist());
         int rowCount = table.getRowCount();
         for (int i = 1; i < rowCount; i++) {
