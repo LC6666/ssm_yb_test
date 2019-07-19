@@ -50,11 +50,11 @@ public class DiseaseSelect {
                             }
                         }
                     }
-                    System.out.println("就诊编号【"+code+"】"+disease+"查询不到");
+                    System.out.println("就诊编号【"+code+"】"+"疾病【"+disease+"】查询不到");
 
                 }
             }else{
-                System.out.println("疾病【"+disease+"】查询有异常！");
+                System.out.println("就诊编号【"+code+"】"+"疾病【"+disease+"】查询有异常！");
                 return;
 
             }

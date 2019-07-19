@@ -47,7 +47,7 @@ public class YiDianChaXun {
     public int getTotalPages() throws IOException, ClassNotFoundException, URISyntaxException {
 
 //        获取分页信息
-        String url = Constant.url + "/app/illegalMedical/illegalMedicalAllotAction.action?method=queryAll";
+        String url = Constant.url + "/app/illegalMedical/illegalMedicalAllotAction.action?method=queryAllRecord";
         List<NameValuePair> nameValuePairList = Lists.newArrayList();
         nameValuePairList.add(new BasicNameValuePair("institutionName",""));
         nameValuePairList.add(new BasicNameValuePair("institutionId",""));
@@ -77,7 +77,7 @@ public class YiDianChaXun {
      * @throws ClassNotFoundException
      */
     public void queryYiD(int totalPages) throws IOException, URISyntaxException, ClassNotFoundException {
-        String url = Constant.url + "/app/illegalMedical/illegalMedicalAllotAction.action?method=queryAll";
+        String url = Constant.url + "/app/illegalMedical/illegalMedicalAllotAction.action?method=queryAllRecord";
         BigDecimal total_illegeFee = BigDecimal.ZERO;
 
 //		==================================================================
@@ -87,7 +87,7 @@ public class YiDianChaXun {
             pageParamValuePairList.add(new BasicNameValuePair("currentPage",String.valueOf(i)));
             pageParamValuePairList.add(new BasicNameValuePair("pageRecords","200"));
             pageParamValuePairList.add(new BasicNameValuePair("orderInfo","-1,asc"));
-            pageParamValuePairList.add(new BasicNameValuePair("gridbox","app.suspicion.doubtful.query.grid"));
+            pageParamValuePairList.add(new BasicNameValuePair("gridbox","app.suspicion.allrecord.query.grid"));
             pageParamValuePairList.add(new BasicNameValuePair("title",""));
             pageParamValuePairList.add(new BasicNameValuePair("institutionName",""));
             pageParamValuePairList.add(new BasicNameValuePair("institutionId",""));
@@ -103,17 +103,20 @@ public class YiDianChaXun {
             pageParamValuePairList.add(new BasicNameValuePair("ruleNum",""));
             pageParamValuePairList.add(new BasicNameValuePair("undefined",""));
             String PageResponse = DoRequest.dopost(url, pageParamValuePairList,MyCookieStore.readCookieStore("cookie"));
+
             if(JsonUtil.isJson(PageResponse)){
                 JsonNode rows = new ObjectMapper().readTree(PageResponse).get("rows");
                 if (rows.isArray()) {
                     for (JsonNode row : rows) {
                         JsonNode data = row.get("data");
+//                        System.out.println(data);
+//                        /*
                         String index = data.get(0).asText();
-//                        System.out.println(index);
                         String id = data.get(2).asText();
                         String code = data.get(3).asText();
                         String disease = data.get(7).asText();
-                        String hospital = data.get(6).asText();
+//                        String hospital = data.get(6).asText();
+                        String hospital = data.get(5).asText();
                         String illegalFee_str = data.get(10).asText();
                         Map info_map = new HashMap();
                         info_map.put("index", index);
@@ -125,18 +128,17 @@ public class YiDianChaXun {
                         info_map.put("illegalInfo_id",row.get("id").asText());
 //                        ======================================================================================================================
 //                        计算年度病例违规费用
-                        BigDecimal illegeFee = new BigDecimal(illegalFee_str);
+//                        BigDecimal illegeFee = new BigDecimal(illegalFee_str);
 //                        total_illegeFee = total_illegeFee.add(illegeFee);
 //                        System.out.println("【"+index+"】【"+id+"】当前病例【"+code+"】违规费用="+illegeFee+"  当前所有病例违规费用总和="+total_illegeFee);
 //                        ======================================================================================================================
 
-
 //                        ======================================================================================================================
 //                        病种查询
-                        diseaseSelect.FindDisease(info_map);
+//                        diseaseSelect.FindDisease(info_map);
 
 //                        医院查询
-//                        hospitalSelect.FindHospital(info_map);
+                          hospitalSelect.FindHospital(info_map);
 //                        ======================================================================================================================
 
 //                         病例详情分析
