@@ -1,24 +1,12 @@
 package com.iebm.ssm.urlClient;
 
-import com.google.common.collect.Lists;
-import com.iebm.ssm.testScripts.LoginTest;
+
 import com.iebm.ssm.util.Constant;
 import org.apache.http.*;
-import org.apache.http.client.CookieStore;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.*;
-import org.apache.http.client.protocol.HttpClientContext;
-import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.message.BasicHeader;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
+import org.testng.collections.Lists;
 
 import java.io.*;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 

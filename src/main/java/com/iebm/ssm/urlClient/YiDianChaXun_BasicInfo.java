@@ -1,11 +1,15 @@
 package com.iebm.ssm.urlClient;
 
-import com.google.common.collect.Lists;
+import org.testng.collections.Lists;
 import com.iebm.ssm.util.Constant;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -58,10 +62,16 @@ public class YiDianChaXun_BasicInfo {
                 .attr("value").replace(",", "");
         treatmentFee_str = doc.getElementById("app.common.diagnosis.basicInfo.form0.treatmentFee")
                 .attr("value").replace(",", "");
+
         otherFee_str = doc.getElementById("app.common.diagnosis.basicInfo.form0.otherFee").attr("value").replace(",", "");
         ownExpense_str = doc.getElementById("app.common.diagnosis.basicInfo.form0.ownExpense").attr("value").replace(",", "");
         initialIllegalFee_str = doc.getElementById("app.common.diagnosis.basicInfo.form0.initialIllegalFee").attr("value").replace(",", "");
 
+        Elements titles = doc.getElementsByClass("layout_win_title");
+        for (Element title : titles)
+        {
+            System.out.println("title : " + title.text());
+        }
 
         drugFee = drugFee_str.equals("") ? drugFee : new BigDecimal(drugFee_str);
         inspectionFee = inspectionFee_str.equals("") ? inspectionFee: new BigDecimal(inspectionFee_str);

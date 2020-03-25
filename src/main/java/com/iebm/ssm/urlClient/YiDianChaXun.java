@@ -2,11 +2,12 @@ package com.iebm.ssm.urlClient;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.common.collect.Lists;
+
 import com.iebm.ssm.util.Constant;
 import com.iebm.ssm.util.JsonUtil;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.testng.collections.Lists;
 
 import java.io.*;
 import java.math.BigDecimal;

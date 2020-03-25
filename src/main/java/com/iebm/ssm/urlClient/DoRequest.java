@@ -1,6 +1,6 @@
 package com.iebm.ssm.urlClient;
 
-import com.google.common.collect.Lists;
+import org.testng.collections.Lists;
 import org.apache.http.*;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.HttpClient;
