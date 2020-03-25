@@ -13,7 +13,7 @@ public class Constant {
 //    public static final String url = "http://192.168.29.185:1855";
 //    public static final String url = "http://192.168.29.185:1851";
 //    public static final String url = "http://192.168.29.185:1854";
-    public static final String url = "http://192.168.29.223:18080/";
+    public static final String url = "http://192.168.29.240:18090/";
 //    public static final String url = "http://192.168.29.127:8088/ssm_web";
 
     public static final String loginUsername = "ssm";

@@ -50,6 +50,7 @@ public class HospitalSelect_Action {
             page.hospitalname_input().clear();
             page.hospitalname_input().sendKeys(hospitalname);
             page.hospitalquery_btn().click();
+            Thread.sleep(300);
             Table table = new Table(page.hospitallist());
             int rowCount = table.getRowCount();
             for (int i = 1; i < rowCount; i++) {

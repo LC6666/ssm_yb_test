@@ -50,7 +50,8 @@ public class ReviewFirst_Action {
                 page.hospital_img().click();
                 Thread.sleep(300);
                 HospitalSelect_Action hospitalSelect_action = new HospitalSelect_Action();
-                hospitalSelect_action.findHospital(hospital);
+//                hospitalSelect_action.findHospital(hospital);
+                hospitalSelect_action.isFindHospital(hospital);
 
             }
             if(hospital_level!=null&&!hospital_level.equals("")){
