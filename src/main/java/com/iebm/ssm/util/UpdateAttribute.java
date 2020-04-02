@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 
 /*
  *TODO
+ *	更改控件属性
  *LC
  *下午5:20:42
  */
