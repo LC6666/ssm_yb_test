@@ -1,2 +1,4 @@
 /target/
 /ssm_yb_test.iml
+.classpath
+.settings/
