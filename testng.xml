@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-
-<suite name="TestDependency">
-
-    <!--系统登录-->
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">  
+  <!--系统登录-->
     <test name="datadriverlogin" enabled="false" >
-
         <classes>
             <class name="com.iebm.ssm.testScripts.DataDriverLoginTest"></class>
         </classes>
-
     </test>
 
     <!--病例查询-->
@@ -22,15 +18,11 @@
             </class>
             <class name="com.iebm.ssm.testScripts.CaseQueryTest"></class>
         </classes>
-
     </test>
-
-
 
     <!--疑点查询-->
     <test name="QueryDoubtfulTest" enabled="false">
         <classes>
-
             <!--<class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>
                     <include name="guestLogin"/>
@@ -56,7 +48,6 @@
             <class name="com.iebm.ssm.testScripts.UserConfigTest"></class>
         </classes>
     </test>
-
     <!--规则列表-->
     <test name="RuleListTest" enabled="false">
         <classes>
@@ -91,9 +82,8 @@
 <!--             <class name="com.iebm.ssm.testScripts.BusinessAuditTest"></class> -->
 <!--             疑点审核 疑点结论 -->
 <!--             <class name="com.iebm.ssm.testScripts.ConclusionAuditTest"></class> -->
-            
         </classes>
     </test>
 
-
-</suite>
+  
+</suite> <!-- Suite -->

@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="14" passed="12">
+<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="TestDependency" duration-ms="17914" started-at="2020-03-25T08:48:09Z" finished-at="2020-03-25T08:48:27Z">
+  <suite name="Suite" duration-ms="316" started-at="2020-04-14T08:12:54Z" finished-at="2020-04-14T08:12:54Z">
     <groups>
     </groups>
-    <test name="ConclusionAuditTest" duration-ms="17914" started-at="2020-03-25T08:48:09Z" finished-at="2020-03-25T08:48:27Z">
-      <class name="com.iebm.ssm.testScripts.LoginTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.iebm.ssm.testScripts.LoginTest@1686d1f]" name="beforeTest" is-config="true" duration-ms="3699" started-at="2020-03-25T08:48:09Z" finished-at="2020-03-25T08:48:13Z">
+    <test name="Test" duration-ms="316" started-at="2020-04-14T08:12:54Z" finished-at="2020-04-14T08:12:54Z">
+      <class name="com.iebm.ssm.test.TestNGDemo">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="beforeSuite" is-config="true" duration-ms="12" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="BeforeSuite()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="BeforeSuite" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeSuite -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="beforeTest" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="guestLogin()[pri:0, instance:com.iebm.ssm.testScripts.LoginTest@1686d1f]" name="guestLogin" duration-ms="3343" started-at="2020-03-25T08:48:13Z" finished-at="2020-03-25T08:48:16Z">
+        <test-method status="PASS" signature="BeforeTest()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="BeforeTest" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- guestLogin -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.iebm.ssm.testScripts.LoginTest@1686d1f]" name="afterSuite" is-config="true" duration-ms="0" started-at="2020-03-25T08:48:27Z" finished-at="2020-03-25T08:48:27Z">
+        </test-method> <!-- BeforeTest -->
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="beforeClass" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterSuite -->
-      </class> <!-- com.iebm.ssm.testScripts.LoginTest -->
-      <class name="com.iebm.ssm.testScripts.ReviewFirstTest">
-        <test-method status="PASS" signature="openPage()[pri:0, instance:com.iebm.ssm.testScripts.ReviewFirstTest@1ee9989]" name="openPage" duration-ms="1173" started-at="2020-03-25T08:48:16Z" finished-at="2020-03-25T08:48:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openPage -->
-        <test-method status="PASS" signature="queryReviewCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.ReviewFirstTest@1ee9989]" name="queryReviewCase" duration-ms="1821" started-at="2020-03-25T08:48:18Z" data-provider="queryReviewCaseDataFromMysql" finished-at="2020-03-25T08:48:19Z">
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="f(java.lang.Integer, java.lang.String)[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="f" duration-ms="1" started-at="2020-04-14T16:12:54Z" data-provider="dp" finished-at="2020-04-14T16:12:54Z">
           <params>
             <param index="0">
               <value>
@@ -34,59 +36,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[妇幼保健院]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2019-01-01]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[2019-05-30]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[医院疑似违规病例反馈]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[基于UI的自动处理]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[y]]>
+                <![CDATA[a]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- queryReviewCase -->
-        <test-method status="PASS" signature="queryReviewCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.ReviewFirstTest@1ee9989]" name="queryReviewCase" duration-ms="733" started-at="2020-03-25T08:48:19Z" data-provider="queryReviewCaseDataFromMysql" finished-at="2020-03-25T08:48:20Z">
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="f(java.lang.Integer, java.lang.String)[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="f" duration-ms="1" started-at="2020-04-14T16:12:54Z" data-provider="dp" finished-at="2020-04-14T16:12:54Z">
           <params>
             <param index="0">
               <value>
@@ -95,547 +56,141 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[三级]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2019-01-01]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[2019-05-30]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[结案]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[基于UI的自动处理]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[y]]>
+                <![CDATA[b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- queryReviewCase -->
-        <test-method status="PASS" signature="queryReviewCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.ReviewFirstTest@1ee9989]" name="queryReviewCase" duration-ms="1914" started-at="2020-03-25T08:48:20Z" data-provider="queryReviewCaseDataFromMysql" finished-at="2020-03-25T08:48:22Z">
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="f2(java.lang.String)[pri:1, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="f2" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[3]]>
+                <![CDATA[no parameters]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f2 -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="AfterTest()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="AfterTest" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterTest -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="afterSuite" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+        <test-method status="PASS" signature="AfterSuite()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="AfterSuite" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterSuite -->
+      </class> <!-- com.iebm.ssm.test.TestNGDemo -->
+      <class name="com.iebm.ssm.test.JsonTest">
+        <test-method status="PASS" signature="f()[pri:0, instance:com.iebm.ssm.test.JsonTest@1fffcd7]" name="f" duration-ms="269" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+      </class> <!-- com.iebm.ssm.test.JsonTest -->
+      <class name="com.iebm.ssm.test.TestNGDemo1">
+        <test-method status="PASS" signature="BeforeClass()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="BeforeClass" is-config="true" duration-ms="1" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeClass -->
+        <test-method status="PASS" signature="BeforeMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="BeforeMethod" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeMethod -->
+        <test-method status="PASS" signature="Test1()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="Test1" duration-ms="4" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test1 -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="AfterMethod" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="BeforeMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="BeforeMethod" is-config="true" duration-ms="1" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeMethod -->
+        <test-method status="PASS" signature="Test2(java.lang.String, java.lang.String)[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="Test2" duration-ms="1" started-at="2020-04-14T16:12:54Z" data-provider="dataProvider" finished-at="2020-04-14T16:12:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[user]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[原发性高血压]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2019-01-01]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[2019-05-30]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[结案]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[基于UI的自动处理]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[y]]>
+                <![CDATA[user]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- queryReviewCase -->
-        <test-method status="PASS" signature="queryReviewCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.ReviewFirstTest@1ee9989]" name="queryReviewCase" duration-ms="666" started-at="2020-03-25T08:48:22Z" data-provider="queryReviewCaseDataFromMysql" finished-at="2020-03-25T08:48:23Z">
+        </test-method> <!-- Test2 -->
+        <test-method status="PASS" signature="BeforeMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="BeforeMethod" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeMethod -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="AfterMethod" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="Test2(java.lang.String, java.lang.String)[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="Test2" duration-ms="1" started-at="2020-04-14T16:12:54Z" data-provider="dataProvider" finished-at="2020-04-14T16:12:54Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[4]]>
+                <![CDATA[admin]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2019-01-01]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[2019-05-30]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[医院疑似违规病例反馈]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[基于UI的自动处理]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[y]]>
+                <![CDATA[admin]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- queryReviewCase -->
-        <test-method status="PASS" signature="queryReviewCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.ReviewFirstTest@1ee9989]" name="queryReviewCase" duration-ms="731" started-at="2020-03-25T08:48:23Z" data-provider="queryReviewCaseDataFromMysql" finished-at="2020-03-25T08:48:23Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2019-01-01]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[2019-05-30]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[违规]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[结案]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[基于UI的自动处理]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[y]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- Test2 -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="AfterMethod" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- queryReviewCase -->
-        <test-method status="PASS" signature="queryReviewCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.ReviewFirstTest@1ee9989]" name="queryReviewCase" duration-ms="845" started-at="2020-03-25T08:48:23Z" data-provider="queryReviewCaseDataFromMysql" finished-at="2020-03-25T08:48:24Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[6]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2019-01-01]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[2019-05-30]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[201905071530110009-100003]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[结案]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[基于UI的自动处理]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[y]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="AfterClass()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="AfterClass" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- queryReviewCase -->
-        <test-method status="PASS" signature="queryReviewCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.ReviewFirstTest@1ee9989]" name="queryReviewCase" duration-ms="663" started-at="2020-03-25T08:48:24Z" data-provider="queryReviewCaseDataFromMysql" finished-at="2020-03-25T08:48:25Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[7]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2019-01-01]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[2019-05-30]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[结案]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[基于UI的自动处理]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[y]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- queryReviewCase -->
-        <test-method status="PASS" signature="queryReviewCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.ReviewFirstTest@1ee9989]" name="queryReviewCase" duration-ms="643" started-at="2020-03-25T08:48:25Z" data-provider="queryReviewCaseDataFromMysql" finished-at="2020-03-25T08:48:26Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[8]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2019-01-01]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[2019-05-30]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[医院疑似违规病例反馈]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[基于UI的自动处理]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[y]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- queryReviewCase -->
-        <test-method status="PASS" signature="queryReviewCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.ReviewFirstTest@1ee9989]" name="queryReviewCase" duration-ms="724" started-at="2020-03-25T08:48:26Z" data-provider="queryReviewCaseDataFromMysql" finished-at="2020-03-25T08:48:26Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[9]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2019-01-01]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[2019-05-30]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[疑似违规]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[结案]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[基于UI的自动处理]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[y]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- queryReviewCase -->
-        <test-method status="PASS" signature="queryReviewCase(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.iebm.ssm.testScripts.ReviewFirstTest@1ee9989]" name="queryReviewCase" duration-ms="672" started-at="2020-03-25T08:48:26Z" data-provider="queryReviewCaseDataFromMysql" finished-at="2020-03-25T08:48:27Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2019-01-01]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[2019-05-30]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[医院疑似违规病例反馈]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[基于UI的自动处理]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[y]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- queryReviewCase -->
-      </class> <!-- com.iebm.ssm.testScripts.ReviewFirstTest -->
-    </test> <!-- ConclusionAuditTest -->
-  </suite> <!-- TestDependency -->
+        </test-method> <!-- AfterClass -->
+      </class> <!-- com.iebm.ssm.test.TestNGDemo1 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
