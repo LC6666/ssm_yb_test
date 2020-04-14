@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">  
+	<parameter name="testparameters" value="testparameters"></parameter>
+	<test name="testngtest">
+		<classes>
+			<class name="com.iebm.ssm.test.TestNGDemo" ></class>
+		</classes>
+	</test>
+
   <!--系统登录-->
     <test name="datadriverlogin" enabled="false" >
         <classes>
@@ -61,7 +68,7 @@
     </test>
     
     <!--疑点审核 流程-->
-    <test name="ConclusionAuditTest" enabled="true">
+    <test name="ConclusionAuditTest" enabled="false">
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>
