@@ -2,6 +2,8 @@ package com.iebm.ssm.urlClient;
 
 
 import com.iebm.ssm.util.Constant;
+import com.iebm.ssm.util.MyCookieStore;
+
 import org.apache.http.*;
 import org.apache.http.message.BasicNameValuePair;
 import org.testng.collections.Lists;

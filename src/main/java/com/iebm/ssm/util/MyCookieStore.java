@@ -1,4 +1,4 @@
-package com.iebm.ssm.urlClient;
+package com.iebm.ssm.util;
 
 import org.apache.http.client.CookieStore;
 

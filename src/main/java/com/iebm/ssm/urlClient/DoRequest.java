@@ -1,6 +1,9 @@
 package com.iebm.ssm.urlClient;
 
 import org.testng.collections.Lists;
+
+import com.iebm.ssm.util.MyCookieStore;
+
 import org.apache.http.*;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.HttpClient;

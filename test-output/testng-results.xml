@@ -1,33 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="316" started-at="2020-04-14T08:12:54Z" finished-at="2020-04-14T08:12:54Z">
+  <suite name="Suite" duration-ms="40" started-at="2020-04-14T09:15:42Z" finished-at="2020-04-14T09:15:42Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="316" started-at="2020-04-14T08:12:54Z" finished-at="2020-04-14T08:12:54Z">
+    <test name="testngtest" duration-ms="40" started-at="2020-04-14T09:15:42Z" finished-at="2020-04-14T09:15:42Z">
       <class name="com.iebm.ssm.test.TestNGDemo">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="beforeSuite" is-config="true" duration-ms="12" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="beforeSuite" is-config="true" duration-ms="11" started-at="2020-04-14T17:15:42Z" finished-at="2020-04-14T17:15:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="BeforeSuite()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="BeforeSuite" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BeforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="beforeTest" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="beforeTest" is-config="true" duration-ms="0" started-at="2020-04-14T17:15:42Z" finished-at="2020-04-14T17:15:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="BeforeTest()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="BeforeTest" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BeforeTest -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="beforeClass" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="beforeClass" is-config="true" duration-ms="0" started-at="2020-04-14T17:15:42Z" finished-at="2020-04-14T17:15:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="f(java.lang.Integer, java.lang.String)[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="f" duration-ms="1" started-at="2020-04-14T16:12:54Z" data-provider="dp" finished-at="2020-04-14T16:12:54Z">
+        <test-method status="PASS" signature="f(java.lang.Integer, java.lang.String)[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="f" duration-ms="4" started-at="2020-04-14T17:15:42Z" data-provider="dp" finished-at="2020-04-14T17:15:42Z">
           <params>
             <param index="0">
               <value>
@@ -43,11 +35,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-04-14T17:15:42Z" finished-at="2020-04-14T17:15:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="f(java.lang.Integer, java.lang.String)[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="f" duration-ms="1" started-at="2020-04-14T16:12:54Z" data-provider="dp" finished-at="2020-04-14T16:12:54Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-04-14T17:15:42Z" finished-at="2020-04-14T17:15:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="f(java.lang.Integer, java.lang.String)[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="f" duration-ms="1" started-at="2020-04-14T17:15:42Z" data-provider="dp" finished-at="2020-04-14T17:15:42Z">
           <params>
             <param index="0">
               <value>
@@ -63,134 +59,46 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-04-14T17:15:42Z" finished-at="2020-04-14T17:15:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-04-14T17:15:42Z" finished-at="2020-04-14T17:15:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="f2(java.lang.String)[pri:1, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="f2" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+        <test-method status="PASS" signature="f2(java.lang.String)[pri:1, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="f2" duration-ms="1" started-at="2020-04-14T17:15:42Z" finished-at="2020-04-14T17:15:42Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[no parameters]]>
+                <![CDATA[case/api-data.xls]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-04-14T17:15:42Z" finished-at="2020-04-14T17:15:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-04-14T17:15:42Z" finished-at="2020-04-14T17:15:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="AfterTest()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="AfterTest" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterTest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-04-14T17:15:42Z" finished-at="2020-04-14T17:15:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="afterSuite" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-04-14T17:15:42Z" finished-at="2020-04-14T17:15:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.iebm.ssm.test.TestNGDemo@bbfa04]" name="afterSuite" is-config="true" duration-ms="0" started-at="2020-04-14T17:15:42Z" finished-at="2020-04-14T17:15:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-        <test-method status="PASS" signature="AfterSuite()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="AfterSuite" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterSuite -->
       </class> <!-- com.iebm.ssm.test.TestNGDemo -->
-      <class name="com.iebm.ssm.test.JsonTest">
-        <test-method status="PASS" signature="f()[pri:0, instance:com.iebm.ssm.test.JsonTest@1fffcd7]" name="f" duration-ms="269" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- f -->
-      </class> <!-- com.iebm.ssm.test.JsonTest -->
-      <class name="com.iebm.ssm.test.TestNGDemo1">
-        <test-method status="PASS" signature="BeforeClass()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="BeforeClass" is-config="true" duration-ms="1" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BeforeClass -->
-        <test-method status="PASS" signature="BeforeMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="BeforeMethod" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BeforeMethod -->
-        <test-method status="PASS" signature="Test1()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="Test1" duration-ms="4" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test1 -->
-        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="AfterMethod" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterMethod -->
-        <test-method status="PASS" signature="BeforeMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="BeforeMethod" is-config="true" duration-ms="1" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BeforeMethod -->
-        <test-method status="PASS" signature="Test2(java.lang.String, java.lang.String)[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="Test2" duration-ms="1" started-at="2020-04-14T16:12:54Z" data-provider="dataProvider" finished-at="2020-04-14T16:12:54Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[user]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[user]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test2 -->
-        <test-method status="PASS" signature="BeforeMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="BeforeMethod" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BeforeMethod -->
-        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="AfterMethod" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterMethod -->
-        <test-method status="PASS" signature="Test2(java.lang.String, java.lang.String)[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="Test2" duration-ms="1" started-at="2020-04-14T16:12:54Z" data-provider="dataProvider" finished-at="2020-04-14T16:12:54Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test2 -->
-        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="AfterMethod" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterMethod -->
-        <test-method status="PASS" signature="AfterClass()[pri:0, instance:com.iebm.ssm.test.TestNGDemo1@19963d8]" name="AfterClass" is-config="true" duration-ms="0" started-at="2020-04-14T16:12:54Z" finished-at="2020-04-14T16:12:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterClass -->
-      </class> <!-- com.iebm.ssm.test.TestNGDemo1 -->
-    </test> <!-- Test -->
+    </test> <!-- testngtest -->
   </suite> <!-- Suite -->
 </testng-results>

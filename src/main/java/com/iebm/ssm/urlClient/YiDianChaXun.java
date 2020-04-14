@@ -5,6 +5,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.iebm.ssm.util.Constant;
 import com.iebm.ssm.util.JsonUtil;
+import com.iebm.ssm.util.MyCookieStore;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.testng.collections.Lists;
