@@ -9,7 +9,7 @@ import java.util.List;
 public class RuleListPage {
 
     private WebElement element = null;
-    private ObjectMap objectmap = new ObjectMap("./resource/ruleListPageMap.properties");
+    private ObjectMap objectmap = new ObjectMap("ruleListPageMap.properties");
     private WebDriver driver;
 
     public RuleListPage(WebDriver driver){

@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
 
 public class BusinessAuditPage {
     private WebElement element = null;
-    private ObjectMap objectmap = new ObjectMap("./resource/businessAuditPageMap.properties");
+    private ObjectMap objectmap = new ObjectMap("businessAuditPageMap.properties");
     private WebDriver driver;
 
     public BusinessAuditPage(WebDriver driver) throws Exception {

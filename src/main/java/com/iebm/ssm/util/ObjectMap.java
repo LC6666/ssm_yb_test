@@ -2,6 +2,7 @@ package com.iebm.ssm.util;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 import org.jsoup.Jsoup;
@@ -23,7 +24,9 @@ public class ObjectMap {
         properties = new Properties();
 
         try {
-            FileInputStream in = new FileInputStream(propFile);
+        	String propfile = Paths.get(System.getProperty("user.dir"), "resource/"+propFile).toString();
+        	FileInputStream in = new FileInputStream(propfile);
+//            FileInputStream in = new FileInputStream(propFile);
             properties.load(in);
             in.close();
         } catch (IOException e) {

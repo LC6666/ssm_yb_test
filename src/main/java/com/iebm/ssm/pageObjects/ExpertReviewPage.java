@@ -13,7 +13,7 @@ import org.openqa.selenium.WebElement;
 public class ExpertReviewPage {
 
     private WebElement element = null;
-    private ObjectMap objectmap = new ObjectMap("./resource/expertReviewPageMap.properties");
+    private ObjectMap objectmap = new ObjectMap("expertReviewPageMap.properties");
     private WebDriver driver;
 
     public ExpertReviewPage(WebDriver driver){

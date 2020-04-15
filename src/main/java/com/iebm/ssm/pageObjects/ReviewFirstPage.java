@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
 
 public class ReviewFirstPage {
     private WebElement element = null;
-    private ObjectMap objectmap = new ObjectMap("./resource/reviewFirstPageMap.properties");
+    private ObjectMap objectmap = new ObjectMap("reviewFirstPageMap.properties");
     private WebDriver driver;
 
     public ReviewFirstPage(WebDriver driver) {

@@ -9,7 +9,7 @@ import java.util.List;
 public class UserConfigPage {
 
     private WebElement element = null;
-    private ObjectMap objectmap = new ObjectMap("./resource/userConfigPageMap.properties");
+    private ObjectMap objectmap = new ObjectMap("userConfigPageMap.properties");
     private WebDriver driver;
 
     public UserConfigPage(WebDriver driver){

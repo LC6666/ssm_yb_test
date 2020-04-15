@@ -15,7 +15,7 @@ import com.iebm.ssm.util.ObjectMap;
 public class QuestionDetailPage {
 
     private WebElement element = null;
-    private ObjectMap  objectmap = new ObjectMap("./resource/questionDetailPageMap.properties");
+    private ObjectMap  objectmap = new ObjectMap("questionDetailPageMap.properties");
     private WebDriver driver;
 
     public QuestionDetailPage(WebDriver driver) {

@@ -14,7 +14,7 @@ import org.openqa.selenium.WebElement;
 public class ConclusionAuditPage {
 
     private WebElement element = null;
-    private ObjectMap objectmap = new ObjectMap("./resource/conclusionAuditPageMap.properties");
+    private ObjectMap objectmap = new ObjectMap("conclusionAuditPageMap.properties");
     private WebDriver driver;
 
     public ConclusionAuditPage(WebDriver driver) {

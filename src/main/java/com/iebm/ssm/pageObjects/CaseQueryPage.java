@@ -13,7 +13,7 @@ import com.iebm.ssm.util.ObjectMap;
 
 public class CaseQueryPage {
     private WebElement element = null;
-    private ObjectMap  objectmap = new ObjectMap("./resource/caseQueryPageMap.properties");
+    private ObjectMap  objectmap = new ObjectMap("caseQueryPageMap.properties");
     private WebDriver driver;
 
     public CaseQueryPage(WebDriver driver) {

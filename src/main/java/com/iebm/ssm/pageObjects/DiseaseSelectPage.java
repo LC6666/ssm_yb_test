@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 public class DiseaseSelectPage {
 
     private WebElement element = null;
-    private ObjectMap objectmap = new ObjectMap("./resource/diseaseSelectPageMap.properties");
+    private ObjectMap objectmap = new ObjectMap("diseaseSelectPageMap.properties");
     private WebDriver driver;
 
     public DiseaseSelectPage() {

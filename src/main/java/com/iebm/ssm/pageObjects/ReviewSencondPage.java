@@ -13,7 +13,7 @@ import org.openqa.selenium.WebElement;
 
 public class ReviewSencondPage {
     private WebElement element = null;
-    private ObjectMap objectmap = new ObjectMap("./resource/reviewSecondPageMap.properties");
+    private ObjectMap objectmap = new ObjectMap("reviewSecondPageMap.properties");
     private WebDriver driver;
 
     public ReviewSencondPage(WebDriver driver) {

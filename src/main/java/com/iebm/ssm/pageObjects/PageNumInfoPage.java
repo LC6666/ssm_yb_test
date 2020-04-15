@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
 
 public class PageNumInfoPage {
     private WebElement element = null;
-    private ObjectMap objectmap = new ObjectMap("./resource/pageNumInfoPageMap.properties");
+    private ObjectMap objectmap = new ObjectMap("pageNumInfoPageMap.properties");
     private WebElement root;
 
 

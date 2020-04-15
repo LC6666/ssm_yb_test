@@ -15,7 +15,7 @@ import java.util.List;
 public class HospitalFeedBackPage {
 
     private WebElement element = null;
-    private ObjectMap objectmap = new ObjectMap("./resource/hospitalFeedBackPageMap.properties");
+    private ObjectMap objectmap = new ObjectMap("hospitalFeedBackPageMap.properties");
     private WebDriver driver;
 
     public HospitalFeedBackPage(WebDriver driver) {

@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 public class HospitalSelectPage {
 
     private WebElement element = null;
-    private ObjectMap objectmap = new ObjectMap("./resource/hospitalSelectPageMap.properties");
+    private ObjectMap objectmap = new ObjectMap("hospitalSelectPageMap.properties");
     private WebDriver driver;
 
     public HospitalSelectPage() {
