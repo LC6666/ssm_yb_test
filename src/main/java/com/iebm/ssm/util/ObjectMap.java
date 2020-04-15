@@ -24,7 +24,7 @@ public class ObjectMap {
         properties = new Properties();
 
         try {
-        	String propfile = Paths.get(System.getProperty("user.dir"), "resource/"+propFile).toString();
+        	String propfile = Paths.get(System.getProperty("user.dir"), "pageFile/"+propFile).toString();
         	FileInputStream in = new FileInputStream(propfile);
 //            FileInputStream in = new FileInputStream(propFile);
             properties.load(in);

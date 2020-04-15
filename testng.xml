@@ -69,7 +69,7 @@
     </test>
     
     <!--疑点审核 流程-->
-    <test name="ConclusionAuditTest" enabled="false">
+    <test name="ConclusionAuditTest" enabled="true">
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>
