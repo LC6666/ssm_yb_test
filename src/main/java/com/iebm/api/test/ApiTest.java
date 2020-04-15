@@ -10,6 +10,7 @@ import java.util.Map;
 import org.apache.http.Header;
 import org.apache.http.client.HttpClient;
 import org.apache.http.message.BasicHeader;
+import org.apache.http.params.CoreConnectionPNames;
 import org.dom4j.DocumentException;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
@@ -41,7 +42,7 @@ public class ApiTest extends TestBase{
 	
 	@Parameters("envName")
 	@BeforeSuite
-	public void init(@Optional("api-config.xml")String envName) throws DocumentException, KeyManagementException, NoSuchAlgorithmException{
+	public void init(@Optional("api-config.xml")String envName) throws Exception{
 		String configFilePath = Paths.get(System.getProperty("user.dir"), envName).toString();
 //		System.out.println("user.dir="+configFilePath);
 		Log.info("api config path:"+configFilePath);
@@ -65,8 +66,11 @@ public class ApiTest extends TestBase{
 		
 		publicHeaders = headers.toArray(new Header[headers.size()]);
 		
-		sslclient = SSLClient.SSLClient();
-		
+		sslclient = new SSLClient();
+		// 请求超时
+		sslclient.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 60000);
+		// 读取超时
+		sslclient.getParams().setParameter(CoreConnectionPNames.SO_TIMEOUT, 60000);
 		
 	}
 	

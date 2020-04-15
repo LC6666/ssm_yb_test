@@ -16,58 +16,46 @@ import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.config.Registry;
 import org.apache.http.config.RegistryBuilder;
+import org.apache.http.conn.ClientConnectionManager;
+import org.apache.http.conn.scheme.Scheme;
+import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.socket.PlainConnectionSocketFactory;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 
-public class SSLClient {
+public class SSLClient extends DefaultHttpClient {
 
-	public static HttpClient SSLClient() throws NoSuchAlgorithmException, KeyManagementException {
-		
-		X509TrustManager trustManager = new X509TrustManager() {
+	
+	
+	
+	public SSLClient() throws Exception {
+		super();
+		SSLContext ctx = SSLContext.getInstance("TLS");
+		X509TrustManager tm = new X509TrustManager() {
+			public void checkClientTrusted(X509Certificate[] chain,
+					String authType) throws CertificateException {
+			}
 
-			@Override
+			public void checkServerTrusted(X509Certificate[] chain,
+					String authType) throws CertificateException {
+			}
+
 			public X509Certificate[] getAcceptedIssuers() {
-				// TODO Auto-generated method stub
 				return null;
 			}
-
-			@Override
-			public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
-				// TODO Auto-generated method stub
-
-			}
 		};
-
-		SSLContext ctx = SSLContext.getInstance(SSLConnectionSocketFactory.TLS);
-		ctx.init(null, new TrustManager[] { trustManager }, null);
-		SSLConnectionSocketFactory soketFactory = new SSLConnectionSocketFactory(ctx, NoopHostnameVerifier.INSTANCE);
-
-		// 创建Registry
-		RequestConfig requestConfig = RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD_STRICT)
-				.setExpectContinueEnabled(Boolean.TRUE)
-				.setTargetPreferredAuthSchemes(Arrays.asList(AuthSchemes.NTLM, AuthSchemes.DIGEST))
-				.setProxyPreferredAuthSchemes(Arrays.asList(AuthSchemes.BASIC)).build();
-		Registry<ConnectionSocketFactory> socketFactoryRegistry = RegistryBuilder.<ConnectionSocketFactory>create()
-				.register("http", PlainConnectionSocketFactory.INSTANCE).register("https", soketFactory).build();
-
-		// 创建ConnectionManager，添加Connection配置信息
-		PoolingHttpClientConnectionManager connectionManager = new PoolingHttpClientConnectionManager(
-				socketFactoryRegistry);
-		CloseableHttpClient closeableHttpClient = HttpClients.custom().setConnectionManager(connectionManager)
-				.setDefaultRequestConfig(requestConfig).build();
-
-		return closeableHttpClient;
+		ctx.init(null, new TrustManager[] { tm }, null);
+		SSLSocketFactory ssf = new SSLSocketFactory(ctx,
+				SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+		ClientConnectionManager ccm = this.getConnectionManager();
+		SchemeRegistry sr = ccm.getSchemeRegistry();
+		sr.register(new Scheme("https", 443, ssf));
 	}
 
 	
