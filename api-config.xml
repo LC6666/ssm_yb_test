@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<rootUrl>http://192.168.29.156:9201</rootUrl>
+	<headers>
+		<header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"></header>
+		<header name="Accept-Encoding" value="gzip, deflate"></header>
+		<header name="Accept-Language" value="zh-CN,zh;q=0.9"></header>
+		<header name="Cache-Control" value="max-age=0"></header>
+		<header name="Connection" value="keep-alive"></header>
+	</headers>
+	<params>
+		<param name="test" value="test"></param>
+	</params>
+	<project_name>接口自动化测试TestDemo</project_name>
+</root>

@@ -69,7 +69,7 @@
     </test>
     
     <!--疑点审核 流程-->
-    <test name="ConclusionAuditTest" enabled="true">
+    <test name="ConclusionAuditTest" enabled="false">
         <classes>
             <class name="com.iebm.ssm.testScripts.LoginTest">
                 <methods>
@@ -93,7 +93,7 @@
         </classes>
     </test>
 
-  	<test name="接口测试框架" enabled="false">
+  	<test name="接口测试框架" enabled="true">
 		<classes>
 			<class name="com.iebm.api.test.ApiTest" ></class>
 		</classes>
