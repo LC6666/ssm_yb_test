@@ -17,7 +17,7 @@ public class CaseQueryTest {
 	@DataProvider(name = "hospitalnamedata")
 	public Object[][] testdata() throws IOException {
 //		return TestDataDrivenByExcelFile.getDataFromXlxs("./resource/", "hos_name.xlsx", "Sheet1");
-		return TestDataDrivenByCSVFile.getTestData("./resource/hospitalname.csv");
+		return TestDataDrivenByCSVFile.getTestData("hospitalname.csv");
 	}
 
 	

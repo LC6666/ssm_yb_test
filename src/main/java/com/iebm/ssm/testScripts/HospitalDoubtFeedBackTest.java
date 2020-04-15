@@ -26,7 +26,7 @@ public class HospitalDoubtFeedBackTest {
 
     @DataProvider(name="queryFeedBackCaseDataFromExcel")
     public Object[][] queryFeedBackCaseDataFromExcel() throws ClassNotFoundException, IOException {
-        return TestDataDrivenByExcelFile.getDataFromXlxs("./resource","test_data.xlsx","医院疑似违规病例反馈" );
+        return TestDataDrivenByExcelFile.getDataFromXlxs("test_data.xlsx","医院疑似违规病例反馈" );
     }
 
     /**

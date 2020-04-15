@@ -27,7 +27,7 @@ public class HospitalFeedBackTest {
 
     @DataProvider(name="getTestCaseDateFromExcel")
     public static Object[][] getloginDataByExcel2() throws IOException {
-        return TestDataDrivenByExcelFile.getDataFromXlxs("./resource","test_data.xlsx","医院违规病例反馈");
+        return TestDataDrivenByExcelFile.getDataFromXlxs("test_data.xlsx","医院违规病例反馈");
     }
 
     /**

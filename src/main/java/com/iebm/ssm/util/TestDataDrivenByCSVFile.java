@@ -19,7 +19,9 @@ public class TestDataDrivenByCSVFile {
         List<Object[]> records = new ArrayList<>();
         String record;
 //      设定UTF-8字符集，使用带缓冲区的字符输入流BufferedReader读取文件内容
-        BufferedReader file = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF-8"));
+//        BufferedReader file = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF-8"));
+        BufferedReader file = new BufferedReader(new InputStreamReader(new FileInputStream(new File("./case"+"\\"+filename)), "UTF-8"));
+//      
 //      忽略读取CSV文件的标题行（第一行）
         file.readLine();
 //      遍历读取文件中除第一行以外的其他所有行内容并存储在名为records的ArrayList中，第个recods中存储的对象为一个String数组

@@ -26,7 +26,7 @@ public class ReviewSencondTest {
 
     @DataProvider(name="getReviewCaseDataFromExcel")
     public Object[][] getReviewCaseDataFromExcel() throws ClassNotFoundException, IOException {
-        return TestDataDrivenByExcelFile.getDataFromXlxs("./resource","test_data.xlsx","人工复审" );
+        return TestDataDrivenByExcelFile.getDataFromXlxs("test_data.xlsx","人工复审" );
     }
 
     /**

@@ -30,7 +30,7 @@ public class BusinessAuditTest {
 //  从excel中读取测试数据
     @DataProvider(name="getBusinessAuditCaseDataFromExcel")
     public Object[][] getBusinessAuditCaseDataFromExcel() throws ClassNotFoundException, IOException {
-        return TestDataDrivenByExcelFile.getDataFromXlxs("./resource","test_data.xlsx","稽查科调查" );
+        return TestDataDrivenByExcelFile.getDataFromXlxs("test_data.xlsx","稽查科调查" );
     }
 
     @Test(testName = "openPage",priority = 0,enabled = true)

@@ -25,7 +25,7 @@ public class ExpertReviewTest {
 
     @DataProvider(name="getExpertReviewCaseDataFromExcel")
     public Object[][] getExpertReviewCaseDataFromExcel() throws ClassNotFoundException, IOException {
-        return TestDataDrivenByExcelFile.getDataFromXlxs("./resource","test_data.xlsx","专家审核" );
+        return TestDataDrivenByExcelFile.getDataFromXlxs("test_data.xlsx","专家审核" );
     }
 
     @Test(testName = "openPage",priority = 0,enabled = true)

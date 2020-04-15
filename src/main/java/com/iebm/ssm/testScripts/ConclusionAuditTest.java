@@ -26,7 +26,7 @@ public class ConclusionAuditTest {
 
     @DataProvider(name="getConclusionCaseDataFromExcel")
     public static Object[][] getConclusionCaseDataFromExcel() throws IOException {
-        return TestDataDrivenByExcelFile.getDataFromXlxs("./resource","test_data.xlsx","疑点结论");
+        return TestDataDrivenByExcelFile.getDataFromXlxs("test_data.xlsx","疑点结论");
     }
 
     @Test(testName = "openPage",priority = 0,enabled = true)

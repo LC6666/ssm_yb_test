@@ -25,7 +25,7 @@ public class ReviewFirstTest {
 
     @DataProvider(name="getTestDataFromExcel")
     public static Object[][] getTestDataFromExcel() throws IOException {
-        return TestDataDrivenByExcelFile.getDataFromXlxs("./resource","test_data.xlsx","人工初审");
+        return TestDataDrivenByExcelFile.getDataFromXlxs("test_data.xlsx","人工初审");
     }
     /**
      * 进入疑点审核，打开人工初审

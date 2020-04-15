@@ -30,10 +30,12 @@ public class TestDataDrivenByExcelFile {
      * @auther: LC
      * @date: 2019/3/7 10:42
      */
-    public static Object[][] getDataFromXlxs(String filePath,String fileName,String sheetName) throws IOException {
+    public static Object[][] getDataFromXlxs(String fileName,String sheetName) throws IOException {
 //      根据参数传入的数据文件路径和文件名称，组合出excel数据文件的绝对路径
 //      声明一个File文件对象
-        File file = new File(filePath+"\\"+fileName);
+//        File file = new File(filePath+"\\"+fileName);
+        File file = new File("./case"+"\\"+fileName);
+
 //      创建FileInputStream对象用于读取Excel文件
         FileInputStream inputStream = new FileInputStream(file);
 //      声明Workbook对象
