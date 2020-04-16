@@ -40,6 +40,10 @@ public class ApiTest extends TestBase{
 	 */
 	private static Header[] publicHeaders;
 	
+	
+	
+	
+	
 	@Parameters("envName")
 	@BeforeSuite
 	public void init(@Optional("api-config.xml")String envName) throws Exception{
@@ -77,6 +81,9 @@ public class ApiTest extends TestBase{
 	}
 	
 	
+	public void readData(String excelPath,String sheetName){
+//		dataList
+	}
 	
 	
 	@Test
