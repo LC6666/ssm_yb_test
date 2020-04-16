@@ -72,6 +72,8 @@ public class ApiTest extends TestBase{
 		// 读取超时
 		sslclient.getParams().setParameter(CoreConnectionPNames.SO_TIMEOUT, 60000);
 		
+		
+		
 	}
 	
 	
