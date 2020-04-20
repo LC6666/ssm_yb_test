@@ -1,8 +1,6 @@
 package com.iebm.api.test;
 
 import java.nio.file.Paths;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -11,7 +9,6 @@ import org.apache.http.Header;
 import org.apache.http.client.HttpClient;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.params.CoreConnectionPNames;
-import org.dom4j.DocumentException;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -21,6 +18,7 @@ import com.iebm.api.beans.ApiDataBean;
 import com.iebm.api.config.ApiConfig;
 import com.iebm.ssm.util.Log;
 import com.iebm.ssm.util.SSLClient;
+
 
 public class ApiTest extends TestBase{
 	
@@ -85,7 +83,7 @@ public class ApiTest extends TestBase{
 	
 	
 	public void readData(String excelPath,String sheetName){
-//		dataList
+//		dataList = readExcelData(ApiDataBean.class,exc)
 	}
 	
 	
