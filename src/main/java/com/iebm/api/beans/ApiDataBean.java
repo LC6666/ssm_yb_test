@@ -1,6 +1,6 @@
 package com.iebm.api.beans;
 
-public class ApiDataBean {
+public class ApiDataBean extends BaseBean {
 	
 	private boolean run;
 	private String desc;

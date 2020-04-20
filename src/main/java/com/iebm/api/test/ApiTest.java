@@ -2,6 +2,7 @@ package com.iebm.api.test;
 
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -9,7 +10,10 @@ import org.apache.http.Header;
 import org.apache.http.client.HttpClient;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.params.CoreConnectionPNames;
+import org.testng.ITestContext;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -82,12 +86,37 @@ public class ApiTest extends TestBase{
 	}
 	
 	
-	public void readData(String excelPath,String sheetName){
-//		dataList = readExcelData(ApiDataBean.class,exc)
+	
+	@Parameters({"excelPath","sheetName"})
+	@BeforeTest
+	public void readData(@Optional("case/api_test.xlsx")String excelPath,@Optional("Sheet1")String sheetName){
+		dataList = readExcelData(ApiDataBean.class,excelPath.split(";"),sheetName.split(";"));
 	}
 	
 	
-	@Test
+	
+	
+	/**
+	 * 过滤数据，run标记为Y的执行
+	 * @param context
+	 * @return
+	 */
+	@DataProvider(name="apiDatas")
+	public Iterator<Object[]> getApiData(ITestContext context){
+		List<Object[]> dataProvider = new ArrayList<Object[]>();
+		for(ApiDataBean data:dataList){
+			if(data.isRun()){
+				dataProvider.add(new Object[]{data});
+			}
+			
+		}	
+		return dataProvider.iterator();
+		
+	}
+	
+	
+	
+	@Test(dataProvider = "apiDatas")
 	public void apiTest(){
 		System.out.println("apiTest");
 	}
