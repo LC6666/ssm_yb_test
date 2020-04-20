@@ -17,6 +17,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.iebm.api.beans.ApiDataBean;
 import com.iebm.api.config.ApiConfig;
 import com.iebm.ssm.util.Log;
 import com.iebm.ssm.util.SSLClient;
@@ -39,6 +40,8 @@ public class ApiTest extends TestBase{
 	 * 所有公共header，会在发送请求的时候添加到http header上
 	 */
 	private static Header[] publicHeaders;
+	
+	protected List<ApiDataBean> dataList;
 	
 	
 	
