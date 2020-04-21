@@ -2,7 +2,9 @@ package com.iebm.ssm.util;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,6 +17,8 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import com.fasterxml.jackson.databind.util.JSONPObject;
 
 public class ExcelUtil {
 		
@@ -68,6 +72,7 @@ public class ExcelUtil {
 	 */
 	public static <T> List<T> readExcel(Class<T> clz, String path, String sheetName) {
 		// TODO Auto-generated method stub
+		Log.info("readExcel");
 		if(null == path||"".equals(path)){
 			return null;
 		}
@@ -131,8 +136,9 @@ public class ExcelUtil {
 	}
 	
 	
-	private static void setValue(Object obj,List<Object> data,List<Object> heads,Map<String,Method> methods) {
+	private static void setValue(Object obj,List<Object> data,List<Object> heads,Map<String,Method> methods) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		// TODO Auto-generated method stub
+		Log.info("setValue");
 		for(Map.Entry<String, Method> entry:methods.entrySet()){
 			Object value = "";
 			int dataIndex = heads.indexOf(entry.getKey());
@@ -140,6 +146,34 @@ public class ExcelUtil {
 				value = data.get(heads.indexOf(entry.getKey()));
 			}
 			Method method = entry.getValue();
+			Class<?> param = method.getParameterTypes()[0];
+			if(String.class.equals(param)){
+				method.invoke(obj, value);
+			}else if(Integer.class.equals(param)||int.class.equals(param)){
+				if(value.toString()==""){
+					value=0;
+				}
+				method.invoke(obj, new BigDecimal(value.toString()).intValue());
+			}else if(Long.class.equals(param)||long.class.equals(param)){
+				if(value.toString()==""){
+					value=0;
+				}
+				method.invoke(obj, new BigDecimal(value.toString()).longValue());
+			}else if(Short.class.equals(param)||short.class.equals(param)){
+				if(value.toString()==""){
+					value=0;
+				}
+				method.invoke(obj, new BigDecimal(value.toString()).shortValue());
+			}else if(Boolean.class.equals(param)||boolean.class.equals(param)){
+				method.invoke(obj, Boolean.class.equals(value.toString())||value.toString().toLowerCase().equals("y"));
+			}else if(JSONPObject.class.equals(param)){
+//				method.invoke(obj, JSONObject.parseObject(value.toString()));
+				System.out.println("JSONObject");
+			}else{
+				method.invoke(obj, value);
+			}
+			
+			Log.info(obj.toString());
 			
 		}
 	}

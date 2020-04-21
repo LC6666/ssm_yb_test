@@ -44,13 +44,16 @@ public class TestBase {
 //		excel文件数组
 		List<T> allExcelData = new ArrayList<T>();
 		List<T> temArrayList = new ArrayList<T>();
+		System.out.println(clz);
 		for(String excelPath:excelPathArr){
+//			System.out.println(excelPath);
 			File file = Paths.get(System.getProperty("user.dir"),excelPath).toFile();
 			temArrayList.clear();
 			if(sheetNameArr.length == 0 || sheetNameArr[0] == ""){
 				temArrayList = ExcelUtil.readExcel(clz, file.getAbsolutePath());
 			}else{
 				for(String sheetName : sheetNameArr){
+//					System.out.println(sheetName);
 					temArrayList.addAll(ExcelUtil.readExcel(clz, file.getAbsolutePath(),sheetName));
 				}
 			}

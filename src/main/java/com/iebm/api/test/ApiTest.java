@@ -112,7 +112,8 @@ public class ApiTest extends TestBase{
 				dataProvider.add(new Object[]{data});
 			}
 			
-		}	
+		}
+		System.out.println(dataProvider.size());
 		return dataProvider.iterator();
 		
 	}
