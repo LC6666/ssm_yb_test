@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="580" started-at="2020-04-20T09:31:22Z" finished-at="2020-04-20T09:31:23Z">
+  <suite name="Suite" duration-ms="586" started-at="2020-04-21T01:36:16Z" finished-at="2020-04-21T01:36:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="580" started-at="2020-04-20T09:31:22Z" finished-at="2020-04-20T09:31:23Z">
+    <test name="接口测试框架" duration-ms="586" started-at="2020-04-21T01:36:16Z" finished-at="2020-04-21T01:36:17Z">
       <class name="com.iebm.api.test.ApiTest">
-        <test-method status="PASS" signature="init(java.lang.String)[pri:0, instance:com.iebm.api.test.ApiTest@11053e1]" name="init" is-config="true" duration-ms="281" started-at="2020-04-20T17:31:22Z" finished-at="2020-04-20T17:31:22Z">
+        <test-method status="PASS" signature="init(java.lang.String)[pri:0, instance:com.iebm.api.test.ApiTest@f777e8]" name="init" is-config="true" duration-ms="295" started-at="2020-04-21T09:36:16Z" finished-at="2020-04-21T09:36:16Z">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="readData(java.lang.String, java.lang.String)[pri:0, instance:com.iebm.api.test.ApiTest@11053e1]" name="readData" is-config="true" duration-ms="567" started-at="2020-04-20T17:31:22Z" finished-at="2020-04-20T17:31:23Z">
+        <test-method status="PASS" signature="readData(java.lang.String, java.lang.String)[pri:0, instance:com.iebm.api.test.ApiTest@f777e8]" name="readData" is-config="true" duration-ms="572" started-at="2020-04-21T09:36:16Z" finished-at="2020-04-21T09:36:17Z">
           <params>
             <param index="0">
               <value>
@@ -35,6 +35,6 @@
           </reporter-output>
         </test-method> <!-- readData -->
       </class> <!-- com.iebm.api.test.ApiTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- 接口测试框架 -->
+  </suite> <!-- Suite -->
 </testng-results>
