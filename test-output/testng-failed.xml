@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="testparameters" value="testparameters"/>
+  <test name="接口测试框架(failed)">
     <classes>
       <class name="com.iebm.api.test.ApiTest">
         <methods>
@@ -11,5 +12,5 @@
         </methods>
       </class> <!-- com.iebm.api.test.ApiTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- 接口测试框架(failed) -->
+</suite> <!-- Failed suite [Suite] -->

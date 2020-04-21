@@ -2,20 +2,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <parameter name="testparameters" value="testparameters"/>
-  <test name="ConclusionAuditTest(failed)">
+  <test name="接口测试框架(failed)">
     <classes>
-      <class name="com.iebm.ssm.testScripts.LoginTest">
+      <class name="com.iebm.api.test.ApiTest">
         <methods>
-          <include name="afterSuite"/>
-          <include name="beforeTest"/>
+          <include name="readData"/>
+          <include name="init"/>
+          <include name="apiTest"/>
         </methods>
-      </class> <!-- com.iebm.ssm.testScripts.LoginTest -->
-      <class name="com.iebm.ssm.testScripts.ReviewFirstTest">
-        <methods>
-          <include name="queryReviewCase" invocation-numbers="0 2 3 4 5 6 7 8 9"/>
-          <include name="openPage"/>
-        </methods>
-      </class> <!-- com.iebm.ssm.testScripts.ReviewFirstTest -->
+      </class> <!-- com.iebm.api.test.ApiTest -->
     </classes>
-  </test> <!-- ConclusionAuditTest(failed) -->
+  </test> <!-- 接口测试框架(failed) -->
 </suite> <!-- Failed suite [Suite] -->
