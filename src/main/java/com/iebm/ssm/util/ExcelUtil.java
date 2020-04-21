@@ -106,11 +106,45 @@ public class ExcelUtil {
 //		添加sheetName字段，用于封装至bean中，与bean中的字段相匹配。
 		heads.add("sheetName");
 		Map<String,Method> headMethod = getSetMethod(clz,heads);
+		for(int rowNum = 1;rowNum<=xssfSheet.getLastRowNum();rowNum++){
+			Row xssfRow = xssfSheet.getRow(rowNum);
+			if(xssfRow == null){
+				continue;
+			}
+			try {
+				T t = clz.newInstance();
+				List<Object> data = getRow(xssfRow);
+				while(data.size()+1<heads.size()){
+					data.add("");
+				}
+				data.add(sheetName);
+				setValue(t,data,heads,headMethod);
+				list.add(t);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
 		
 		return list;		
 	}
 	
 	
+	private static void setValue(Object obj,List<Object> data,List<Object> heads,Map<String,Method> methods) {
+		// TODO Auto-generated method stub
+		for(Map.Entry<String, Method> entry:methods.entrySet()){
+			Object value = "";
+			int dataIndex = heads.indexOf(entry.getKey());
+			if(dataIndex < data.size()){
+				value = data.get(heads.indexOf(entry.getKey()));
+			}
+			Method method = entry.getValue();
+			
+		}
+	}
+
+
 	private static Map<String, Method> getSetMethod(Class<?> clz, List<Object> heads) {
 		// TODO Auto-generated method stub
 		Map<String,Method> map = new HashMap<String,Method>();

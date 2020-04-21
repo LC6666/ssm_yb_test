@@ -52,6 +52,7 @@ public class ApiTest extends TestBase{
 	@Parameters("envName")
 	@BeforeSuite
 	public void init(@Optional("api-config.xml")String envName) throws Exception{
+		Log.info("@BeforeSuite");
 		String configFilePath = Paths.get(System.getProperty("user.dir"), envName).toString();
 //		System.out.println("user.dir="+configFilePath);
 		Log.info("api config path:"+configFilePath);
@@ -90,6 +91,7 @@ public class ApiTest extends TestBase{
 	@Parameters({"excelPath","sheetName"})
 	@BeforeTest
 	public void readData(@Optional("case/api_test.xlsx")String excelPath,@Optional("Sheet1")String sheetName){
+		Log.info("@BeforeTest");
 		dataList = readExcelData(ApiDataBean.class,excelPath.split(";"),sheetName.split(";"));
 	}
 	
@@ -103,6 +105,7 @@ public class ApiTest extends TestBase{
 	 */
 	@DataProvider(name="apiDatas")
 	public Iterator<Object[]> getApiData(ITestContext context){
+		Log.info("@DataProvider");
 		List<Object[]> dataProvider = new ArrayList<Object[]>();
 		for(ApiDataBean data:dataList){
 			if(data.isRun()){
@@ -118,6 +121,6 @@ public class ApiTest extends TestBase{
 	
 	@Test(dataProvider = "apiDatas")
 	public void apiTest(){
-		System.out.println("apiTest");
+		Log.info("@Test");
 	}
 }

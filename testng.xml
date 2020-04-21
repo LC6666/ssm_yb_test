@@ -3,7 +3,7 @@
 <suite name="Suite">  
 	<parameter name="testparameters" value="testparameters"></parameter>
 	
-	<test name="testngtest" enabled="true" >
+	<test name="testngtest" enabled="false" >
 		<classes>
 			<class name="com.iebm.ssm.test.TestNGDemo" ></class>
 		</classes>
@@ -93,7 +93,7 @@
         </classes>
     </test>
 
-  	<test name="接口测试框架" enabled="false">
+  	<test name="接口测试框架" enabled="true">
 		<classes>
 			<class name="com.iebm.api.test.ApiTest" ></class>
 		</classes>
