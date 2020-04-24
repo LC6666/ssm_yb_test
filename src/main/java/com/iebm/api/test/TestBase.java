@@ -6,16 +6,36 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.iebm.api.beans.BaseBean;
 import com.iebm.ssm.util.ExcelUtil;
+import com.iebm.ssm.util.StringUtil;
 
+
+/**
+ * @author LC
+ *
+ */
 public class TestBase {
 	
 	/**
 	 * 公共参数数据池（全局可用）
 	 */
 	private static Map<String,String> saveDatas = new HashMap<String,String>();
+	
+	
+	/**
+	 * 替换符，如果数据中包含“${}”则会被替换成公共参数中存储的数据
+	 */
+	protected Pattern replaceParamPattern = Pattern.compile("\\$\\{(.*?)\\}");
+	
+	
+	/**
+	 * 截取自定义方法正则表达式：_xxx(ooo)
+	 */
+	protected Pattern funPattern = Pattern.compile("__(\\w*?)\\((([\\w\\\\\\/:\\.\\$]*,?)*)\\)");
 	
 	protected void setSaveDatas(Map<String,String> map){
 		saveDatas.putAll(map);
@@ -30,6 +50,54 @@ public class TestBase {
 	}
 	
 	
+	/**
+	 * 组件预参数（处理_fun()以及${xxxx}）
+	 * @param preParam
+	 * @return
+	 */
+	protected String buildParam(String param) {
+		// TODO Auto-generated method stub
+		param = getCommonParam(param);
+		return null;
+	}
+	
+	
+	
+	/**
+	 * 取公共参数 并替换参数
+	 * @param param
+	 * @return
+	 */
+	protected String getCommonParam(String param) {
+		// TODO Auto-generated method stub
+		if(StringUtil.isEmpty(param)){
+			return "";
+		}
+		Matcher m = replaceParamPattern.matcher(param);
+		while(m.find()){
+			String replaceKey = m.group(1);
+			String value;
+//			从公共参数池中获取值
+			value = getSaveData(replaceKey);
+		}
+		return null;
+	}
+
+	/**
+	 * 获取公共数据池中的数据
+	 * @param replaceKey  公共数据的key
+	 * @return 对应的value
+	 */
+	protected String getSaveData(String replaceKey) {
+		// TODO Auto-generated method stub
+		if("".equals(replaceKey)|| !saveDatas.containsKey(replaceKey)){
+			return null;
+		}else{
+			return saveDatas.get(replaceKey);
+		}
+		
+	}
+
 	/**
 	 * 根据配置读取测试用例
 	 * @param clz 需要转换的类

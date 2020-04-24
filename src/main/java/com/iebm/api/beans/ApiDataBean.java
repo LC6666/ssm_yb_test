@@ -84,7 +84,11 @@ public class ApiDataBean extends BaseBean {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return String.format("desc:%s,method:%s,url:%s,param:%s", this.desc,this.method,this.url,this.param);
+		String str = "run:%s;desc:%s;url:%s;method:%s;param:%s;contains:%s;status:%s;verify:%s;save:%s;preParam:%s;sleep:%s;";
+		return String.format(str, this.run,this.desc,this.url,this.method,this.param,this.contains,this.status,this.verify,this.save,this.preParam,this.sleep);
+//		return String.format("desc:%s,method:%s,url:%s,param:%s", this.desc,this.method,this.url,this.param);
+		
+		
 	}
 	
 	

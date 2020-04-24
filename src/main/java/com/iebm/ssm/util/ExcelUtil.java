@@ -143,28 +143,34 @@ public class ExcelUtil {
 			Object value = "";
 			int dataIndex = heads.indexOf(entry.getKey());
 			if(dataIndex < data.size()){
+				Log.info("dataIndex < data.size");
 				value = data.get(heads.indexOf(entry.getKey()));
 			}
 			Method method = entry.getValue();
 			Class<?> param = method.getParameterTypes()[0];
 			if(String.class.equals(param)){
+				Log.info("setValue-String");
 				method.invoke(obj, value);
 			}else if(Integer.class.equals(param)||int.class.equals(param)){
+				Log.info("setValue-Integer");
 				if(value.toString()==""){
 					value=0;
 				}
 				method.invoke(obj, new BigDecimal(value.toString()).intValue());
 			}else if(Long.class.equals(param)||long.class.equals(param)){
+				Log.info("setValue-Long");
 				if(value.toString()==""){
 					value=0;
 				}
 				method.invoke(obj, new BigDecimal(value.toString()).longValue());
 			}else if(Short.class.equals(param)||short.class.equals(param)){
+				Log.info("setValue-Short");
 				if(value.toString()==""){
 					value=0;
 				}
 				method.invoke(obj, new BigDecimal(value.toString()).shortValue());
 			}else if(Boolean.class.equals(param)||boolean.class.equals(param)){
+				Log.info("setValue-Boolean");
 				method.invoke(obj, Boolean.class.equals(value.toString())||value.toString().toLowerCase().equals("y"));
 			}else if(JSONPObject.class.equals(param)){
 //				method.invoke(obj, JSONObject.parseObject(value.toString()));

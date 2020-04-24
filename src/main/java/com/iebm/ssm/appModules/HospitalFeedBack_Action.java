@@ -5,7 +5,6 @@ import com.iebm.ssm.util.Constant;
 import com.iebm.ssm.util.PageNumInfo;
 import com.iebm.ssm.util.Table;
 import com.iebm.ssm.util.UpdateAttribute;
-import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -30,7 +29,20 @@ public class HospitalFeedBack_Action {
         page.title().click();
     }
 
-    //    根据病例号查找病例
+       
+    /**
+     * 根据病例号查找病例
+     * @param index
+     * @param disease
+     * @param startdate
+     * @param enddate
+     * @param sicode
+     * @param accpet
+     * @param remark
+     * @param filepath
+     * @param enable
+     * @throws Exception
+     */
     public void queryCaseFeedBack(String index, String disease, String startdate, String enddate, String sicode, String accpet, String remark, String filepath, String enable) throws Exception {
 //        if (enable.equals("true")) {
         if (disease != null && !disease.equals("")) {
@@ -64,7 +76,7 @@ public class HospitalFeedBack_Action {
                     int rowCount = table.getRowCount();
 
                     for (int j = 1; j < rowCount; j++) {
-//                          获取表格中的病例号
+//                          获取表格中的病例
                         String sicode_in_td = table.getCell(j, 2).getText();
                         if (sicode_in_td.equals(sicode)) {
                             System.out.println("找到病例");
@@ -93,7 +105,20 @@ public class HospitalFeedBack_Action {
     }
 
 
-    //    根据条件查找病例，并对病例进行医院回馈操作
+       
+    /**
+     * 根据条件查找病例，并对病例进行医院回馈操作
+     * @param index
+     * @param diseasename
+     * @param startdate
+     * @param enddate
+     * @param sicode
+     * @param accpet
+     * @param remark
+     * @param filepath
+     * @param enable
+     * @throws Exception
+     */
     public void queryCaseFeedBack2(String index, String diseasename, String startdate, String enddate, String sicode, String accpet, String remark, String filepath, String enable) throws Exception {
         if (enable.equals("y")) {
             page.reset_btn().click();
@@ -137,7 +162,7 @@ public class HospitalFeedBack_Action {
                         int rowCount = table.getRowCount();
 
                         for (int j = 1; j < rowCount; j++) {
-//                          获取表格中的病例号
+//                          获取表格中的病例
                             String sicode_in_td = table.getCell(j, 2).getText();
 
                             if (sicode_in_td.equals(sicode)) {
@@ -158,7 +183,7 @@ public class HospitalFeedBack_Action {
                 }
 
                 if (accpet != null && !accpet.equals("")) {
-                    //      任意选择某个病例(第一个病例)
+                    //      任意选择某个病例(第一个病)
                     Table table = new Table(page.resultlist_table());
                     table.getCell(rowNum, 3).click();
                     page.feedBack_btn().click();
@@ -182,7 +207,7 @@ public class HospitalFeedBack_Action {
 //                Thread.sleep(1000);
 //                提交
                     page.commit_btn().click();
-//                确认
+//               
                     page.confirm_y_btn().click();
                     Thread.sleep(500);
                     page.tips_btn().click();
@@ -193,12 +218,12 @@ public class HospitalFeedBack_Action {
                 }
 
             } else {
-                System.out.println("没有查找到病例");
+                System.out.println("娌℃湁鏌ユ壘鍒扮梾渚�");
                 return;
             }
 
 
-            //                就诊编号为空，任意选择某一病例进行处理
+            //                灏辫瘖缂栧彿涓虹┖锛屼换鎰忛�夋嫨鏌愪竴鐥呬緥杩涜澶勭悊
 
 
 

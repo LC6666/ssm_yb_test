@@ -116,9 +116,9 @@ public class OracleUpdateTest {
 
     public static void main(String[] args) throws SQLException {
         OracleUpdateTest update = new OracleUpdateTest();
-        update.updateSqls();
+//        update.updateSqls();
 //        update.updateSql();
-//        update.newSqls();
+        update.newSqls();
 
 
     }

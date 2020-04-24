@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="617" started-at="2020-04-21T09:31:56Z" finished-at="2020-04-21T09:31:56Z">
+  <suite name="Suite" duration-ms="636" started-at="2020-04-23T03:16:30Z" finished-at="2020-04-23T03:16:30Z">
     <groups>
     </groups>
-    <test name="接口测试框架" duration-ms="617" started-at="2020-04-21T09:31:56Z" finished-at="2020-04-21T09:31:56Z">
+    <test name="接口测试框架" duration-ms="636" started-at="2020-04-23T03:16:30Z" finished-at="2020-04-23T03:16:30Z">
       <class name="com.iebm.api.test.ApiTest">
-        <test-method status="PASS" signature="init(java.lang.String)[pri:0, instance:com.iebm.api.test.ApiTest@f777e8]" name="init" is-config="true" duration-ms="301" started-at="2020-04-21T17:31:55Z" finished-at="2020-04-21T17:31:56Z">
+        <test-method status="PASS" signature="init(java.lang.String)[pri:0, instance:com.iebm.api.test.ApiTest@f777e8]" name="init" is-config="true" duration-ms="298" started-at="2020-04-23T11:16:29Z" finished-at="2020-04-23T11:16:30Z">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="readData(java.lang.String, java.lang.String)[pri:0, instance:com.iebm.api.test.ApiTest@f777e8]" name="readData" is-config="true" duration-ms="593" started-at="2020-04-21T17:31:56Z" finished-at="2020-04-21T17:31:56Z">
+        <test-method status="PASS" signature="readData(java.lang.String, java.lang.String)[pri:0, instance:com.iebm.api.test.ApiTest@f777e8]" name="readData" is-config="true" duration-ms="606" started-at="2020-04-23T11:16:30Z" finished-at="2020-04-23T11:16:30Z">
           <params>
             <param index="0">
               <value>
@@ -34,42 +34,14 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- readData -->
-        <test-method status="FAIL" signature="apiTest()[pri:0, instance:com.iebm.api.test.ApiTest@f777e8]" name="apiTest" duration-ms="10" started-at="2020-04-21T17:31:56Z" data-provider="apiDatas" finished-at="2020-04-21T17:31:56Z">
-          <exception class="org.testng.internal.reflect.MethodMatcherException">
-            <message>
-              <![CDATA[
-Data provider mismatch
-Method: apiTest([])
-Arguments: [(com.iebm.api.beans.ApiDataBean)desc:登录接口,method:post,url:/api/login,param:]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.internal.reflect.MethodMatcherException: 
-Data provider mismatch
-Method: apiTest([])
-Arguments: [(com.iebm.api.beans.ApiDataBean)desc:登录接口,method:post,url:/api/login,param:]
-	at org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:52)
-	at org.testng.internal.Invoker.injectParameters(Invoker.java:1278)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1171)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.internal.reflect.MethodMatcherException -->
+        <test-method status="PASS" signature="apiTest(com.iebm.api.beans.ApiDataBean)[pri:0, instance:com.iebm.api.test.ApiTest@f777e8]" name="apiTest" duration-ms="6" started-at="2020-04-23T11:16:30Z" data-provider="apiDatas" finished-at="2020-04-23T11:16:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[run:true;desc:登录接口;url:/api/login;method:post;param:;contains:false;status:0;verify:;save:;preParam:null;sleep:0;]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- apiTest -->
