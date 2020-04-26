@@ -279,9 +279,8 @@ public class ApiTest extends TestBase{
 			return multiEntity;
 			
 		}else{
-			
+			return new StringEntity(apiParam,"UTF-8");
 		}
-		return new StringEntity(apiParam,"UTF-8");
 	}
 
 
