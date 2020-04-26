@@ -137,7 +137,7 @@ public class TestBase {
 //		excel文件数组
 		List<T> allExcelData = new ArrayList<T>();
 		List<T> temArrayList = new ArrayList<T>();
-		System.out.println(clz);
+//		System.out.println(clz);
 		for(String excelPath:excelPathArr){
 //			System.out.println(excelPath);
 			File file = Paths.get(System.getProperty("user.dir"),excelPath).toFile();

@@ -103,8 +103,12 @@ public class ApiTest extends TestBase{
 		Log.info("api config path:"+configFilePath);
 //		读取apiconfig，获取相应信息
 		apiconfig = new ApiConfig(configFilePath);
-		Log.info(apiconfig.getRootUrl());
-		Log.info(apiconfig.getHeaders().toString());
+		rootUrl = apiconfig.getRootUrl();
+		rootUrlEndWithSlash = rootUrl.endsWith("/");
+		
+//		Log.info(apiconfig.getRootUrl());
+//		Log.info(apiconfig.getHeaders().toString());
+		
 //		读取apiconfig中的param参数，保存到公共数据map
 		Map<String,String> params = apiconfig.getParams();
 		setSaveDatas(params);
@@ -183,6 +187,7 @@ public class ApiTest extends TestBase{
 		
 //		封装请求方法
 		HttpUriRequest method = parseHttpRequest(apiDataBean.getUrl(),apiDataBean.getMethod(),apiParam);
+		System.out.println("apiTest method="+method);
 		
 //		String responseData;
 		HttpResponse response = client.execute(method);
@@ -256,6 +261,7 @@ public class ApiTest extends TestBase{
 	 */
 	private HttpEntity parseEntity(String apiParam, boolean formData) throws UnsupportedEncodingException {
 		// TODO Auto-generated method stub
+		System.out.println("parseEntity apiParam="+apiParam+" formData="+formData);
 		if(formData){
 			Map<String,String> paramMap = (Map<String, String>) new ObjectMapper().reader();
 			MultipartEntity multiEntity = new MultipartEntity();
