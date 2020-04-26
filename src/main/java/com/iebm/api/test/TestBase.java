@@ -62,7 +62,30 @@ public class TestBase {
 	}
 	
 	
+	/**
+	 * 通过“;”分隔，将参数加入公共参数map中
+	 * @param preParam
+	 */
+	protected void savePreParam(String preParam) {
+		// TODO Auto-generated method stub
+//		通过“;”分隔，将参数加入公共参数map中
+		if(StringUtil.isEmpty(preParam)) {
+			return;
+		}
+		String[] preParamArr = preParam.split(";");
+		String key,value;
+		for(String prepar:preParamArr) {
+			if(StringUtil.isEmpty(prepar)) {
+				continue;
+			}
+			key = prepar.split("=")[0];
+			value = prepar.split("=")[1];
+			saveDatas.put(key,value);
+		}
+		
+	}
 	
+
 	/**
 	 * 取公共参数 并替换参数
 	 * @param param
@@ -79,8 +102,10 @@ public class TestBase {
 			String value;
 //			从公共参数池中获取值
 			value = getSaveData(replaceKey);
+			param = param.replace(m.group(), value);
 		}
-		return null;
+		System.out.println("getCommonParam() param="+param);
+		return param;
 	}
 
 	/**

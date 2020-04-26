@@ -15,6 +15,8 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpDelete;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.client.methods.HttpUriRequest;
@@ -177,12 +179,12 @@ public class ApiTest extends TestBase{
 			Thread.sleep(apiDataBean.getSleep()*1000);
 		}
 		
-		String apiParam = BuildRequestParam(apiDataBean);
+		String apiParam = buildRequestParam(apiDataBean);
 		
 //		封装请求方法
 		HttpUriRequest method = parseHttpRequest(apiDataBean.getUrl(),apiDataBean.getMethod(),apiParam);
 		
-		String responseData;
+//		String responseData;
 		HttpResponse response = client.execute(method);
 		int responseStatus = response.getStatusLine().getStatusCode();
 		if(apiDataBean.getStatus()!=0){
@@ -213,6 +215,7 @@ public class ApiTest extends TestBase{
 		// TODO Auto-generated method stub
 //		处理url
 		url = parseUrl(url);
+		System.out.println("parseHttpRequest url="+url);
 		if("post".equalsIgnoreCase(method)||"uplodad".equalsIgnoreCase(method)){
 			//封装post方法
 			HttpPost postMethod = new HttpPost(url);
@@ -228,9 +231,18 @@ public class ApiTest extends TestBase{
 			putMethod.setEntity(entity);
 			return putMethod;			
 			
+		}else if("delete".equalsIgnoreCase(method)) {
+//			封装delete方法
+			HttpDelete deleteMethod = new HttpDelete(url);
+			deleteMethod.setHeaders(publicHeaders);
+			return deleteMethod;
+		}else {
+//			封装get方法
+			HttpGet getMethod = new HttpGet(url);
+			getMethod.setHeaders(publicHeaders);
+			return getMethod;
 		}
 		
-		return null;
 	}
 
 
@@ -297,11 +309,18 @@ public class ApiTest extends TestBase{
 	 * @param apiDataBean
 	 * @return
 	 */
-	private String BuildRequestParam(ApiDataBean apiDataBean) {
+	private String buildRequestParam(ApiDataBean apiDataBean) {
 		// TODO Auto-generated method stub
 		String preParam = buildParam(apiDataBean.getPreParam());
-		return null;
+		savePreParam(preParam);
+//		处理参数
+		String apiParam = buildParam(apiDataBean.getParam());
+		return apiParam;
 	}
+
+
+
+	
 
 
 
