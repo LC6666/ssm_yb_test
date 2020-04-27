@@ -125,11 +125,11 @@ public class ApiTest extends TestBase{
 		
 		publicHeaders = headers.toArray(new Header[headers.size()]);
 		
-		sslclient = new SSLClient();
+		client = new SSLClient();
 		// 请求超时
-		sslclient.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 60000);
+		client.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 60000);
 		// 读取超时
-		sslclient.getParams().setParameter(CoreConnectionPNames.SO_TIMEOUT, 60000);
+		client.getParams().setParameter(CoreConnectionPNames.SO_TIMEOUT, 60000);
 		
 		
 		
@@ -220,32 +220,40 @@ public class ApiTest extends TestBase{
 		// TODO Auto-generated method stub
 //		处理url
 		url = parseUrl(url);
-		System.out.println("parseHttpRequest url="+url+" method="+method+" apiParam="+apiParam);
+		
 		if("post".equalsIgnoreCase(method)||"uplodad".equalsIgnoreCase(method)){
 			//封装post方法
 			HttpPost postMethod = new HttpPost(url);
 			postMethod.setHeaders(publicHeaders);
-			HttpEntity entity = parseEntity(apiParam,requestByFormData);
+			//如果请求头的content-type的值包含form-data 或者 请求方法为upload(上传)时采用MultipartEntity形式
+			HttpEntity entity = parseEntity(apiParam,requestByFormData || "upload".equalsIgnoreCase(method));
 			postMethod.setEntity(entity);
+			System.out.println("parseHttpRequest url="+url+" method="+method+" apiParam="+apiParam+" entity="+entity+" postMethod="+postMethod);
 			return postMethod;
+			
 		}else if("put".equalsIgnoreCase(method)){
 //			封装Put方法
 			HttpPut putMethod = new HttpPut(url);
 			putMethod.setHeaders(publicHeaders);
 			HttpEntity entity = parseEntity(apiParam, requestByFormData);
 			putMethod.setEntity(entity);
+			System.out.println("parseHttpRequest url="+url+" method="+method+" apiParam="+apiParam+" entity="+entity+" putMethod="+putMethod);
 			return putMethod;			
 			
 		}else if("delete".equalsIgnoreCase(method)) {
 //			封装delete方法
 			HttpDelete deleteMethod = new HttpDelete(url);
 			deleteMethod.setHeaders(publicHeaders);
+			System.out.println("parseHttpRequest url="+url+" method="+method+" apiParam="+apiParam+" deleteMethod"+deleteMethod);
 			return deleteMethod;
+			
 		}else {
 //			封装get方法
 			HttpGet getMethod = new HttpGet(url);
 			getMethod.setHeaders(publicHeaders);
+			System.out.println("parseHttpRequest url="+url+" method="+method+" apiParam="+apiParam+" getMethod"+getMethod);
 			return getMethod;
+			
 		}
 		
 	}
