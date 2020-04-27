@@ -220,7 +220,7 @@ public class ApiTest extends TestBase{
 		// TODO Auto-generated method stub
 //		处理url
 		url = parseUrl(url);
-		System.out.println("parseHttpRequest url="+url);
+		System.out.println("parseHttpRequest url="+url+" method="+method+" apiParam="+apiParam);
 		if("post".equalsIgnoreCase(method)||"uplodad".equalsIgnoreCase(method)){
 			//封装post方法
 			HttpPost postMethod = new HttpPost(url);
@@ -320,6 +320,7 @@ public class ApiTest extends TestBase{
 		savePreParam(preParam);
 //		处理参数
 		String apiParam = buildParam(apiDataBean.getParam());
+		System.out.println("buildRequestParam preParam="+preParam+" apiParam="+apiParam);
 		return apiParam;
 	}
 

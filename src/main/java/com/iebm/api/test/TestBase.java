@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 
 import com.iebm.api.beans.BaseBean;
 import com.iebm.ssm.util.ExcelUtil;
+import com.iebm.ssm.util.FunctionUtil;
 import com.iebm.ssm.util.StringUtil;
 
 
@@ -58,7 +59,20 @@ public class TestBase {
 	protected String buildParam(String param) {
 		// TODO Auto-generated method stub
 		param = getCommonParam(param);
-		return null;
+		Matcher m = funPattern.matcher(param);
+		while(m.find()) {
+			String funcName = m.group(1);
+			String args = m.group(2);
+			String value;
+//			bodyfile属于特殊情况，不进行匹配，在post请求的时候进行处理
+			if(FunctionUtil.isFunction(funcName)&& !funcName.equals("bodyfile")) {
+//				属于函数助手，调用哪个函数助手获取
+				value = FunctionUtil.getValue(funcName, args.split(","));
+//				解析对应的函数失败
+				param = StringUtil.replaceFirst(param, m.group(), value);				
+			}
+		}
+		return param;
 	}
 	
 	
