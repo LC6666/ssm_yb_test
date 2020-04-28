@@ -2,6 +2,7 @@ package com.iebm.api.test;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
+import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.entity.mime.MultipartEntity;
@@ -26,6 +28,7 @@ import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.params.CoreConnectionPNames;
+import org.apache.http.util.EntityUtils;
 import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeSuite;
@@ -39,7 +42,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.iebm.api.beans.ApiDataBean;
 import com.iebm.api.config.ApiConfig;
+import com.iebm.ssm.util.FileUtil;
 import com.iebm.ssm.util.Log;
+import com.iebm.ssm.util.NewSSLClient;
 import com.iebm.ssm.util.RandomUtil;
 import com.iebm.ssm.util.SSLClient;
 
@@ -86,9 +91,6 @@ public class ApiTest extends TestBase{
 	private static HttpClient client;
 	
 	
-	
-	
-	
 	/**
 	 * 初始化测试数据
 	 * @param envName
@@ -121,17 +123,19 @@ public class ApiTest extends TestBase{
 				requestByFormData = true;
 			}
 			headers.add(header);
+//			System.out.println("init headers name="+key+" value="+value);
 		});
 		
 		publicHeaders = headers.toArray(new Header[headers.size()]);
-		
+
+		/*
 		client = new SSLClient();
 		// 请求超时
 		client.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 60000);
 		// 读取超时
 		client.getParams().setParameter(CoreConnectionPNames.SO_TIMEOUT, 60000);
-		
-		
+ */
+		client = NewSSLClient.SSLClient();
 		
 	}
 	
@@ -175,7 +179,7 @@ public class ApiTest extends TestBase{
 	 * @throws ClientProtocolException 
 	 */
 	@Test(dataProvider = "apiDatas")
-	public void apiTest(ApiDataBean apiDataBean) throws InterruptedException, ClientProtocolException, IOException{
+	public void apiTest(ApiDataBean apiDataBean) throws Exception{
 		Log.startTestCase("Api Test");
 		Log.info(apiDataBean.getDesc());
 		if(apiDataBean.getSleep()>0){
@@ -189,7 +193,7 @@ public class ApiTest extends TestBase{
 		HttpUriRequest method = parseHttpRequest(apiDataBean.getUrl(),apiDataBean.getMethod(),apiParam);
 		System.out.println("apiTest method="+method);
 		
-//		String responseData;
+		String responseData;
 		HttpResponse response = client.execute(method);
 		int responseStatus = response.getStatusLine().getStatusCode();
 		if(apiDataBean.getStatus()!=0){
@@ -202,10 +206,28 @@ public class ApiTest extends TestBase{
 			String conDisposition = response.getFirstHeader("Content-disposition").getValue();
 			String fileType = conDisposition.substring(conDisposition.lastIndexOf("."), conDisposition.length());
 			String filePath = "download/"+RandomUtil.getRandom(8,false);
+			InputStream is = response.getEntity().getContent();
+			Assert.assertTrue(FileUtil.writeFile(is, filePath),"下载文件失败");
+			responseData = "{\"filePath\":\""+filePath+"\"}";
+		}else {
+			responseData = EntityUtils.toString(respEntity,"UTF-8");
 		}
+		method.abort();
+		
+//		验证预期信息
+		verifyResult(responseData,apiDataBean.getVerify(),apiDataBean.isContains());
+		
+//		对返回结果进行提取保存
+		saveResult(responseData,apiDataBean.getSave());
+		
+		
+		
 		
 	}
 
+
+
+	
 
 
 	/**
@@ -221,6 +243,8 @@ public class ApiTest extends TestBase{
 //		处理url
 		url = parseUrl(url);
 		
+		HttpRequestBase request_method = null;
+		
 		if("post".equalsIgnoreCase(method)||"uplodad".equalsIgnoreCase(method)){
 			//封装post方法
 			HttpPost postMethod = new HttpPost(url);
@@ -229,7 +253,8 @@ public class ApiTest extends TestBase{
 			HttpEntity entity = parseEntity(apiParam,requestByFormData || "upload".equalsIgnoreCase(method));
 			postMethod.setEntity(entity);
 			System.out.println("parseHttpRequest url="+url+" method="+method+" apiParam="+apiParam+" entity="+entity+" postMethod="+postMethod);
-			return postMethod;
+			request_method = postMethod;
+//			return postMethod;
 			
 		}else if("put".equalsIgnoreCase(method)){
 //			封装Put方法
@@ -238,23 +263,31 @@ public class ApiTest extends TestBase{
 			HttpEntity entity = parseEntity(apiParam, requestByFormData);
 			putMethod.setEntity(entity);
 			System.out.println("parseHttpRequest url="+url+" method="+method+" apiParam="+apiParam+" entity="+entity+" putMethod="+putMethod);
-			return putMethod;			
+			request_method = putMethod;
+//			return putMethod;			
 			
 		}else if("delete".equalsIgnoreCase(method)) {
 //			封装delete方法
 			HttpDelete deleteMethod = new HttpDelete(url);
 			deleteMethod.setHeaders(publicHeaders);
 			System.out.println("parseHttpRequest url="+url+" method="+method+" apiParam="+apiParam+" deleteMethod"+deleteMethod);
-			return deleteMethod;
+			request_method = deleteMethod;
+//			return deleteMethod;
 			
 		}else {
 //			封装get方法
 			HttpGet getMethod = new HttpGet(url);
 			getMethod.setHeaders(publicHeaders);
 			System.out.println("parseHttpRequest url="+url+" method="+method+" apiParam="+apiParam+" getMethod"+getMethod);
-			return getMethod;
+			request_method = getMethod;
+//			return getMethod;
 			
 		}
+		
+//		使用代理
+//		request_method = NewSSLClient.setProxy(request_method, "127.0.0.1", 8888);
+		
+		return request_method;
 		
 	}
 

@@ -1,6 +1,7 @@
 package com.iebm.api.test;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,7 +10,12 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.testng.Assert;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.iebm.api.beans.BaseBean;
+import com.iebm.ssm.util.AssertUtil;
 import com.iebm.ssm.util.ExcelUtil;
 import com.iebm.ssm.util.FunctionUtil;
 import com.iebm.ssm.util.StringUtil;
@@ -118,7 +124,7 @@ public class TestBase {
 			value = getSaveData(replaceKey);
 			param = param.replace(m.group(), value);
 		}
-		System.out.println("getCommonParam() param="+param);
+		System.out.println("TestBase getCommonParam() param="+param);
 		return param;
 	}
 
@@ -174,5 +180,96 @@ public class TestBase {
 		return allExcelData;
 		
 	}
+	
+	
+	protected void verifyResult(String responseData, String verify, boolean contains) throws IOException {
+		// TODO Auto-generated method stub
+		if(StringUtil.isEmpty(verify)) {
+			return;
+		}
+		String allVerify = getCommonParam(verify);
+		if(contains) {
+//			验证结果包含
+			AssertUtil.contains(responseData,allVerify);
+		}else {
+//			通过“;”分隔，通过jsonPath进行一一校验
+			Pattern pattern = Pattern.compile("([^;]*)=([^;]*)");
+			Matcher m = pattern.matcher(allVerify.trim());
+			while(m.find()) {
+				String actualValue = getBuildValue(responseData,m.group(1));
+				String exceptValue = getBuildValue(responseData, m.group(2));
+				Assert.assertEquals(actualValue, exceptValue,"验证预期结果失败");
+			}
+		}
+	}
+
+	
+	
+	/**
+	 * 获取格式化后的值
+	 * @param sourceJson
+	 * @param key
+	 * @return
+	 * @throws IOException 
+	 */
+	private String getBuildValue(String sourceJson, String key) throws IOException {
+		// TODO Auto-generated method stub
+		key = key.trim();
+		Matcher funMatch = funPattern.matcher(key);
+//		jsonpath
+		if(key.startsWith("$.")) {
+			try {
+				key = new ObjectMapper().readTree(sourceJson).get(key).asText();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return null;
+			}
+		}else if(funMatch.find()) {
+			String args = funMatch.group(2);
+			String[] argArr = args.split(",");
+			for(int index=0;index<argArr.length;index++) {
+				String arg = argArr[index];
+				if(arg.startsWith("$.")) {
+					argArr[index] = new ObjectMapper().readTree(sourceJson).get(arg).asText();
+				}
+			}
+			String value = FunctionUtil.getValue(funMatch.group(1), argArr);
+			key = StringUtil.replaceFirst(key, funMatch.group(), value);
+		}
+		return key;
+	}
+	
+	
+	
+	/**
+	 * 提取json串中的值保存至公共池中
+	 * @param json 将被提取的json串。
+	 * @param save 所有将被保存的数据：xx=$.jsonpath.xx;oo=$.jsonpath.oo，将$.jsonpath.
+	 *            xx提取出来的值存放至公共池的xx中，将$.jsonpath.oo提取出来的值存放至公共池的oo中
+	 * @throws IOException 
+	 */
+	protected void saveResult(String json, String allSave) throws IOException {
+		// TODO Auto-generated method stub
+		if(null == json ||"".equals(json)||null == allSave ||"".equals(allSave)) {
+			return;
+		}
+		
+		allSave = getCommonParam(allSave);
+		String[] saves = allSave.split(";");
+		String key,value;
+		for(String save:saves) {
+			Pattern pattern = Pattern.compile("([^;=]*)=([^;]*)");
+			Matcher m = pattern.matcher(save.trim());
+			while(m.find()) {
+				key = getBuildValue(json, m.group(1));
+				value = getBuildValue(json, m.group(2));
+				saveDatas.put(key, value);
+			}
+		}
+		
+		
+	}
+
 	
 }

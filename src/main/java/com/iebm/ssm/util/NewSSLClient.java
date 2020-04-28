@@ -1,5 +1,6 @@
 package com.iebm.ssm.util;
 
+import java.net.URI;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
@@ -10,10 +11,17 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
+import org.apache.http.Header;
+import org.apache.http.HeaderIterator;
+import org.apache.http.HttpHost;
+import org.apache.http.ProtocolVersion;
+import org.apache.http.RequestLine;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.AuthSchemes;
 import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.config.Registry;
 import org.apache.http.config.RegistryBuilder;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
@@ -23,8 +31,12 @@ import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.apache.http.params.HttpParams;
+
+import okhttp3.internal.http.HttpMethod;
 
 public class NewSSLClient {
+	
 public static HttpClient SSLClient() throws NoSuchAlgorithmException, KeyManagementException {
 		
 		X509TrustManager trustManager = new X509TrustManager() {
@@ -69,4 +81,27 @@ public static HttpClient SSLClient() throws NoSuchAlgorithmException, KeyManagem
 		return closeableHttpClient;
 		
 	}
+
+
+
+	/**
+	 * 设置代理
+	 * @param method 请求方法
+	 * @param proxyIp IP地址
+	 * @param proxyPort 代理端口
+	 * @return
+	 */
+	public static HttpRequestBase setProxy(HttpRequestBase method,String proxyIp,int proxyPort) {
+		
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		
+		HttpHost proxy = new HttpHost(proxyIp,proxyPort,"http");
+		
+		RequestConfig requestConfig=RequestConfig.custom().setProxy(proxy).build();
+		
+		method.setConfig(requestConfig);
+		
+		return method;
+	}
+
 }
