@@ -60,9 +60,9 @@ public class OracleUpdateTest {
 
     public String[] setSQLs(){
         String[] sqls = {
-                "drop table violation_source",
-                "drop table file_resource_pre",
-                "drop table wg_medical_file_zd"
+//                "drop table violation_source",
+//                "drop table file_resource_pre",
+//                "drop table wg_medical_file_zd"
                 };
         return sqls;
     }

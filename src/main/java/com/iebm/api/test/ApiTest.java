@@ -285,7 +285,7 @@ public class ApiTest extends TestBase{
 		}
 		
 //		使用代理
-//		request_method = NewSSLClient.setProxy(request_method, "127.0.0.1", 8888);
+		request_method = NewSSLClient.setProxy(request_method, "127.0.0.1", 8888);
 		
 		return request_method;
 		
