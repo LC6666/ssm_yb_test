@@ -20,7 +20,10 @@ public class Leetcode {
 	
 
 	public static void main(String[] args) {
-		int[] reval = Leetcode.twoSum(new int[] {1, 15, 3, 5}, 9);
-		System.out.println(reval[0]+"==="+reval[1]);
+		int[] reval = Leetcode.twoSum(new int[] {1, 15, 3, 5}, 6);
+		if(reval!=null) {
+			System.out.println(reval[0]+"==="+reval[1]);
+		}
+		
 	}
 }

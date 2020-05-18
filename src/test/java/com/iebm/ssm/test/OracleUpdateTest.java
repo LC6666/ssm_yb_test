@@ -33,7 +33,7 @@ public class OracleUpdateTest {
                 {"jdbc:oracle:thin:@192.168.29.171:1521:orcl","wlcb_ssm_test","wlcb_ssm_test","171"},
                 {"jdbc:oracle:thin:@192.168.29.223:1521:orcl","xlgl_ssm_test","xlgl_ssm_test","223"},
                 {"jdbc:oracle:thin:@192.168.29.223:1521:orcl","xam_ssm_test","xam_ssm_test","223"},
-//                {"jdbc:oracle:thin:@192.168.29.240:1521:orcl","rules_ssm_test","rules_ssm_test"},
+                {"jdbc:oracle:thin:@192.168.29.240:1521:orcl","rules_ssm_test","rules_ssm_test"},
 //                {"jdbc:oracle:thin:@192.168.29.139:1521:orcl","ssm_sy_new","ssm_sy_new"},
                 {"jdbc:oracle:thin:@192.168.29.139:1521:orcl","yf_ssm_test01","yf_ssm_test01","139"},
 //                {"jdbc:oracle:thin:@192.168.29.115:1521:orcl","ssm_sy_new","ssm_sy_new"},
