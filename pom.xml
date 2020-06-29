@@ -165,8 +165,6 @@
             <version>10.2.0.4.0</version>
         </dependency>
 
-
-
         <dependency>
         	<groupId>dom4j</groupId>
         	<artifactId>dom4j</artifactId>
@@ -177,9 +175,19 @@
         	<artifactId>httpmime</artifactId>
         	<version>4.2</version>
         </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    <version>5.2.7.RELEASE</version>
+	</dependency>
+        
+        
     </dependencies>
 
-
+	
+	
 
 
 
