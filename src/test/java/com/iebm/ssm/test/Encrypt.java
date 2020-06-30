@@ -9,6 +9,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.junit.Test;
 import org.springframework.beans.factory.FactoryBean;
+import sun.misc.BASE64Decoder;
+import sun.misc.BASE64Encoder;
 
 
 /**
@@ -115,30 +117,17 @@ public class Encrypt  implements FactoryBean<Object> {
 		StringBuilder sb=new StringBuilder("72pc:");
 		sb.appendCodePoint(72);
 		System.out.println(sb.toString());
-		//System.out.println('鐪�');
 	}
 	
 	@Test
 	public void test() {
-//		String s = "zzqbj_ssmmid";
-//		String s = "ordos_ssm";
-//		String s = "ssm_eeds";
-//		String s = "ssm_new";
-		// String s = "+LFyPEiaZxdV+Ir/vG8gkA=="
-//		String s = "ssm_bt_new";
-//		String s = "tc_ssm_test";
-	//	String s = "jdbc:oracle:thin:@192.168.29.171:1521:orcl";
-		String s1 = " als_ssm";
+
+		String s1 = "als_ssm";
 		String s = "jdbc:oracle:thin:@192.168.29.171:1521:orcl";
 		//String s = "ulm_ssm";
-		Encrypt p = new Encrypt();
-		String afterE = p.eCode(s);
-		System.out.println("after:" + afterE);
-		System.out.println("after:" + p.eCode(s1));
-		System.out.println("before:" + p.dCode("pqODKd/CU1AF7UfSFO44Xw==".getBytes()));
-		System.out.println("before:" + p.dCode("szCx9JW4gLiIFegxTyEfbA==".getBytes()));
-		System.out.println("before:" + p.dCode("Kbs2u6NELkMD+i6RnR+aSQQSJDG9EpkVQpiEHUomAvG9BkQOdPdZGBgCtVrBwlQv".getBytes()));
-		//System.out.println('鐪�');
+		Encrypt p = new Encrypt();		
+		System.out.println("after:"+p.eCode(s));
+		System.out.println("before:" + p.dCode("Kbs2u6NELkMD+i6RnR+aSQQSJDG9EpkV8Op5w2hod/RqZ6DOxTfkgJyuN8CSuxrZ".getBytes()));
 	}
 	
 }
