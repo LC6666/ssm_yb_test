@@ -55,7 +55,8 @@ public class CreateBigFile {
    }
 	
 	public static void main(String[] args) throws IOException {
-		CreateBigFile.createFile(new File("c:/test.docx"), 49*1024*1024);
+//		CreateBigFile.createFile(new File("c:/test.docx"), 10*1024*1024);
+		CreateBigFile.createFixLengthFile(new File("c:/test1.docx"), 10*1024*1024);
 	}
 
 }

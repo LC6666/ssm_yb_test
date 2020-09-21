@@ -98,25 +98,10 @@ public class Encrypt  implements FactoryBean<Object> {
 	}
 
 	public static void main(String[] args) {
-//		String s = "zzqbj_ssmmid";
-//		String s = "ordos_ssm";
-//		String s = "ssm_eeds";
-//		String s = "ssm_new";
-		// String s = "+LFyPEiaZxdV+Ir/vG8gkA=="
-	     String s = "ebm83881021";
-		String s1 = "jdbc:oracle:thin:@192.168.29.144:1521:orcl";
-		//String s = "ulm_ssm";
 		Encrypt p = new Encrypt();
-		String afterE = p.eCode(s);
-		System.out.println("after s:" + afterE);
-		System.out.println("s1:" + p.eCode(s1));
-		System.out.println(1);
-		System.out.println("before:" + p.dCode("/WoSAA//pvYvv2QcudGpZQ==".getBytes()));
-		System.out.println("before:" + p.dCode("MqhP4FEa0uAF7UfSFO44Xw==".getBytes()));
-		System.out.println("before:" + p.dCode("Kbs2u6NELkMD+i6RnR+aSVshbAPcIa9Or5MUq0SHUFNNGguiRfIOeVX4iv+8byCQ".getBytes()));
-		StringBuilder sb=new StringBuilder("72pc:");
-		sb.appendCodePoint(72);
-		System.out.println(sb.toString());
+		System.out.println(p.eCode("als_ssm"));
+		System.out.println(p.dCode("7Cs2/pb/bLMxOzrSDpivrg==".getBytes()));
+		
 	}
 	
 	@Test

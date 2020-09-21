@@ -34,8 +34,10 @@ public class OracleJDBCTest {
 //    更新函数
     public void executesql(String sql){
         try {
+//        	System.out.println(sql);
             statement = connect.createStatement();
             statement.executeUpdate(sql);
+            statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
