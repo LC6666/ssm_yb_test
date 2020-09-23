@@ -259,8 +259,7 @@ public class YiDianChaXun {
     public static void main(String[ ] args) throws IOException, URISyntaxException, ClassNotFoundException {
         Login login = new Login();
         login.openLoginPage();
-        String s = login.loginURL();
-        if(JsonUtil.isJson(s)){
+        if(login.loginURL()){
             YiDianChaXun y = new YiDianChaXun();
             int totalPages = y.getTotalPages();
             y.queryYiD(totalPages);

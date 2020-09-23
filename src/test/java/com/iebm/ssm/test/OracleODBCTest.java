@@ -8,7 +8,7 @@ import java.sql.*;
  * @Description:
  */
 
-public class OracleJDBCTest {
+public class OracleODBCTest {
 
     private Connection connect = null;
     private Statement statement = null;

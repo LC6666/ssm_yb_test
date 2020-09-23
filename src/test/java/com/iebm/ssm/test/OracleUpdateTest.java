@@ -101,7 +101,7 @@ public class OracleUpdateTest {
     public void updateSqls() throws SQLException{
 
         String[] sqls = this.setSQLs();
-        OracleJDBCTest ora = new OracleJDBCTest();
+        OracleODBCTest ora = new OracleODBCTest();
         String[][] dbinfo = getDBinfo();
         for (int i = 0;i<dbinfo.length;i++){
             System.out.println(dbinfo[i][1]);

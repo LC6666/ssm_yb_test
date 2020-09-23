@@ -1,7 +1,10 @@
 package com.iebm.ssm.urlClient;
 
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.iebm.ssm.util.Constant;
+import com.iebm.ssm.util.JsonUtil;
 import com.iebm.ssm.util.MyCookieStore;
 
 import org.apache.http.*;
@@ -23,7 +26,7 @@ public class Login {
     }
 
 
-    public String loginURL() throws URISyntaxException, IOException, ClassNotFoundException {
+    public Boolean loginURL() throws URISyntaxException, IOException, ClassNotFoundException {
 //        构造路径参数
 
         /*List<NameValuePair> nameValuePairList1 = Lists.newArrayList();
@@ -39,18 +42,24 @@ public class Login {
         nameValuePairList.add(new BasicNameValuePair("password",Constant.loginPassword));
         nameValuePairList.add(new BasicNameValuePair("validateCode","1234"));
         String response = DoRequest.dopost(Constant.url+"/loginAction.action?method=login",nameValuePairList,MyCookieStore.readCookieStore("cookie"));
-        return response;
-
+        
+        if(JsonUtil.isJson(response)){
+        	JsonNode rows = new ObjectMapper().readTree(response).get("responseType");
+        	if(rows.asText().equals("NO_MSG")) {
+        		return true;
+        	}else {
+        		return false;
+        	}
+        }else {
+        	return false;
+        }
+        
     }
-
-
-
-
 
 
     public static void main(String[] args) throws ClassNotFoundException, IOException, URISyntaxException {
         Login login = new Login();
-        login.loginURL();
+        System.out.println(login.loginURL());
     }
 
 
