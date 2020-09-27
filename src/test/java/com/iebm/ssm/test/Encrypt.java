@@ -9,9 +9,11 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.junit.Test;
 import org.springframework.beans.factory.FactoryBean;
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
 
+import java.util.Base64;
+/**
+import sun.misc.BASE64Decoder;
+import sun.misc.BASE64Encoder;**/
 
 /**
  * 
@@ -70,10 +72,11 @@ public class Encrypt  implements FactoryBean<Object> {
 			javax.crypto.SecretKey key = EncryptKey.loadKey();
 			enCipher.init(1, key);
 			result = enCipher.doFinal(needEncrypt.getBytes());
-			BASE64Encoder base64Encoder = new BASE64Encoder();
-			ByteArrayOutputStream bos = new ByteArrayOutputStream();
-			base64Encoder.encode(result, bos);
-			result = bos.toByteArray();
+//			BASE64Encoder base64Encoder = new BASE64Encoder();			
+//			ByteArrayOutputStream bos = new ByteArrayOutputStream();
+//			base64Encoder.encode(result, bos);
+//			result = bos.toByteArray();
+			Base64.getUrlEncoder().encodeToString(result);
 		} catch (Exception e) {
 			throw new IllegalStateException(
 					"System doesn't support DES algorithm.");
@@ -86,10 +89,14 @@ public class Encrypt  implements FactoryBean<Object> {
 		try {
 			Cipher deCipher = Cipher.getInstance("DES");
 			deCipher.init(2, EncryptKey.loadKey());
-			BASE64Decoder base64Decoder = new BASE64Decoder();
-			result = base64Decoder.decodeBuffer(new String(result));
-			byte strByte[] = deCipher.doFinal(result);
-			s = new String(strByte);
+//			BASE64Decoder base64Decoder = new BASE64Decoder();
+//			result = base64Decoder.decodeBuffer(new String(result));
+//			byte strByte[] = deCipher.doFinal(result);
+//			s = new String(strByte);
+			
+			byte[] b64UrlDe = Base64.getUrlDecoder().decode(result);
+			s= new String(b64UrlDe, "utf-8");
+
 		} catch (Exception e) {
 			throw new IllegalStateException(
 					"System doesn't support DES algorithm.");

@@ -46,8 +46,6 @@ public class BingLiChaXun_info {
 		nameValuePairList.add(new BasicNameValuePair("miid", miid));
 		nameValuePairList.add(new BasicNameValuePair("zclcsofttimestamp", "1600670163150"));
 
-//		DoRequest.doget(url, nameValuePairList, MyCookieStore.readCookieStore("cookie"));
-
 		String response = DoRequest.doget(url, nameValuePairList, MyCookieStore.readCookieStore("cookie"));
 //		System.out.println(response);
 		Document doc = Jsoup.parseBodyFragment(response);
@@ -65,15 +63,9 @@ public class BingLiChaXun_info {
 		String ownExpense_str = "";
 //		最终违规金额(元)
 		String initialIllegalFee_str = "";
+//		医院等级
+		String levelText =  doc.getElementById("app.common.diagnosis.detailedInfo.form2.levelText").attr("value");
 		
-//		页面显示费用校验（需要校验时去掉注释即可）
-//		===============================================================================================
-//		BigDecimal drugFee = BigDecimal.ZERO;
-//		BigDecimal inspectionFee = BigDecimal.ZERO;
-//		BigDecimal treatmentFee = BigDecimal.ZERO;
-//		BigDecimal otherFee = BigDecimal.ZERO;
-//		BigDecimal totalFee1 = BigDecimal.ZERO;
-//		
 		totalFee_str = doc.getElementById("app.common.diagnosis.basicInfo.form0.totalFee").attr("value").replace(",",
 				"");
 		drugFee_str = doc.getElementById("app.common.diagnosis.basicInfo.form0.drugFee").attr("value").replace(",", "");
@@ -88,6 +80,14 @@ public class BingLiChaXun_info {
 				.replace(",", "");
 		initialIllegalFee_str = doc.getElementById("app.common.diagnosis.basicInfo.form0.initialIllegalFee")
 				.attr("value").replace(",", "");
+		
+//		页面显示费用校验（需要校验时去掉注释即可）
+//		===============================================================================================
+//		BigDecimal drugFee = BigDecimal.ZERO;
+//		BigDecimal inspectionFee = BigDecimal.ZERO;
+//		BigDecimal treatmentFee = BigDecimal.ZERO;
+//		BigDecimal otherFee = BigDecimal.ZERO;
+//		BigDecimal totalFee1 = BigDecimal.ZERO;
 //		
 //		drugFee = drugFee_str.equals("") ? drugFee : new BigDecimal(drugFee_str);
 //		inspectionFee = inspectionFee_str.equals("") ? inspectionFee : new BigDecimal(inspectionFee_str);
@@ -130,6 +130,8 @@ public class BingLiChaXun_info {
 		infoMap.put("ownExpense_str", ownExpense_str);
 //	      最终违规金额
 		infoMap.put("initialIllegalFee_str", initialIllegalFee_str);
+		
+		infoMap.put("levelText", levelText);
 		
 		return infoMap;
 

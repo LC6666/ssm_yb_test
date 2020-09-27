@@ -24,7 +24,10 @@ import java.util.Map;
  */
 public class BingLiChaXun {
 	
+	String illegalMedicalAll_url = "/app/illegalMedical/illegalMedicalAllotAction.action";
+	
 	BingLiChaXun_info bii = new BingLiChaXun_info();
+
 	DecimalFormat df = new DecimalFormat("0.00");
 	MysqlUtil myu = new MysqlUtil();
 //	总住院费用
@@ -50,118 +53,128 @@ public class BingLiChaXun {
 	BigDecimal sum_initialIllegalFee_price = new BigDecimal("0.00");
 	
 	
-	private void getMysql(String sql) {
-		myu.getConn();
-		myu.executesql(sql);
+	private String startCreateTime="",endCreateTime="" ;
+	
+	public BingLiChaXun(String startCreateTime,String endCreateTime) {
+		// TODO Auto-generated constructor stub
+//		nameValuePairList.add(new BasicNameValuePair("startCreateTime",startCreateTime));
+//        nameValuePairList.add(new BasicNameValuePair("endCreateTime",endCreateTime));
+//        this.setDefaultValuePair(0);
+        this.startCreateTime=startCreateTime;
+        this.endCreateTime=endCreateTime;
+        MysqlUtil.getConn();
 	}
 	
 	
-
-    public int getTotalPage() throws IOException, ClassNotFoundException, URISyntaxException {
-        //        获取分页信息
-        String url = Constant.url + "/app/illegalMedical/illegalMedicalAllotAction.action?method=queryAllRecord";
-        List<NameValuePair> nameValuePairList = Lists.newArrayList();
-        nameValuePairList.add(new BasicNameValuePair("institutionName",""));
+	private void getMysql(String sql, Object[] value) {
+		MysqlUtil.executesql(sql,value);
+	}
+	
+	
+	
+	public List<NameValuePair> setDefaultValuePair(int pageNo) {
+		List<NameValuePair> nameValuePairList = Lists.newArrayList();
+		nameValuePairList.add(new BasicNameValuePair("method","queryAllRecord"));
+		nameValuePairList.add(new BasicNameValuePair("institutionName",""));
         nameValuePairList.add(new BasicNameValuePair("institutionId",""));
         nameValuePairList.add(new BasicNameValuePair("institutionLevelKey",""));
         nameValuePairList.add(new BasicNameValuePair("diseaseName",""));
         nameValuePairList.add(new BasicNameValuePair("diseaseId",""));
-        nameValuePairList.add(new BasicNameValuePair("startCreateTime","2020-05-01"));
-        nameValuePairList.add(new BasicNameValuePair("endCreateTime","2020-08-31"));
+        nameValuePairList.add(new BasicNameValuePair("startCreateTime",startCreateTime));
+        nameValuePairList.add(new BasicNameValuePair("endCreateTime",endCreateTime));
+//        nameValuePairList.add(new BasicNameValuePair("startCreateTime","2020-05-01"));
+//        nameValuePairList.add(new BasicNameValuePair("endCreateTime","2020-08-31"));
         nameValuePairList.add(new BasicNameValuePair("siCode",""));
         nameValuePairList.add(new BasicNameValuePair("insuredName",""));
         nameValuePairList.add(new BasicNameValuePair("undefined",""));
         nameValuePairList.add(new BasicNameValuePair("pageRecords","200"));
+		if(pageNo>0) {
+			nameValuePairList.add(new BasicNameValuePair("orderInfo","-1,asc"));
+            nameValuePairList.add(new BasicNameValuePair("gridbox","app.suspicion.allrecord.query.grid"));
+            nameValuePairList.add(new BasicNameValuePair("title",""));
+            nameValuePairList.add(new BasicNameValuePair("undefined",""));
+            nameValuePairList.add(new BasicNameValuePair("currentPage",String.valueOf(pageNo)));			
+		}
+        
+		return nameValuePairList;
+	}
+	
+	
+    
+    public String getPerPages(List<NameValuePair> nameValuePairList) throws ClassNotFoundException, URISyntaxException, IOException {
+		String response = DoRequest.dopost(Constant.url+illegalMedicalAll_url, nameValuePairList, MyCookieStore.readCookieStore("cookie"));
+//		System.out.println(response);
+		return response;
+	}
 
-
-        String response = DoRequest.dopost(url, nameValuePairList,MyCookieStore.readCookieStore("cookie"));
-
-        if(JsonUtil.isJson(response)){
+    
+    
+    public void savePerPages(String response) throws Exception {
+//    	int illegalcount=0,normalcount=0;
+    	if(JsonUtil.isJson(response)){
             JsonNode page = new ObjectMapper().readTree(response).get("page");
             int totalPages = page.get("totalPages").asInt();
-            return totalPages;
+            JsonNode rows = new ObjectMapper().readTree(response).get("rows");
+            this.savePerRecord(response);
+            if(totalPages>1) {
+            	int pageNo=2;
+            	for(;pageNo<=totalPages;pageNo++) {
+            		this.savePerRecord(this.getPerPages(this.setDefaultValuePair(pageNo)));
+            	}	            	               	                
+	                
+            }            	
+            
         }
-        return 0;
-
-    }
-
-
-//    
-    /**
-     * 分页遍历查询
-     * @param totalPages 总页数
-     * @throws IOException
-     * @throws ClassNotFoundException
-     * @throws URISyntaxException
-     */
-    public void getPerPage(int totalPages) throws IOException, ClassNotFoundException, URISyntaxException {
-        if(totalPages>0){
-            String url = Constant.url + "/app/illegalMedical/illegalMedicalAllotAction.action?method=queryAllRecord";
-            int illegalcount=0,normalcount=0;
-            for(int pageNum=1;pageNum<=totalPages;pageNum++){
-                List<NameValuePair> nameValuePairList = Lists.newArrayList();
-                nameValuePairList.add(new BasicNameValuePair("pageRecords","200"));
-                nameValuePairList.add(new BasicNameValuePair("orderInfo","-1,asc"));
-                nameValuePairList.add(new BasicNameValuePair("gridbox","app.suspicion.allrecord.query.grid"));
-                nameValuePairList.add(new BasicNameValuePair("title",""));
-                nameValuePairList.add(new BasicNameValuePair("institutionName",""));
-                nameValuePairList.add(new BasicNameValuePair("institutionId",""));
-                nameValuePairList.add(new BasicNameValuePair("institutionLevelKey",""));
-                nameValuePairList.add(new BasicNameValuePair("diseaseName",""));
-                nameValuePairList.add(new BasicNameValuePair("diseaseId",""));
-                nameValuePairList.add(new BasicNameValuePair("startCreateTime","2020-05-01"));
-                nameValuePairList.add(new BasicNameValuePair("endCreateTime","2020-08-31"));
-                nameValuePairList.add(new BasicNameValuePair("siCode",""));
-                nameValuePairList.add(new BasicNameValuePair("insuredName",""));
-                nameValuePairList.add(new BasicNameValuePair("institutionLevel",""));
-                nameValuePairList.add(new BasicNameValuePair("undefined",""));
-                nameValuePairList.add(new BasicNameValuePair("currentPage",String.valueOf(pageNum)));
-                String PageResponse = DoRequest.dopost(url, nameValuePairList,MyCookieStore.readCookieStore("cookie"));
-                if(JsonUtil.isJson(PageResponse)){
-                    JsonNode rows = new ObjectMapper().readTree(PageResponse).get("rows");
-                    if(rows.isArray()){
-                        for (JsonNode row:rows){
-                            JsonNode data = row.get("data");
-                            String flag = data.get(22).asText();
-                            String institutionName = data.get(5).asText();
-                            String si_code = data.get(3).asText();
-                            String diseaseName = data.get(7).asText();
-                            String illegalFee_price = data.get(19).asText();
-                            if(flag.equals("")){
-//                            	正常病例计数
-                            	normalcount++;                            
-                            }else{
-//                            	违规病例计数
-                            	illegalcount++;
-                            }
-                            String miid = row.get("id").asText();
-                            Map infoMap = new HashMap<>();
-                            
-//                          病例信息查看，获取费用信息
-                            infoMap.put("miid", miid);
-                            infoMap.put("institutionName", institutionName);
-                            infoMap.put("si_code", si_code);
-                            infoMap.put("diseaseName", diseaseName);
-                            infoMap.put("illegalFee_price", illegalFee_price);
-                            
-                            infoMap = this.getAllFee(infoMap);
-                            
-                        }
-                    }
-
-                }else{
-                    System.out.println("病例查询异常！");
-                }
-            }
-            System.out.println("总病例中，正常病例有"+normalcount+"   违规病例有"+illegalcount);
-
-        }
-
     }
     
-    public Map getAllFee(Map infoMap) throws ClassNotFoundException, URISyntaxException, IOException {
+    
+    public void savePerRecord(String response) throws Exception {
+    	int illegalcount=0,normalcount=0;
+    	JsonNode rows = new ObjectMapper().readTree(response).get("rows");
+        if(rows.isArray()){
+            for (JsonNode row:rows){
+                JsonNode data = row.get("data");
+                String flag = data.get(22).asText();
+                String institutionName = data.get(5).asText();
+                String discharge_date = data.get(10).asText();
+                String si_code = data.get(3).asText();
+                String diseaseName = data.get(7).asText();
+                String illegalFee_price = data.get(19).asText();
+                String totalWgCount = data.get(20).asText();
+                String wglevel = data.get(21).asText();
+                String doctor_name = data.get(11).asText();
+                if(flag.equals("")){
+//                	正常病例计数
+                	normalcount++;                            
+                }else{
+//                	违规病例计数
+                	illegalcount++;
+                }
+                String miid = row.get("id").asText();
+                Map infoMap = new HashMap<>();
+                
+//             
+                infoMap.put("miid", miid);
+                infoMap.put("institutionName", institutionName);
+                infoMap.put("si_code", si_code);
+                infoMap.put("diseaseName", diseaseName);
+                infoMap.put("illegalFee_price", illegalFee_price);
+                infoMap.put("discharge_date", discharge_date);
+                infoMap.put("totalWgCount", totalWgCount);
+                infoMap.put("wglevel", wglevel);
+                infoMap.put("doctor_name", doctor_name);
+//              病例信息查看，获取费用信息
+                infoMap = this.getAllFee(infoMap);
+            }
+        }
+    }
+
+
+    public Map getAllFee(Map infoMap) throws Exception {
 //    	基本信息
     	infoMap = bii.cureInfoJointforHis(infoMap);
+//    	测试打印
+//    	===========================================================================
 //    	System.out.println("总住院费用="+infoMap.get("totalFee_str")+	
 //				"药品费用="+infoMap.get("drugFee_str")+	
 //				"检查费用="+infoMap.get("inspectionFee_str")+
@@ -169,8 +182,11 @@ public class BingLiChaXun {
 //				"其他费用="+infoMap.get("otherFee_str")+
 //				"违规费用="+infoMap.get("ownExpense_str")+
 //				"最终违规金额(元)"+infoMap.get("initialIllegalFee_str"));
+//    	============================================================================
     	
-//    	统计费用
+//    	统计费用（需统计进可取消注释）
+//    	=================================================================================
+    	/**
     	BigDecimal totalFee_price = new BigDecimal(((String)infoMap.get("totalFee_str")));
     	sum_totalFee_price = sum_totalFee_price.add(totalFee_price);
         BigDecimal drugFee_price = new BigDecimal((String)infoMap.get("drugFee_str"));
@@ -182,36 +198,49 @@ public class BingLiChaXun {
         BigDecimal otherFee_price  = new BigDecimal((String)infoMap.get("otherFee_str"));
         sum_otherFee_price = sum_otherFee_price.add(otherFee_price);
         BigDecimal initialIllegalFee_price  = new BigDecimal((String)infoMap.get("initialIllegalFee_str"));
-        sum_initialIllegalFee_price = sum_initialIllegalFee_price.add(initialIllegalFee_price);
-        String sql = "insert into binglichaxun (si_code, miid, totalFee_price, drugFee_price, inspectionFee_price, treatmentFee_price, otherFee_price, initialIllegalFee_price,institutionName,diseaseName,illegalFee_price) values ('"
-        			+infoMap.get("si_code")+"','"
-        			+infoMap.get("miid")+"','"
-        			+infoMap.get("totalFee_str")+"','"
-        			+infoMap.get("drugFee_str")+"','"
-        			+infoMap.get("inspectionFee_str")+"','"
-        			+infoMap.get("treatmentFee_str")+"','"
-        			+infoMap.get("otherFee_str")+"','"
-        			+infoMap.get("initialIllegalFee_str")+"','"
-					+infoMap.get("institutionName")+"','"
-        			+infoMap.get("diseaseName")+"','"
-        			+infoMap.get("illegalFee_price")+"')";
+        sum_initialIllegalFee_price = sum_initialIllegalFee_price.add(initialIllegalFee_price);**/
+//    	=================================================================================
+//    	保存病例信息到数据库
+        String sql = "insert into binglichaxun (si_code, miid, totalFee_price, drugFee_price, inspectionFee_price, treatmentFee_price, otherFee_price, initialIllegalFee_price,institutionName,diseaseName,illegalFee_price,discharge_date,levelText,totalWgCount,wglevel,doctor_name) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 //        System.out.println(sql);
-        this.getMysql(sql);
+        Object[] value = {infoMap.get("si_code"),infoMap.get("miid"),infoMap.get("totalFee_str"),infoMap.get("drugFee_str"),infoMap.get("inspectionFee_str"),
+    					 infoMap.get("treatmentFee_str"),infoMap.get("otherFee_str"),infoMap.get("initialIllegalFee_str"),infoMap.get("institutionName"),infoMap.get("diseaseName"),
+    					 infoMap.get("illegalFee_price"),infoMap.get("discharge_date"),infoMap.get("levelText"),infoMap.get("totalWgCount"),infoMap.get("wglevel"),infoMap.get("doctor_name")};
+        this.getMysql(sql,value);
+        
+        BingLiChaXun_FeesDetail bfd = new BingLiChaXun_FeesDetail(infoMap);
+//        bfd.getAllFeesDetail();
+        Thread thread1 = new BingLiChaXun_Thread(bfd,1);
+        Thread thread2 = new BingLiChaXun_Thread(bfd,2);
+        Thread thread3 = new BingLiChaXun_Thread(bfd,3);
+        Thread thread4 = new BingLiChaXun_Thread(bfd,4);
+        Thread thread5 = new BingLiChaXun_Thread(bfd,5);
+        thread1.start();
+        thread2.start();
+        thread3.start();
+        thread4.start();
+        thread5.start();
+        
     	return infoMap;
     }
     
-    
 
-    public static void main(String[] args) throws IOException, URISyntaxException, ClassNotFoundException {
+	
+	
+	public static void main(String[] args) throws Exception {
         Login login = new Login();
         login.openLoginPage();
         if(login.loginURL()){
-            BingLiChaXun bc = new BingLiChaXun();
-            int totalpage = bc.getTotalPage();
-            bc.getPerPage(totalpage);
-            System.out.println(bc.sum_totalFee_price.toString());
+            
+        	BingLiChaXun binglichaxu = new BingLiChaXun("2020-07-01","2020-07-1");
+        	binglichaxu.savePerPages(binglichaxu.getPerPages(binglichaxu.setDefaultValuePair(0)));
+            
+//            System.out.println(bc.sum_totalFee_price.toString());
         }else {
             System.out.println("登录失败!退出请求!");
         }
     }
+
+	
+	
 }
