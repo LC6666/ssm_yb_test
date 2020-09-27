@@ -9,7 +9,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 
 //import sun.misc.BASE64Decoder;
-
+// import sun.misc.BASE64Decoder;
 /**
  * 
  * @ClassName: EncryptKey
@@ -22,6 +22,7 @@ public class EncryptKey {
 	private static String encryptKey = "7EV/Zzutjzg=";
 	public EncryptKey() {}
 	public static SecretKey loadKey() throws Exception {
+		
 //		BASE64Decoder base64Decoder = new BASE64Decoder();
 //		byte b[] = base64Decoder.decodeBuffer(encryptKey);
 //		DESKeySpec desKeySpec = new DESKeySpec(b);
@@ -33,6 +34,6 @@ public class EncryptKey {
 		return original_key;
 		
 		
-		
+	
 	}
 }
