@@ -147,4 +147,67 @@ public class DoRequest {
 
 
     }
+    
+    
+    /**
+     * 当get请求中文乱码时
+     * @param url
+     * @param nameValuePairList
+     * @param cookieStore
+     * @throws URISyntaxException
+     * @throws IOException
+     */
+    public static String dogetWithCharset(String url, List<NameValuePair> nameValuePairList, CookieStore cookieStore,String charset) throws URISyntaxException, IOException {
+
+//      构造请求资源地址
+        URI uri;
+
+        if(nameValuePairList!=null){
+            //      构造请求路径，并添加参数
+            uri = new URIBuilder(url).addParameters(nameValuePairList ).build();
+        }else{
+            uri = new URIBuilder(url).build();
+        }
+
+//      构造Headers
+        List<Header> headerList = Lists.newArrayList();
+        headerList.add(new BasicHeader(HttpHeaders.ACCEPT_ENCODING,"gzip,deflate"));
+        headerList.add(new BasicHeader(HttpHeaders.CONNECTION,"keep-alive"));
+        HttpClientBuilder httpClientBuilder = HttpClients.custom();
+
+//        设置代理IP、端口、协议（请分别替换）
+        /*HttpHost proxy = new HttpHost("127.0.0.1",8888,"http");
+//        把代理设置到请求配置
+        RequestConfig requestConfig = RequestConfig.custom().setProxy(proxy).build();
+        httpClientBuilder.setDefaultRequestConfig(requestConfig);*/
+
+        HttpClientContext httpClientContext = null;
+        if(cookieStore!=null){
+            httpClientBuilder.setDefaultCookieStore(cookieStore);
+        }else{
+            httpClientContext = HttpClientContext.create();
+        }
+
+
+
+        httpClientBuilder.setDefaultHeaders(headerList);
+
+
+        HttpClient httpClient = httpClientBuilder.build();
+        HttpUriRequest httpUriRequest = RequestBuilder.get().setUri(uri).build();
+
+        HttpResponse httpResponse = httpClient.execute(httpUriRequest,httpClientContext);
+
+        if(httpClientContext!=null){
+            CookieStore cookies = httpClientContext.getCookieStore();
+            MyCookieStore.saveCookieStore(cookies,"cookie");
+        }
+
+
+        HttpEntity entity = httpResponse.getEntity();
+
+        return (EntityUtils.toString(entity, charset));
+
+    }
+
 }
