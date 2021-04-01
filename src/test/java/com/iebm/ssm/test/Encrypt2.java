@@ -1,6 +1,8 @@
 package com.iebm.ssm.test;
 
 import java.io.ByteArrayOutputStream;
+import java.util.Base64;
+import java.util.Base64.Decoder;
 import java.util.Properties;
 
 import javax.crypto.Cipher;
@@ -10,19 +12,12 @@ import org.apache.commons.logging.LogFactory;
 import org.junit.Test;
 import org.springframework.beans.factory.FactoryBean;
 
-import java.util.Base64;
-//import sun.misc.BASE64Decoder;
-//import sun.misc.BASE64Encoder;
-
 /**
- * 
- * @ClassName: Encrypt 
- * @Description: 閺佺増宓佹惔鎾舵暏閹村嘲鎮曢崝鐘盒掔�碉拷
- * @author HuZongJian
- * @date 2013楠烇拷1閺堬拷閺冿拷娑撳宕�2:17:36 
+ * @author LC
+ * 适用于JDK1.8以上的加解密处理
  *
  */
-public class Encrypt  implements FactoryBean<Object> {
+public class Encrypt2 implements FactoryBean<Object>  {
 	private static final Log logger = LogFactory.getLog(Encrypt.class);
 	private Properties properties;
 
@@ -65,20 +60,21 @@ public class Encrypt  implements FactoryBean<Object> {
 	}
 
 	public String eCode(String needEncrypt) {
+		
 		byte result[] = null;
 		try {
 			Cipher enCipher = Cipher.getInstance("DES");
-			javax.crypto.SecretKey key = EncryptKey.loadKey();
+			javax.crypto.SecretKey key = EncryptKey2.loadKey();
 			enCipher.init(1, key);
 			result = enCipher.doFinal(needEncrypt.getBytes());
-//			BASE64Encoder base64Encoder = new BASE64Encoder();
+			Base64.Encoder base64Encoder = Base64.getEncoder();
 			ByteArrayOutputStream bos = new ByteArrayOutputStream();
-//			base64Encoder.encode(result, bos);
-			result = bos.toByteArray();
-			Base64.getUrlEncoder().encodeToString(result);
+			result = base64Encoder.encode(result);
+			
 		} catch (Exception e) {
-			throw new IllegalStateException(
-					"System doesn't support DES algorithm.");
+			System.out.println(e.getMessage());
+//			throw new IllegalStateException(
+//					"System doesn't support DES algorithm.");
 		}
 		return new String(result);
 	}
@@ -87,38 +83,38 @@ public class Encrypt  implements FactoryBean<Object> {
 		String s = null;
 		try {
 			Cipher deCipher = Cipher.getInstance("DES");
-			deCipher.init(2, EncryptKey.loadKey());
-//			BASE64Decoder base64Decoder = new BASE64Decoder();
-//			result = base64Decoder.decodeBuffer(new String(result));
+			deCipher.init(2, EncryptKey2.loadKey());
+//			Decoder  base64Decoder = Base64.getDecoder();
+//			result = base64Decoder.decode(result);
+			
+			result = Base64.getDecoder().decode(result);
 			byte strByte[] = deCipher.doFinal(result);
 			s = new String(strByte);
 			
-			byte[] b64UrlDe = Base64.getUrlDecoder().decode(result);
-			s= new String(b64UrlDe, "utf-8");
+//			byte[] b64UrlDe = Base64.getUrlDecoder().decode(result);
+//			s= new String(b64UrlDe, "utf-8");
 
 		} catch (Exception e) {
-			throw new IllegalStateException(
-					"System doesn't support DES algorithm.");
+			System.out.println(e.getMessage());
+			throw new IllegalStateException(	"System doesn't support DES algorithm.");
+			
 		}
 		return s;
 	}
 
 	public static void main(String[] args) {
-		Encrypt p = new Encrypt();
+		Encrypt2 p = new Encrypt2();
 		System.out.println(p.eCode("als_ssm"));
-		System.out.println(p.dCode("7Cs2/pb/bLMxOzrSDpivrg==".getBytes()));
+		System.out.println(p.dCode("Kbs2u6NELkMD+i6RnR+aSQQSJDG9EpkVU2T3JdyYNtG9BkQOdPdZGBgCtVrBwlQv".getBytes()));
+		
+		System.out.println(p.dCode("Kbs2u6NELkMD+i6RnR+aSQQSJDG9EpkV0fr8q0E8yBBqZ6DOxTfkgJyuN8CSuxrZ".getBytes()));
+		
+		System.out.println(p.dCode("saRx0Us3Xacvv2QcudGpZQ==".getBytes()));
+		
+		
+		
 		
 	}
 	
-	@Test
-	public void test() {
-
-		String s1 = "als_ssm";
-		String s = "jdbc:oracle:thin:@192.168.29.171:1521:orcl";
-		//String s = "ulm_ssm";
-		Encrypt p = new Encrypt();		
-		System.out.println("after:"+p.eCode(s));
-		System.out.println("before:" + p.dCode("Kbs2u6NELkMD+i6RnR+aSQQSJDG9EpkV8Op5w2hod/RqZ6DOxTfkgJyuN8CSuxrZ".getBytes()));
-	}
 	
 }

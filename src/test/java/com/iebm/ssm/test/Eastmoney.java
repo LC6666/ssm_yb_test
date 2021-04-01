@@ -5,6 +5,13 @@ import java.net.URISyntaxException;
 
 import com.iebm.ssm.urlClient.DoRequest;
 
+
+
+/**
+ * @author Administrator
+ * 天天基金获取基金净值信息
+ *
+ */
 public class Eastmoney {
 	
     

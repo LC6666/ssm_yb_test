@@ -8,8 +8,11 @@ import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 
-//import sun.misc.BASE64Decoder;
-// import sun.misc.BASE64Decoder;
+/**
+import sun.misc.BASE64Decoder;
+ import sun.misc.BASE64Decoder;
+ */
+
 /**
  * 
  * @ClassName: EncryptKey
@@ -28,10 +31,7 @@ public class EncryptKey {
 //		DESKeySpec desKeySpec = new DESKeySpec(b);
 //		SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("DES");
 //		return keyFactory.generateSecret(desKeySpec);
-		
-		KeyGenerator keygen = KeyGenerator.getInstance("DES");
-		SecretKey original_key = keygen.generateKey();
-		return original_key;
+		return null;
 		
 		
 	

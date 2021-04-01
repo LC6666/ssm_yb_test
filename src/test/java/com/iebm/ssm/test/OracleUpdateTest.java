@@ -60,8 +60,8 @@ public class OracleUpdateTest {
 
 	public String[] setSQLs() {
 		String[] sqls = { 
-				"alter table BIZ_MEDICAL_CASE modify  IN_HP_KS_CODE varchar2(50)",
-				"alter table BIZ_MEDICAL_CASE modify  IN_HP_KS_CLASS varchar2(50)"
+				"alter table BIZ_MEDICAL_CASE modify JZ_DIAG_NAME varchar2(200)",
+				"alter table BIZ_MEDICAL_CASE modify JZ_DIAG_CODE varchar2(50)"
 
 		};
 		return sqls;
